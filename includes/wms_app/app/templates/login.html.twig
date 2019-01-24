@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+
+    <div class="login-container">
+        <div class="login-form">
+            <div class="login-form-contents">
+                <h1 class="logo-login">WMS</h1>
+                <h1>Log In</h1>
+
+                <form action="{{ action_login }}">
+                    <div class="input-container">
+                        <label for=""> Username</label>
+                        <input class="text-input" type="text" name="username">
+                    </div>
+
+                    <div class="input-container">
+                        <label for=""> Password</label>
+                        <input class="text-input" type="password" name="password">
+                    </div>
+
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
