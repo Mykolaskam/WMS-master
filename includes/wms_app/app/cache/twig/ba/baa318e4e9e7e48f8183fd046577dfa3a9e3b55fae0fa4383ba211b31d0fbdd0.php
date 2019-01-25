@@ -28,10 +28,10 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 2
+    // line 5
     public function block_content($context, array $blocks = array())
     {
-        // line 3
+        // line 6
         echo "
 
 
@@ -40,7 +40,10 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
         <h2 class=\"logo\">WMS</h2>
         <div class=\"user-container\">
             <i class=\"fas fa-user user-icon\"></i>
-            <a class=\"username\" href=\"\">Mykolas</a>
+            <a class=\"username\" href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, ($context["action_logout"] ?? null), "html", null, true);
+        echo "\">Mykolas</a>
         </div>
     </div>
 
@@ -51,7 +54,10 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
             <a class=\"menu-item\" href=\"#\"><i class=\"fas fa-users icon\"></i></a>
             <a class=\"menu-item\" href=\"#\"><i class=\"fas fa-shopping-cart icon\"></i></a>
             <a class=\"menu-item\" href=\"#\"><i class=\"fas fa-file icon\"></i></a>
-            <a class=\"menu-item\" href=\"index.html\"><i class=\"far fa-file icon\"></i></a>
+            <a class=\"menu-item\" href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, ($context["sales_orders"] ?? null), "html", null, true);
+        echo "\"><i class=\"far fa-file icon\"></i></a>
             <a class=\"menu-item\" href=\"#\"><i class=\"fas fa-file-invoice-dollar icon\"></i></a>
             <a class=\"menu-item\" href=\"#\"><i class=\"fas fa-money-bill icon\"></i></a>
         </div>
@@ -62,13 +68,16 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
 
         <div class=\"container-row\">
             <h1 class=\"big-title\">Sales Orders</h1>
-            <a class=\"button-small shadow\" href=\"newSO.html\">
+            <a class=\"button-small shadow\" href=\"";
+        // line 36
+        echo twig_escape_filter($this->env, ($context["action_new_so"] ?? null), "html", null, true);
+        echo "\">
                 <i class=\"fas fa-plus plus\"></i>
                 <span class=\"btn-text\">New SO</span>
             </a>
         </div>
 
-        <div class=\"shadow\" id=\"so-table\">
+        <div class=\"table shadow shell\" id=\"so-table\">
 
             <div class=\"scroll-container\">
 
@@ -91,278 +100,58 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
                     </tr>
 
                     <tbody class=\"list\">
-                    <tr id=\"SideModalBtn\">
-                        <td class=\"customerName\">Allan Smith</td>
-                        <td class=\"SONumber\">S0-00001</td>
-                        <td class=\"SODate\">12/12/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£500</td>
-                    </tr>
 
-                    <tr>
-                        <td class=\"customerName\">David Jobs</td>
-                        <td class=\"SONumber\">S0-00002</td>
-                        <td class=\"SODate\">10/09/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£399</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Mark Trevor</td>
-                        <td class=\"SONumber\">S0-00003</td>
-                        <td class=\"SODate\">01/11/2017</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£476</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Lucas Dwin</td>
-                        <td class=\"SONumber\">S0-00004</td>
-                        <td class=\"SODate\">02/01/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£899</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Anna Herman</td>
-                        <td class=\"SONumber\">S0-00005</td>
-                        <td class=\"SODate\">15/08/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£124</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Emma Beluchi</td>
-                        <td class=\"SONumber\">S0-00006</td>
-                        <td class=\"SODate\">23/06/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£539</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class=\"customerName\">Christian Willis</td>
-                        <td class=\"SONumber\">S0-00007</td>
-                        <td class=\"SODate\">13/02/2018</td>
-                        <td class=\"packed text-center\">
-                            <div class=\"indicator green\"></div>
-                        </td>
-                        <td class=\" shipped text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"invoiced text-center\">
-                            <div class=\"indicator\"></div>
-                        </td>
-                        <td class=\"amount text-center\">£999</td>
-                    </tr>
+                    ";
+        // line 66
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["sales_orders_array"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["order"]) {
+            // line 67
+            echo "                        <tr id=\"SideModalBtn\">
+                            <td class=\"customerName\"> ";
+            // line 68
+            echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = $context["order"]) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["customer_name"] ?? null) : null), "html", null, true);
+            echo " </td>
+                            <td class=\"SONumber\"> ";
+            // line 69
+            echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = $context["order"]) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a["so_number"] ?? null) : null), "html", null, true);
+            echo " </td>
+                            <td class=\"SODate\"> ";
+            // line 70
+            echo twig_escape_filter($this->env, (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["order"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["so_date"] ?? null) : null), "html", null, true);
+            echo " </td>
+                            <td class=\"packed text-center\">
+                                <div class=\"indicator ";
+            // line 72
+            echo twig_escape_filter($this->env, (($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["order"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["packed"] ?? null) : null), "html", null, true);
+            echo "\"></div>
+                            </td>
+                            <td class=\" shipped text-center\">
+                                <div class=\"indicator ";
+            // line 75
+            echo twig_escape_filter($this->env, (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = $context["order"]) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["shipped"] ?? null) : null), "html", null, true);
+            echo "\"></div>
+                            </td>
+                            <td class=\"invoiced text-center\">
+                                <div class=\"indicator ";
+            // line 78
+            echo twig_escape_filter($this->env, (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["order"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["invoiced"] ?? null) : null), "html", null, true);
+            echo "\"></div>
+                            </td>
+                            <td class=\"amount text-center\"> ";
+            // line 80
+            echo twig_escape_filter($this->env, (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["order"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["amount"] ?? null) : null), "html", null, true);
+            echo " </td>
+                        </tr>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 83
+        echo "
                     </tbody>
+
                 </table>
 
             </div>
@@ -437,7 +226,7 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
 
     public function getDebugInfo()
     {
-        return array (  35 => 3,  32 => 2,  15 => 1,);
+        return array (  152 => 83,  143 => 80,  138 => 78,  132 => 75,  126 => 72,  121 => 70,  117 => 69,  113 => 68,  110 => 67,  106 => 66,  73 => 36,  59 => 25,  45 => 14,  35 => 6,  32 => 5,  15 => 1,);
     }
 
     public function getSourceContext()

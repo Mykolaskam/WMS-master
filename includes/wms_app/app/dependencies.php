@@ -117,6 +117,13 @@ $container['sql_model'] = function ($container) {
     return $sql_model;
 };
 
+$container['sales_order'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'SalesOrder.php';
+    $sales_order = new salesorder();
+    return $sales_order;
+};
+
 /**
  * @param $container
  * @return null|PDO

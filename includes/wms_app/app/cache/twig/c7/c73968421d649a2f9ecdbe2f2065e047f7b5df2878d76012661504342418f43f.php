@@ -62,7 +62,7 @@ class __TwigTemplate_9092de5a70b2a0a587df80888b01b4943983ecdb363d1a4aae8c3bd55ee
 
         <div class=\"container-row\">
             <h1 class=\"big-title\">Sales Orders</h1>
-            <a class=\"button-small shadow\" href=\"newSO.html\">
+            <a class=\"button-small shadow\" href=\"newSO.html.twig\">
                 <i class=\"fas fa-plus plus\"></i>
                 <span class=\"btn-text\">New SO</span>
             </a>

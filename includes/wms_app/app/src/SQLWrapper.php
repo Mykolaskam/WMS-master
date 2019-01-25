@@ -189,10 +189,10 @@ class SQLWrapper
      * function returns and array of messages from the database messages table. The query is executed using safe_query with passed query string and passed parameters but in this case no parameters needed to be set.
      * @return mixed
      */
-    public function get_messages_var()
+    public function get_sales_orders_var()
     {
 
-        $m_query_string = $this->c_obj_sql_queries->get_messages();
+        $m_query_string = $this->c_obj_sql_queries->get_sales_orders();
 
         $m_arr_query_parameters = [];
 

@@ -135,11 +135,11 @@ class SQLQueries
      * Gets all rows from messages table and orders it by time in descending order
      * @return string
      */
-    public static function get_messages()
+    public static function get_sales_orders()
     {
         $m_query_string = "SELECT * ";
-        $m_query_string .= "FROM messages ";
-        $m_query_string .= "ORDER BY time DESC ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "ORDER BY so_date DESC ";
         return $m_query_string;
 
     }

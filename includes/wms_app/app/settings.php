@@ -16,10 +16,12 @@ define('BCRYPT_COST', 12);
 $url_root = $_SERVER['SCRIPT_NAME'];
 $url_root = implode('/', explode('/', $url_root, -1));
 $css_path = $url_root . '/css/style.css';
+$js_path = $url_root . '/js/javascript.js';
 /**
  *
  */
 define('CSS_PATH', $css_path);
+define('JS_PATH', $js_path);
 
 ini_set('display_errors', 'On');
 ini_set('html_errors', 'On');
@@ -43,9 +45,9 @@ $settings = [
         'pdo' => [
             'rdbms' => 'mysql',
             'host' => 'localhost',
-            'db_name' => 'secure_db',
+            'db_name' => 'wms',
             'port' => '8888',
-            'user_name' => 'secure',
+            'user_name' => 'wms_user',
             'user_password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',

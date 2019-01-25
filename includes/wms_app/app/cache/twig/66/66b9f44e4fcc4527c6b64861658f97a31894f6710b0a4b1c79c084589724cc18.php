@@ -49,7 +49,7 @@ class __TwigTemplate_630cc2934aa1f27fc93fbcc32a7c6235246ec8c41776dec17785e40d17e
                 <form action=\"";
         // line 11
         echo twig_escape_filter($this->env, ($context["action_login"] ?? null), "html", null, true);
-        echo "\">
+        echo "\" method=\"post\">
                     <div class=\"input-container\">
                         <label for=\"\"> Username</label>
                         <input class=\"text-input\" type=\"text\" name=\"username\">

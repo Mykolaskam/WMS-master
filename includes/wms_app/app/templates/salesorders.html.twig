@@ -1,4 +1,7 @@
 {% extends 'layout.html.twig' %}
+
+
+
 {% block content %}
 
 
@@ -8,7 +11,7 @@
         <h2 class="logo">WMS</h2>
         <div class="user-container">
             <i class="fas fa-user user-icon"></i>
-            <a class="username" href="">Mykolas</a>
+            <a class="username" href="{{ action_logout }}">Mykolas</a>
         </div>
     </div>
 
@@ -19,7 +22,7 @@
             <a class="menu-item" href="#"><i class="fas fa-users icon"></i></a>
             <a class="menu-item" href="#"><i class="fas fa-shopping-cart icon"></i></a>
             <a class="menu-item" href="#"><i class="fas fa-file icon"></i></a>
-            <a class="menu-item" href="index.html"><i class="far fa-file icon"></i></a>
+            <a class="menu-item" href="{{ sales_orders }}"><i class="far fa-file icon"></i></a>
             <a class="menu-item" href="#"><i class="fas fa-file-invoice-dollar icon"></i></a>
             <a class="menu-item" href="#"><i class="fas fa-money-bill icon"></i></a>
         </div>
@@ -30,13 +33,13 @@
 
         <div class="container-row">
             <h1 class="big-title">Sales Orders</h1>
-            <a class="button-small shadow" href="newSO.html">
+            <a class="button-small shadow" href="{{ action_new_so }}">
                 <i class="fas fa-plus plus"></i>
                 <span class="btn-text">New SO</span>
             </a>
         </div>
 
-        <div class="shadow" id="so-table">
+        <div class="table shadow shell" id="so-table">
 
             <div class="scroll-container">
 
@@ -59,278 +62,27 @@
                     </tr>
 
                     <tbody class="list">
-                    <tr id="SideModalBtn">
-                        <td class="customerName">Allan Smith</td>
-                        <td class="SONumber">S0-00001</td>
-                        <td class="SODate">12/12/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£500</td>
-                    </tr>
 
-                    <tr>
-                        <td class="customerName">David Jobs</td>
-                        <td class="SONumber">S0-00002</td>
-                        <td class="SODate">10/09/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£399</td>
-                    </tr>
+                    {% for order in sales_orders_array %}
+                        <tr id="SideModalBtn">
+                            <td class="customerName"> {{ order['customer_name'] }} </td>
+                            <td class="SONumber"> {{ order['so_number'] }} </td>
+                            <td class="SODate"> {{ order['so_date'] }} </td>
+                            <td class="packed text-center">
+                                <div class="indicator {{ order['packed'] }}"></div>
+                            </td>
+                            <td class=" shipped text-center">
+                                <div class="indicator {{ order['shipped'] }}"></div>
+                            </td>
+                            <td class="invoiced text-center">
+                                <div class="indicator {{ order['invoiced'] }}"></div>
+                            </td>
+                            <td class="amount text-center"> {{ order['amount'] }} </td>
+                        </tr>
+                    {% endfor %}
 
-                    <tr>
-                        <td class="customerName">Mark Trevor</td>
-                        <td class="SONumber">S0-00003</td>
-                        <td class="SODate">01/11/2017</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£476</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Lucas Dwin</td>
-                        <td class="SONumber">S0-00004</td>
-                        <td class="SODate">02/01/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£899</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Anna Herman</td>
-                        <td class="SONumber">S0-00005</td>
-                        <td class="SODate">15/08/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£124</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Emma Beluchi</td>
-                        <td class="SONumber">S0-00006</td>
-                        <td class="SODate">23/06/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£539</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
-
-                    <tr>
-                        <td class="customerName">Christian Willis</td>
-                        <td class="SONumber">S0-00007</td>
-                        <td class="SODate">13/02/2018</td>
-                        <td class="packed text-center">
-                            <div class="indicator green"></div>
-                        </td>
-                        <td class=" shipped text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="invoiced text-center">
-                            <div class="indicator"></div>
-                        </td>
-                        <td class="amount text-center">£999</td>
-                    </tr>
                     </tbody>
+
                 </table>
 
             </div>

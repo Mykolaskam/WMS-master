@@ -9,4 +9,24 @@
 class SalesOrder
 {
 
+    private $id;
+    private $company_name;
+    private $customer_name;
+    private $s0_number;
+    private $so_date;
+    private $packed;
+    private $shipped;
+    private $invoiced;
+    private $amount;
+
+    public function __construct()
+    {
+
+    }
+
+    public function __destruct()
+    {
+
+    }
+
 }
