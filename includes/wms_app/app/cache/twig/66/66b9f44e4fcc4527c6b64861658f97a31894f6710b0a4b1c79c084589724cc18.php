@@ -44,10 +44,13 @@ class __TwigTemplate_630cc2934aa1f27fc93fbcc32a7c6235246ec8c41776dec17785e40d17e
         <div class=\"login-form\">
             <div class=\"login-form-contents\">
                 <h1 class=\"logo-login\">WMS</h1>
-                <h1>Log In</h1>
+
+                <div class=\"input-container\">
+                    <h1>Log In</h1>
+                </div>
 
                 <form action=\"";
-        // line 11
+        // line 14
         echo twig_escape_filter($this->env, ($context["action_login"] ?? null), "html", null, true);
         echo "\" method=\"post\">
                     <div class=\"input-container\">
@@ -60,7 +63,9 @@ class __TwigTemplate_630cc2934aa1f27fc93fbcc32a7c6235246ec8c41776dec17785e40d17e
                         <input class=\"text-input\" type=\"password\" name=\"password\">
                     </div>
 
-                    <button type=\"submit\">Sign In</button>
+                    <div class=\"input-container\">
+                        <button type=\"submit\">Sign In</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -81,7 +86,7 @@ class __TwigTemplate_630cc2934aa1f27fc93fbcc32a7c6235246ec8c41776dec17785e40d17e
 
     public function getDebugInfo()
     {
-        return array (  51 => 11,  42 => 4,  39 => 3,  33 => 2,  15 => 1,);
+        return array (  54 => 14,  42 => 4,  39 => 3,  33 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

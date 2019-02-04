@@ -1,17 +1,5 @@
 <?php
 
-/**
- * MySQLWrapper.php
- *
- * Access the sessions database
- *
- * Author: CF Ingrams
- * Email: <clinton@cfing.co.uk>
- * Date: 22/10/2017
- *
- * @author CF Ingrams <clinton@cfing.co.uk>
- * @copyright CFI
- */
 
 class SQLWrapper
 {
@@ -66,7 +54,7 @@ class SQLWrapper
     {
         $this->c_obj_sql_queries = $p_obj_sql_queries;
     }
-    
+
     /**
      * @param $p_session_key
      * @param $p_session_value
@@ -185,6 +173,33 @@ class SQLWrapper
     }
 
 
+    public function create_sales_order_id_var()
+    {
+        $m_query_string = $this->c_obj_sql_queries->create_sales_order_id();
+
+
+        $m_arr_query_parameters = [
+
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        // return $this->last_inserted_ID();
+
+    }
+
+
+    public function delete_empty_orders_var()
+    {
+        $m_query_string = $this->c_obj_sql_queries->delete_empty_orders();
+
+        $m_arr_query_parameters = [
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+
     /**
      * function returns and array of messages from the database messages table. The query is executed using safe_query with passed query string and passed parameters but in this case no parameters needed to be set.
      * @return mixed
@@ -200,6 +215,64 @@ class SQLWrapper
 
         $message = $this->safe_fetch_all_array();
         return $message;
+    }
+
+
+    public function get_items_var()
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_items();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $item = $this->safe_fetch_all_array();
+        return $item;
+    }
+
+    public function get_item_var($p_order_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_item();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $p_order_id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $item = $this->safe_fetch_all_array();
+        return $item;
+    }
+
+    public function get_items_by_id_var($p_item_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_items_by_id();
+
+        $m_arr_query_parameters = [
+            ':local_item_id' => $p_item_id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $item = $this->safe_fetch_all_array();
+        return $item;
+    }
+
+
+    public function get_customers_var()
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_customers();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $customer = $this->safe_fetch_all_array();
+        return $customer;
     }
 
 
@@ -259,8 +332,21 @@ class SQLWrapper
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
 
+    public function add_item_to_order_items_var($p_order_id, $p_item_id, $p_quantity)
+    {
+        $m_query_string = $this->c_obj_sql_queries->add_item_to_order_items();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $p_order_id,
+            ':local_item_id' => $p_item_id,
+            ':local_quantity' => $p_quantity
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
     /**
-     * 
+     *
      * @param $p_session_key
      * @param $p_session_value
      */
@@ -344,6 +430,16 @@ class SQLWrapper
         $m_arr_row = $this->c_obj_stmt->fetchall(PDO::FETCH_ASSOC);
         $this->c_obj_stmt->closeCursor();
         return $m_arr_row;
+    }
+
+    public function last_inserted_ID()
+    {
+        $m_sql_query = 'SELECT LAST_INSERT_ID()';
+
+        $this->safe_query($m_sql_query);
+        $m_arr_last_inserted_id = $this->safe_fetch_array();
+        $m_last_inserted_id = $m_arr_last_inserted_id['LAST_INSERT_ID()'];
+        return $m_last_inserted_id;
     }
 
 }

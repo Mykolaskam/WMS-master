@@ -40,6 +40,13 @@ $container['session_model'] = function ($container) {
     return $session_model;
 };
 
+$container['session_wrapper'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'SessionWrapper.php';
+    $session_wrapper = new SessionWrapper();
+    return $session_wrapper;
+};
+
 /**
  * @param $container
  * @return BcryptWrapper
@@ -82,6 +89,27 @@ $container['user_model'] = function ($container) {
     require $class_path . 'UserModel.php';
     $user_model = new UserModel();
     return $user_model;
+};
+
+$container['sales_order'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'SalesOrder.php';
+    $sales_order = new SalesOrder();
+    return $sales_order;
+};
+
+$container['order_items'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'OrderItems.php';
+    $order_items = new OrderItems();
+    return $order_items;
+};
+
+$container['item'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'Item.php';
+    $item = new Item();
+    return $item;
 };
 
 /**

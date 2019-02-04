@@ -6,28 +6,30 @@
 
 
 
-    <div class="top-bar shadow">
+    <div class="top-bar">
         <!--  <a id="menu" class="menu-button"><i class="fas fa-bars"></i></a> -->
-        <h2 class="logo">WMS</h2>
-        <div class="user-container">
-            <i class="fas fa-user user-icon"></i>
-            <a class="username" href="{{ action_logout }}">Mykolas</a>
-        </div>
     </div>
 
     <div id="side-menu" class="shadow side-menu">
+        <h2 class="logo">WMS</h2>
+
+        <h4 class="menu-header">Manage</h4>
         <div class="menu-items">
-            <a class="menu-item" href="#"><i class="fas fa-home icon"></i></a>
-            <a class="menu-item" href="#"><i class="fas fa-boxes icon"></i></a>
-            <a class="menu-item" href="#"><i class="fas fa-users icon"></i></a>
-            <a class="menu-item" href="#"><i class="fas fa-shopping-cart icon"></i></a>
-            <a class="menu-item" href="#"><i class="fas fa-file icon"></i></a>
-            <a class="menu-item" href="{{ sales_orders }}"><i class="far fa-file icon"></i></a>
-            <a class="menu-item" href="#"><i class="fas fa-file-invoice-dollar icon"></i></a>
-            <a class="menu-item" href="#"><i class="fas fa-money-bill icon"></i></a>
+            <a class="menu-item" href="#">Dashboard</a>
+            <a class="menu-item" href="#">Items</a>
+            <a class="menu-item" href="#">Customers</a>
+            <a class="menu-item" href="#">Vendors</a>
+            <a class="menu-item" href="#">Purchase Orders</a>
+            <a class="menu-item" href="{{ sales_orders }}">Sales Orders</a>
+            <a class="menu-item" href="#">Invoices</a>
+            <a class="menu-item" href="#">Bills</a>
+        </div>
+
+        <h4 class="menu-header">Account</h4>
+        <div class="menu-items">
+            <a class="menu-item" href="{{ action_logout }}">Profile</a>
         </div>
     </div>
-
 
     <main class="main-body">
 
@@ -39,51 +41,55 @@
             </a>
         </div>
 
-        <div class="table shadow shell" id="so-table">
+        <div class="row-col-inputs">
+            <div class="col-inputs shadow shell" id="so-table">
 
-            <div class="scroll-container">
+                <div class="scroll-container">
 
-                <input class="input-search search" type="text" name="search" placeholder="Search">
+                    <input class="input-search search" type="text" name="search" placeholder="Search">
 
-                <table>
+                    <table>
 
-                    <tr class="table-titles">
-                        <th class="button-sort sort" data-sort="customerName">Customer Name<i
-                                    class="arrow fas fa-angle-up"></i></th>
-                        <th class="button-sort sort" data-sort="SONumber">SO Number<i class="arrow fas fa-angle-up"></i>
-                        </th>
-                        <th class="button-sort sort" data-sort="SODate">SO Date<i class="arrow fas fa-angle-up"></i>
-                        </th>
-                        <th class="text-center">Packed</th>
-                        <th class="text-center">Shipped</th>
-                        <th class="text-center">Invoiced</th>
-                        <th class="text-center button-sort sort" data-sort="amount">Amount<i
-                                    class="arrow fas fa-angle-up"></i></th>
-                    </tr>
-
-                    <tbody class="list">
-
-                    {% for order in sales_orders_array %}
-                        <tr id="SideModalBtn">
-                            <td class="customerName"> {{ order['customer_name'] }} </td>
-                            <td class="SONumber"> {{ order['so_number'] }} </td>
-                            <td class="SODate"> {{ order['so_date'] }} </td>
-                            <td class="packed text-center">
-                                <div class="indicator {{ order['packed'] }}"></div>
-                            </td>
-                            <td class=" shipped text-center">
-                                <div class="indicator {{ order['shipped'] }}"></div>
-                            </td>
-                            <td class="invoiced text-center">
-                                <div class="indicator {{ order['invoiced'] }}"></div>
-                            </td>
-                            <td class="amount text-center"> {{ order['amount'] }} </td>
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="customerName">Customer Name<i
+                                        class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SONumber">SO Number<i
+                                        class="arrow fas fa-angle-up"></i>
+                            </th>
+                            <th class="button-sort sort" data-sort="SODate">SO Date<i class="arrow fas fa-angle-up"></i>
+                            </th>
+                            <th class="text-center">Packed</th>
+                            <th class="text-center">Shipped</th>
+                            <th class="text-center">Invoiced</th>
+                            <th class="text-center button-sort sort" data-sort="amount">Amount<i
+                                        class="arrow fas fa-angle-up"></i></th>
                         </tr>
-                    {% endfor %}
 
-                    </tbody>
+                        <tbody class="list">
 
-                </table>
+                        {% for order in sales_orders_array %}
+                            <tr id="SideModalBtn">
+                                <td class="customerName"> {{ order['customer_name'] }} </td>
+                                <td class="SONumber"> {{ order['so_number'] }} </td>
+                                <td class="SODate"> {{ order['so_date'] }} </td>
+                                <td class="packed text-center">
+                                    <div class="indicator {{ order['packed'] }}"></div>
+                                </td>
+                                <td class=" shipped text-center">
+                                    <div class="indicator {{ order['shipped'] }}"></div>
+                                </td>
+                                <td class="invoiced text-center">
+                                    <div class="indicator {{ order['invoiced'] }}"></div>
+                                </td>
+                                <td class="amount text-center"> {{ order['amount'] }} </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
 
             </div>
 
