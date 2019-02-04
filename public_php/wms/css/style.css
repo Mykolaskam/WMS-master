@@ -43,7 +43,7 @@ html {
 button {
     margin: 15px 0;
     border: none;
-    border-radius: 100px;
+    border-radius: 5px;
     width: 100%;
     outline: none;
     padding: 15px 30px;
@@ -276,14 +276,13 @@ select {
     margin: 0 10px;
 }
 
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
     overflow-x: scroll;
     table-layout: fixed;
-    margin: 0 20px 20px 20px;
-    min-width: calc(100% - 40px);
+    margin: 0;
+    min-width: 100%;
 }
 
 th {
@@ -301,7 +300,6 @@ th.sort {
 }
 
 tr {
-
     height: 60px;
     border-top: 1px solid rgb(233, 233, 233);
     border-bottom: 1px solid rgb(233, 233, 233);
@@ -311,7 +309,14 @@ tr:first-child {
     border-top: none;
     border-left: none;
     border-right: none;
+}
 
+tr:last-child {
+    border-bottom: none;
+}
+
+.table-titles:hover {
+    box-shadow: none;
 }
 
 tr:hover {
@@ -334,7 +339,6 @@ tr:hover > td:first-child {
 }
 
 tr.table-titles:hover {
-    background-color: white;
     cursor: auto;
     transform: scale(1);
 }
@@ -385,7 +389,7 @@ input {
     margin: 0;
     width: 100%;
     padding: 10px 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px solid #E1E5EA;
     outline: none;
     font-size: 100%;
@@ -553,7 +557,7 @@ input:checked + .slider:before {
 
     .button-small {
         padding: 10px 30px;
-        border-radius: 100px;
+        border-radius: 5px;
         font-size: 100%;
         cursor: pointer;
     }

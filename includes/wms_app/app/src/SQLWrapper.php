@@ -55,6 +55,12 @@ class SQLWrapper
         $this->c_obj_sql_queries = $p_obj_sql_queries;
     }
 
+
+
+
+
+
+    /** ========================= LOGIN STUFF ==============================     */
     /**
      * @param $p_session_key
      * @param $p_session_value
@@ -91,6 +97,24 @@ class SQLWrapper
             $session_var_exists = true;
         }
         return $session_var_exists;
+    }
+
+    /**
+     *
+     * @param $p_session_key
+     * @param $p_session_value
+     */
+    private function set_session_var($p_session_key, $p_session_value)
+    {
+        $m_query_string = $this->c_obj_sql_queries->set_session_var();
+
+        $m_arr_query_parameters = [
+            ':local_session_id' => session_id(),
+            ':session_var_name' => $p_session_key,
+            ':session_var_value' => $p_session_value
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
 
     /**
@@ -172,20 +196,33 @@ class SQLWrapper
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
 
+    public function create_user_var($p_username, $p_password, $p_name, $p_surname)
+    {
+        $m_query_string = $this->c_obj_sql_queries->create_new_user();
 
+        $m_arr_query_parameters = [
+            ':local_username' => $p_username,
+            ':local_password' => $p_password,
+            ':local_name' => $p_name,
+            ':local_surname' => $p_surname
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    /** ========================= LOGIN STUFF END ==============================     */
+
+
+
+
+    /** ========================= SALES ORDERS ==============================     */
     public function create_sales_order_id_var()
     {
         $m_query_string = $this->c_obj_sql_queries->create_sales_order_id();
 
-
-        $m_arr_query_parameters = [
-
-        ];
+        $m_arr_query_parameters = [];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
-
-        // return $this->last_inserted_ID();
-
     }
 
 
@@ -193,8 +230,7 @@ class SQLWrapper
     {
         $m_query_string = $this->c_obj_sql_queries->delete_empty_orders();
 
-        $m_arr_query_parameters = [
-        ];
+        $m_arr_query_parameters = [];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
@@ -216,29 +252,20 @@ class SQLWrapper
         $message = $this->safe_fetch_all_array();
         return $message;
     }
+    /** ========================= SALES ORDERS END ==============================     */
 
 
+
+
+
+
+    /** ========================= ITEMS ==============================     */
     public function get_items_var()
     {
 
         $m_query_string = $this->c_obj_sql_queries->get_items();
 
         $m_arr_query_parameters = [];
-
-        $this->safe_query($m_query_string, $m_arr_query_parameters);
-
-        $item = $this->safe_fetch_all_array();
-        return $item;
-    }
-
-    public function get_item_var($p_order_id)
-    {
-
-        $m_query_string = $this->c_obj_sql_queries->get_item();
-
-        $m_arr_query_parameters = [
-            ':local_order_id' => $p_order_id
-        ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
 
@@ -260,8 +287,15 @@ class SQLWrapper
         $item = $this->safe_fetch_all_array();
         return $item;
     }
+    /** ========================= ITEMS END ==============================     */
 
 
+
+
+
+
+
+    /** ========================= CUSTOMERS ==============================     */
     public function get_customers_var()
     {
 
@@ -274,64 +308,13 @@ class SQLWrapper
         $customer = $this->safe_fetch_all_array();
         return $customer;
     }
+    /** ========================= CUSTOMERS ==============================     */
 
 
-    /**
-     * function stores a new message in the database with 11 passed parameters. The query is executed using safe_query with passed query string and passed parameters.
-     * @param $p_source
-     * @param $p_destination
-     * @param $p_time
-     * @param $p_id
-     * @param $p_switch1
-     * @param $p_switch2
-     * @param $p_switch3
-     * @param $p_switch4
-     * @param $p_fan
-     * @param $p_temperature
-     * @param $p_key
-     */
-    public function create_message_var($p_source, $p_destination, $p_time, $p_id, $p_switch1, $p_switch2, $p_switch3, $p_switch4, $p_fan, $p_temperature, $p_key)
-    {
-        $m_query_string = $this->c_obj_sql_queries->create_message();
 
-        $m_arr_query_parameters = [
-            ':local_source' => $p_source,
-            ':local_destination' => $p_destination,
-            ':local_time' => $p_time,
-            ':local_group_id' => $p_id,
-            ':local_switch_1' => $p_switch1,
-            ':local_switch_2' => $p_switch2,
-            ':local_switch_3' => $p_switch3,
-            ':local_switch_4' => $p_switch4,
-            ':local_fan' => $p_fan,
-            ':local_temperature' => $p_temperature,
-            ':local_last_key' => $p_key
-        ];
 
-        $this->safe_query($m_query_string, $m_arr_query_parameters);
-    }
 
-    /**
-     * function creates a new user in the database with passed parameters. The query is executed using safe_query with passed query string and passed parameters.
-     * @param $p_username
-     * @param $p_password
-     * @param $p_name
-     * @param $p_surname
-     */
-    public function create_user_var($p_username, $p_password, $p_name, $p_surname)
-    {
-        $m_query_string = $this->c_obj_sql_queries->create_new_user();
-
-        $m_arr_query_parameters = [
-            ':local_username' => $p_username,
-            ':local_password' => $p_password,
-            ':local_name' => $p_name,
-            ':local_surname' => $p_surname
-        ];
-
-        $this->safe_query($m_query_string, $m_arr_query_parameters);
-    }
-
+    /** ========================= ORDER ITEMS ==============================     */
     public function add_item_to_order_items_var($p_order_id, $p_item_id, $p_quantity)
     {
         $m_query_string = $this->c_obj_sql_queries->add_item_to_order_items();
@@ -345,23 +328,24 @@ class SQLWrapper
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
 
-    /**
-     *
-     * @param $p_session_key
-     * @param $p_session_value
-     */
-    private function set_session_var($p_session_key, $p_session_value)
+
+    public function get_item_var($p_order_id)
     {
-        $m_query_string = $this->c_obj_sql_queries->set_session_var();
+
+        $m_query_string = $this->c_obj_sql_queries->get_item();
 
         $m_arr_query_parameters = [
-            ':local_session_id' => session_id(),
-            ':session_var_name' => $p_session_key,
-            ':session_var_value' => $p_session_value
+            ':local_order_id' => $p_order_id
         ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $item = $this->safe_fetch_all_array();
+        return $item;
     }
+    /** ========================= ORDER ITEMS END ==============================     */
+
+
 
     /**
      * this function accepts a query string and an array of parameters. The function uses prepeared statements and binds parameters. Function also catches pdo exception and displays error information

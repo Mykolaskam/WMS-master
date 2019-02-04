@@ -29,6 +29,7 @@ class SQLQueries
     {
     }
 
+    /** ========================= LOGIN STUFF ==============================     */
     /**
      * inserts new user into database table users with values passed in sqlwrapper
      * @return string
@@ -66,7 +67,6 @@ class SQLQueries
         $m_query_string .= "WHERE username = :local_username ";
         return $m_query_string;
     }
-
 
     /**
      * Selects session_var_name from table session where session id matches local session id
@@ -131,48 +131,19 @@ class SQLQueries
         $m_query_string .= "AND session_var_name = :session_var_name";
         return $m_query_string;
     }
+    /** ========================= LOGIN STUFF END ==============================     */
 
-    /**
-     * Gets all rows from messages table and orders it by time in descending order
-     * @return string
-     */
+
+
+
+
+
+    /** ========================= SALES ORDERS ==============================     */
     public static function get_sales_orders()
     {
         $m_query_string = "SELECT * ";
         $m_query_string .= "FROM salesorders ";
         $m_query_string .= "ORDER BY so_date DESC ";
-        return $m_query_string;
-    }
-
-    public static function get_items()
-    {
-        $m_query_string = "SELECT * ";
-        $m_query_string .= "FROM items ";
-        $m_query_string .= "ORDER BY item_name DESC ";
-        return $m_query_string;
-    }
-
-    public static function get_items_by_id()
-    {
-        $m_query_string = "SELECT * ";
-        $m_query_string .= "FROM items ";
-        $m_query_string .= "WHERE ID = :local_item_id ";
-        return $m_query_string;
-    }
-
-    public static function get_item()
-    {
-        $m_query_string = "SELECT * ";
-        $m_query_string .= "FROM order_items ";
-        $m_query_string .= "WHERE order_id = :local_order_id ";
-        return $m_query_string;
-    }
-
-    public static function get_customers()
-    {
-        $m_query_string = "SELECT * ";
-        $m_query_string .= "FROM customers ";
-        $m_query_string .= "ORDER BY first_name DESC ";
         return $m_query_string;
     }
 
@@ -190,6 +161,44 @@ class SQLQueries
         $m_query_string .= "OR so_number = '' ";
         return $m_query_string;
     }
+    /**========================= SALES ORDERS END ==============================     */
+
+
+
+
+
+
+    /** ========================= ITEMS ==============================     */
+    public static function get_items()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM items ";
+        $m_query_string .= "ORDER BY item_name DESC ";
+        return $m_query_string;
+    }
+
+    public static function get_items_by_id()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM items ";
+        $m_query_string .= "WHERE ID = :local_item_id ";
+        return $m_query_string;
+    }
+    /** ========================= ITEMS END ==============================     */
+
+
+
+
+
+
+    /** ========================= ORDER ITEMS ==============================     */
+    public static function get_item()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM order_items ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        return $m_query_string;
+    }
 
     public static function add_item_to_order_items()
     {
@@ -199,28 +208,22 @@ class SQLQueries
         $m_query_string .= "quantity = :local_quantity ";
         return $m_query_string;
     }
+    /** ========================= ORDER ITEMS END ==============================     */
 
 
 
-    /**
-     * This function inserts a new row into messages table with all parameters passed in sqlwrapper. REPLACE ensures that the same exact message is not inserted.
-     * @return string
-     */
-    public static function create_message()
+
+
+
+
+    /** ========================= CUSTOMERS ==============================     */
+    public static function get_customers()
     {
-        $m_query_string = "REPLACE INTO messages ";
-        $m_query_string .= "SET source = :local_source, ";
-        $m_query_string .= "destination = :local_destination, ";
-        $m_query_string .= "time = :local_time, ";
-        $m_query_string .= "group_id = :local_group_id, ";
-        $m_query_string .= "switch_1 = :local_switch_1, ";
-        $m_query_string .= "switch_2 = :local_switch_2, ";
-        $m_query_string .= "switch_3 = :local_switch_3, ";
-        $m_query_string .= "switch_4 = :local_switch_4, ";
-        $m_query_string .= "fan = :local_fan, ";
-        $m_query_string .= "temperature = :local_temperature, ";
-        $m_query_string .= "last_key = :local_last_key ";
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM customers ";
+        $m_query_string .= "ORDER BY first_name DESC ";
         return $m_query_string;
     }
+    /** ========================= CUSTOMERS END ==============================     */
 
 }
