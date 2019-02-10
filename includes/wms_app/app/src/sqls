@@ -1,0 +1,6 @@
+SELECT *
+FROM salesorders
+INNER JOIN order_items
+ON salesorders.ID = order_items.order_id
+INNER JOIN items
+ON items.ID = order_items.item_id;

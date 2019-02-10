@@ -1,129 +1,130 @@
 {% extends 'layout.html.twig' %}
 {% block title %}New Saler Order{% endblock %}
+
 {% block content %}
 
-
-    <div class="top-bar">
-        <!--  <a id="menu" class="menu-button"><i class="fas fa-bars"></i></a> -->
-    </div>
-
-    <div id="side-menu" class="shadow side-menu">
-        <h2 class="logo">WMS</h2>
-
-        <h4 class="menu-header">Manage</h4>
-        <div class="menu-items">
-            <a class="menu-item" href="#">Dashboard</a>
-            <a class="menu-item" href="#">Items</a>
-            <a class="menu-item" href="#">Customers</a>
-            <a class="menu-item" href="#">Vendors</a>
-            <a class="menu-item" href="#">Purchase Orders</a>
-            <a class="menu-item" href="{{ sales_orders }}">Sales Orders</a>
-            <a class="menu-item" href="#">Invoices</a>
-            <a class="menu-item" href="#">Bills</a>
-        </div>
-
-        <h4 class="menu-header">Account</h4>
-        <div class="menu-items">
-            <a class="menu-item" href="{{ action_logout }}">Profile</a>
-        </div>
-    </div>
-
-
     <main class="main-body">
-
-        <div class="container-row">
-            <h1 class="big-title">Add New SO</h1>
-            <a id="addItem" class="button-small shadow">
-                <i class="fas fa-plus plus"></i>
-                <span class="btn-text">Add Item</span>
-            </a>
-        </div>
-
-        <div class="row-col-inputs">
-
-            <div class="col-inputs shadow shell">
-
-                <div class="input-container">
-                    <label for=""> Customer</label>
-                    <select>
-                        {% for customer in customers_array %}
-
-                            <option value="{{ customer['item_name'] }} {{ customer['last_name'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}</option>
-
-                        {% endfor %}
-                    </select>
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please select a customer</span>
-                </div>
-
-                <div class="input-container">
-                    <label for=""> Sales Order Number</label>
-                    <input type="text">
-                </div>
-
-                <div class="input-container">
-                    <label for=""> Date</label>
-                    <input type="date">
-                    <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SO
-                    date</span>
-                </div>
+        <form action="{{ action_create_so }}" method="post">
+            <div class="container-row">
+                <h1 class="big-title">Add New SO</h1>
 
             </div>
 
+            <div class="row-col-inputs">
+                <div class="col-inputs shadow shell">
 
-            <div class="col-inputs shadow shell">
+                    <div class="input-container">
+                        <h2 class="col-title">General Information</h2>
+                        <div class="line-blue"></div>
+                    </div>
 
-                <div class="scroll-container">
+                    <div class="input-container">
+                        <div class="input-field ">
+                            <label>Customer</label>
+                            <select name="customer">
+                                {% for customer in customers_array %}
 
-                    <table>
+                                    <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
+                                        - "{{ customer['company_name'] }}"
+                                    </option>
 
-                        <tr class="table-titles">
-                            <th class="button-sort sort" data-sort="">Name<i class="arrow fas fa-angle-up"></i></th>
-                            <th class="button-sort sort" data-sort="">SKU<i class="arrow fas fa-angle-up"></i></th>
-                            <th class="button-sort sort" data-sort="">Purchase Price<i
-                                        class="arrow fas fa-angle-up"></i>
-                            </th>
-                            <th class="text-center">Quantity</th>
-                            <th class="text-center">Amount</th>
-                            <th class="text-center"></th>
-                        </tr>
+                                {% endfor %}
+                            </select>
 
-                        <tbody class="list">
+                        </div>
 
-                        {% for item in real_items_array %}
-                            {% for i in item %}
-                                <tr>
-                                    <td class="">{{ i['item_name'] }}</td>
-                                    <td class="">{{ i['sku'] }}</td>
-                                    <td class="">{{ i['purchase_price'] }}</td>
-                                    <td class="text-center">{{ i['quantity'] }}</td>
-                                    <td class="text-center">{{ i['selling_price'] }}</td>
-                                    <td class="text-center">
-                                        <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i></div>
-                                    </td>
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a customer</span>
+                    </div>
+
+                    <div class="input-container">
+                        <label for=""> Sales Order ID</label>
+                        <input value="SO-{{ order_id }}" type="text" name="orderID" readonly>
+                    </div>
+
+                    <div class="input-container">
+                        <label for=""> Date</label>
+                        <input type="date" name="date">
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
+                    </div>
+
+                </div>
+
+
+                <div class="col-inputs shadow shell" id="so-items">
+
+                    <div class="input-container">
+
+                        <div class="row">
+                            <h2 class="col-title">Selected Items</h2>
+                            <a id="addItem" class="button-small addItem">
+                                <i class="fas fa-plus plus"></i>
+                                <span class="btn-text">Add Item</span>
+                            </a>
+                        </div>
+
+                        <div class="line-blue"></div>
+
+
+                    </div>
+
+
+                    <div class="input-container">
+
+                        <div class="scroll-container">
+
+                            <table>
+
+                                <tr class="table-titles">
+                                    <th class="button-sort sort name" data-sort="name">Name<i
+                                                class="arrow fas fa-angle-up"></i>
+                                    </th>
+                                    <th class="button-sort sort sku" data-sort="sku">SKU<i
+                                                class="arrow fas fa-angle-up"></i>
+                                    </th>
+                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Purchase Price<i
+                                                class="arrow fas fa-angle-up"></i>
+                                    </th>
+                                    <th class="text-center quantity" data-sort="quantity">Quantity</th>
+                                    <th class="text-center amount" data-sort="amount">Amount</th>
+                                    <th class="text-center"></th>
                                 </tr>
-                            {% endfor %}
-                        {% endfor %}
 
-                        </tbody>
+                                <tbody class="list">
 
-                    </table>
+                                {% for item in real_items_array %}
+                                    {% for i in item %}
+                                        <tr>
+                                            <td class="">{{ i['item_name'] }}</td>
+                                            <td class="">{{ i['sku'] }}</td>
+                                            <td class="">{{ i['purchase_price'] }}</td>
+                                            <td class="text-center">{{ qty }}</td>
+                                            <td class="text-center">{{ i['selling_price'] }}</td>
+                                            <td class="text-center">
+                                                <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% endfor %}
 
-                    {% for item in real_items_array %}
-                        <h1>{{ item['item_name'] }}</h1>
-                    {% endfor %}
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
-        </div>
 
-        <div class="row-col-inputs">
-            <div class="col-inputs shadow shell">
-                </br></br></br></br></br></br>
+            <div class="row-col-inputs">
+                <button type="submit">Create SO</button>
             </div>
-        </div>
+
+        </form>
 
 
     </main>
@@ -131,7 +132,7 @@
 
 
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="Modal" class="Modal">
         <!-- Modal content -->
         <div class="modal-content shell shadow">
             <!--     <span class="close">&times;</span> -->

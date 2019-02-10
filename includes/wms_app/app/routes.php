@@ -1,6 +1,8 @@
 <?php
 
 require 'routes/login.php';
+require 'routes/items.php';
+require 'routes/customers.php';
 require 'routes/register.php';
 require 'routes/salesorders.php';
 require 'routes/newsalesorder.php';

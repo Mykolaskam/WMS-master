@@ -1,4 +1,3 @@
-
 //Sort button arrow
 $('.table-titles').on('click', 'th', function () {
 
@@ -19,21 +18,24 @@ $('.table-titles').on('click', 'th', function () {
 
 //Menu button
 
-$('#menu').on('click', function(){
+$('#menu').on('click', function () {
 
-    if($('#side-menu').hasClass('menu-open')) {
+    if ($('#side-menu').hasClass('menu-open')) {
         $('#side-menu').removeClass('menu-open');
     } else {
         $('#side-menu').addClass('menu-open');
     }
 
 });
+
+
 /*----------------------*/
 
 
-//Sort Functions
-var options = {
-    valueNames: ['customerName',
+//Sort Functions SALES ORDERS
+var SOOptions = {
+    valueNames: [
+        'customerName',
         'SONumber',
         'SODate',
         'packed',
@@ -43,72 +45,65 @@ var options = {
     ]
 };
 
-var SOtable = new List('so-table', options);
+//Sort Functions ITEMS
+var ItemsOptions = {
+    valueNames: [
+        'itemName',
+        'sku',
+        'manufacturer',
+        'sellingPrice',
+        'purchasePrice',
+        'warehouselocation',
+        'stock'
+    ]
+};
+
+//Sort Functions ITEMS
+var CustomersOptions = {
+    valueNames: [
+        'salutation',
+        'name',
+        'companyName',
+        'email',
+        'phoneNumber',
+        'website',
+        'billingAddres'
+    ]
+};
+
+var SOtable = new List('so-table', SOOptions);
+var ItemsTable = new List('items-table', ItemsOptions);
+var CustomersTable = new List('customers-table', CustomersOptions);
+
 /*----------------------*/
 
-//Removes selected row
+//Removes selected row from a table
 $(document).on('click', '#removeItem', function () {
     $(this).parent().parent().remove();
 });
 
-
-/*----------------------*/
-
-
 /*----------------------*/
 
 // Get the modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('Modal');
+
 // Get the button that opens the modal
-var addItem = document.getElementById("addItem");
+var btn = document.getElementById("addItem");
+
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+
+
 // When the user clicks on the button, open the modal
-addItem.onclick = function() {
-    modal.style.display = "block";
+if (typeof (btn) != 'undefined' && btn != null) {
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
 }
 
-// When the user clicks on <span> (x), close the modal
-//span.onclick = function() {
-  //  modal.style.display = "none";
-    //}
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
-var x = document.getElementById("xxx").value;
-
-console.log(x);
-
-/*----------------------*/
-/*----------------------*/
-/*
-// Get the modal
-var SideModal = document.getElementById('SideModal');
-// Get the button that opens the modal
-var SideModalBtn = document.getElementById("SideModalBtn");
-// Get the <span> element that closes the modal
-var CloseSideModal = document.getElementsByClassName("close-side-modal")[0];
-// When the user clicks on the button, open the modal
-SideModalBtn.onclick = function() {
-    SideModal.style.display = "block";
-}
-/*
-// When the user clicks on <span> (x), close the modal
-CloseSideModal.onclick = function() {
-    SideModal.style.display = "none";
-}
-*/
-/*
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == SideModal) {
-    SideModal.style.display = "none";
-  }
-}
-
-/*----------------------*/

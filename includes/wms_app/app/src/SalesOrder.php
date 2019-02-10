@@ -10,8 +10,7 @@ class SalesOrder
 {
 
     private $c_id;
-    private $c_company_name;
-    private $c_customer_name;
+    private $c_customer_id;
     private $c_so_number;
     private $c_so_date;
     private $c_packed;
@@ -22,8 +21,7 @@ class SalesOrder
     public function __construct()
     {
         $this->c_id = null;
-        $this->c_company_name = null;
-        $this->c_customer_name = null;
+        $this->c_customer_id = null;
         $this->c_so_number = null;
         $this->c_so_date = null;
         $this->c_packed = null;
@@ -36,11 +34,10 @@ class SalesOrder
     {
     }
 
-    public function set_values($p_id, $p_company_name, $p_customer_name, $p_so_number, $p_so_date, $p_packed, $p_shipped, $p_invoiced, $p_amount)
+    public function set_values($p_id, $p_customer_id, $p_so_number, $p_so_date, $p_packed, $p_shipped, $p_invoiced, $p_amount)
     {
         $this->c_id = $p_id;
-        $this->c_company_name = $p_company_name;
-        $this->c_customer_name = $p_customer_name;
+        $this->c_customer_id = $p_customer_id;
         $this->c_so_number = $p_so_number;
         $this->c_so_date = $p_so_date;
         $this->c_packed = $p_packed;
@@ -65,36 +62,21 @@ class SalesOrder
         $this->c_id = $c_id;
     }
 
-    /**
-     * @return null
-     */
-    public function get_c_company_name()
-    {
-        return $this->c_company_name;
-    }
-
-    /**
-     * @param null $c_company_name
-     */
-    public function set_c_company_name($c_company_name)
-    {
-        $this->c_company_name = $c_company_name;
-    }
 
     /**
      * @return null
      */
-    public function get_c_customer_name()
+    public function get_c_customer_id()
     {
-        return $this->c_customer_name;
+        return $this->c_customer_id;
     }
 
     /**
-     * @param null $c_customer_name
+     * @param null $c_customer_id
      */
-    public function set_c_customer_name($c_customer_name)
+    public function set_c_customer_id($c_customer_id)
     {
-        $this->c_customer_name = $c_customer_name;
+        $this->c_customer_id = $c_customer_id;
     }
 
     /**

@@ -14,6 +14,7 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
         // line 1
         $this->parent = $this->loadTemplate("layout.html.twig", "salesorders.html.twig", 1);
         $this->blocks = array(
+            'title' => array($this, 'block_title'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -28,50 +29,23 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
+    // line 3
+    public function block_title($context, array $blocks = array())
+    {
+        echo "Sales Orders";
+    }
+
     // line 5
     public function block_content($context, array $blocks = array())
     {
         // line 6
         echo "
-
-
-    <div class=\"top-bar\">
-        <!--  <a id=\"menu\" class=\"menu-button\"><i class=\"fas fa-bars\"></i></a> -->
-    </div>
-
-    <div id=\"side-menu\" class=\"shadow side-menu\">
-        <h2 class=\"logo\">WMS</h2>
-
-        <h4 class=\"menu-header\">Manage</h4>
-        <div class=\"menu-items\">
-            <a class=\"menu-item\" href=\"#\">Dashboard</a>
-            <a class=\"menu-item\" href=\"#\">Items</a>
-            <a class=\"menu-item\" href=\"#\">Customers</a>
-            <a class=\"menu-item\" href=\"#\">Vendors</a>
-            <a class=\"menu-item\" href=\"#\">Purchase Orders</a>
-            <a class=\"menu-item\" href=\"";
-        // line 23
-        echo twig_escape_filter($this->env, ($context["sales_orders"] ?? null), "html", null, true);
-        echo "\">Sales Orders</a>
-            <a class=\"menu-item\" href=\"#\">Invoices</a>
-            <a class=\"menu-item\" href=\"#\">Bills</a>
-        </div>
-
-        <h4 class=\"menu-header\">Account</h4>
-        <div class=\"menu-items\">
-            <a class=\"menu-item\" href=\"";
-        // line 30
-        echo twig_escape_filter($this->env, ($context["action_logout"] ?? null), "html", null, true);
-        echo "\">Profile</a>
-        </div>
-    </div>
-
     <main class=\"main-body\">
 
         <div class=\"container-row\">
             <h1 class=\"big-title\">Sales Orders</h1>
             <a class=\"button-small shadow\" href=\"";
-        // line 38
+        // line 11
         echo twig_escape_filter($this->env, ($context["action_new_so"] ?? null), "html", null, true);
         echo "\">
                 <i class=\"fas fa-plus plus\"></i>
@@ -79,7 +53,9 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
             </a>
         </div>
 
+
         <div class=\"row-col-inputs\">
+
             <div class=\"col-inputs shadow shell\" id=\"so-table\">
 
                 <div class=\"scroll-container\">
@@ -106,45 +82,47 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
                         <tbody class=\"list\">
 
                         ";
-        // line 70
+        // line 45
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["sales_orders_array"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["all_salesorders"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["order"]) {
-            // line 71
-            echo "                            <tr id=\"SideModalBtn\">
+            // line 46
+            echo "                            <tr>
                                 <td class=\"customerName\"> ";
-            // line 72
-            echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = $context["order"]) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["customer_name"] ?? null) : null), "html", null, true);
+            // line 47
+            echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = $context["order"]) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["first_name"] ?? null) : null), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = $context["order"]) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a["last_name"] ?? null) : null), "html", null, true);
             echo " </td>
                                 <td class=\"SONumber\"> ";
-            // line 73
-            echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = $context["order"]) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a["so_number"] ?? null) : null), "html", null, true);
+            // line 48
+            echo twig_escape_filter($this->env, (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["order"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["so_number"] ?? null) : null), "html", null, true);
             echo " </td>
                                 <td class=\"SODate\"> ";
-            // line 74
-            echo twig_escape_filter($this->env, (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["order"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["so_date"] ?? null) : null), "html", null, true);
+            // line 49
+            echo twig_escape_filter($this->env, (($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["order"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["so_date"] ?? null) : null), "html", null, true);
             echo " </td>
                                 <td class=\"packed text-center\">
                                     <div class=\"indicator ";
-            // line 76
-            echo twig_escape_filter($this->env, (($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["order"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["packed"] ?? null) : null), "html", null, true);
+            // line 51
+            echo twig_escape_filter($this->env, (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = $context["order"]) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["packed"] ?? null) : null), "html", null, true);
             echo "\"></div>
                                 </td>
                                 <td class=\" shipped text-center\">
                                     <div class=\"indicator ";
-            // line 79
-            echo twig_escape_filter($this->env, (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = $context["order"]) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["shipped"] ?? null) : null), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["order"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["shipped"] ?? null) : null), "html", null, true);
             echo "\"></div>
                                 </td>
                                 <td class=\"invoiced text-center\">
                                     <div class=\"indicator ";
-            // line 82
-            echo twig_escape_filter($this->env, (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["order"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["invoiced"] ?? null) : null), "html", null, true);
+            // line 57
+            echo twig_escape_filter($this->env, (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["order"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["invoiced"] ?? null) : null), "html", null, true);
             echo "\"></div>
                                 </td>
                                 <td class=\"amount text-center\"> ";
-            // line 84
-            echo twig_escape_filter($this->env, (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["order"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["amount"] ?? null) : null), "html", null, true);
+            // line 59
+            echo twig_escape_filter($this->env, (($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["order"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["amount"] ?? null) : null), "html", null, true);
             echo " </td>
                             </tr>
                         ";
@@ -152,7 +130,7 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['order'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 87
+        // line 62
         echo "
                         </tbody>
 
@@ -167,7 +145,7 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
     </main>
 
 
-    <div id=\"SideModal\" class=\"side-modal\">
+    <div class=\"Modal\">
 
         <div class=\"side-modal-content shadow\">
 
@@ -232,7 +210,7 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
 
     public function getDebugInfo()
     {
-        return array (  156 => 87,  147 => 84,  142 => 82,  136 => 79,  130 => 76,  125 => 74,  121 => 73,  117 => 72,  114 => 71,  110 => 70,  75 => 38,  64 => 30,  54 => 23,  35 => 6,  32 => 5,  15 => 1,);
+        return array (  134 => 62,  125 => 59,  120 => 57,  114 => 54,  108 => 51,  103 => 49,  99 => 48,  93 => 47,  90 => 46,  86 => 45,  49 => 11,  42 => 6,  39 => 5,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

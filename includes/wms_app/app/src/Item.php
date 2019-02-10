@@ -22,6 +22,8 @@ class Item
     private $c_warehouse_location;
     private $c_stock;
 
+    private $c_quantity;
+
     public function __construct()
     {
         $this->c_id = null;
@@ -36,6 +38,7 @@ class Item
         $this->c_description = null;
         $this->c_warehouse_location = null;
         $this->c_stock = null;
+        $this->c_quantity = null;
     }
 
     public function __destruct()
@@ -230,6 +233,16 @@ class Item
      * @param null $c_stock
      */
     public function set_stock($c_stock)
+    {
+        $this->c_stock = $c_stock;
+    }
+
+    public function get_quantity()
+    {
+        return $this->c_stock;
+    }
+
+    public function set_quantity($c_stock)
     {
         $this->c_stock = $c_stock;
     }

@@ -1,0 +1,149 @@
+{% extends 'layout.html.twig' %}
+{% block title %}New Item{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+        <form action="{{ action_create_item }}" method="post">
+            <div class="container-row">
+                <h1 class="big-title">Add New Item</h1>
+                <a id="addItem" class="button-small shadow addItem">
+                    <i class="fas fa-plus plus"></i>
+                    <span class="btn-text">Add Item</span>
+                </a>
+            </div>
+
+            <div class="row-col-inputs">
+                <div class="col-inputs shadow shell">
+
+                    <div class="input-container">
+                        <h2 class="col-title">Item Information</h2>
+                        <div class="line-blue"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">SKU</label>
+                        <input value="" type="text" name="sku" autofocus>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Selling Price</label>
+                        <input value="" type="text" name="selling_price">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Purchase Price</label>
+                        <input value="" type="text" name="purchase_price">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Barcode Code</label>
+                        <input value="" type="text" name="barcode_code">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Warehouse Location</label>
+                        <input value="" type="text" name="warehouse_location">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">On-hand Stock</label>
+                        <input value="" type="text" name="stock">
+                    </div>
+
+                </div>
+
+
+                <div class="col-inputs shadow shell">
+
+                    <div class="input-container">
+                        <h2 class="col-title">Technical Information</h2>
+                        <div class="line-blue"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Item Name</label>
+                        <input value="" type="text" name="item_name">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Manufacturer</label>
+                        <input value="" type="text" name="manufacturer">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Part Number</label>
+                        <input value="" type="text" name="part_number">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Serial Number</label>
+                        <input value="" type="text" name="serial_number">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Description</label>
+                        <textarea name="description" rows="7" cols="20"></textarea>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="row-col-inputs">
+                <button type="submit">Create Item</button>
+            </div>
+
+        </form>
+
+
+    </main>
+
+
+
+    <!-- The Modal -->
+    <div id="Modal" class="Modal">
+        <!-- Modal content -->
+        <div class="modal-content shell shadow">
+            <!--     <span class="close">&times;</span> -->
+            <div class="input-container">
+                <h1 class="big-title">Add Item</h1>
+            </div>
+
+            <form action="{{ action_add_item_to_list }}" method="post">
+                <div class="input-container">
+                    <label for="">Item</label>
+                    <select name="item">
+                        {% for item in items_array %}
+
+                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }}
+                                ({{ item['stock'] }})
+                            </option>
+
+                        {% endfor %}
+                    </select>
+                    <span class="input-info"><i
+                                class="question-mark far fa-question-circle"></i>Please select an item</span>
+                </div>
+
+                <div class="input-container">
+                    <label for=""> Quantity</label>
+                    <input type="text" name="quantity">
+                    <span class="input-info"><i
+                                class="question-mark far fa-question-circle"></i>Please enter quantity</span>
+                </div>
+
+                <div class="input-container">
+                    <button type="submit"><i class="fas fa-plus plus"></i>Create Item</button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

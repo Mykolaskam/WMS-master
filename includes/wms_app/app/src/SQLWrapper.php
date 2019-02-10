@@ -252,6 +252,35 @@ class SQLWrapper
         $message = $this->safe_fetch_all_array();
         return $message;
     }
+
+    public function create_sales_order_var($customer_id, $so_number, $so_date,$ID)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->create_sales_order();
+
+        $m_arr_query_parameters = [
+            ':local_customer_id' => $customer_id,
+            ':local_so_number' => $so_number,
+            ':local_so_date' => $so_date,
+            ':local_ID' => $ID
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function get_all_on_sales_order_var()
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_all_on_sales_order();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $message = $this->safe_fetch_all_array();
+        return $message;
+    }
+
     /** ========================= SALES ORDERS END ==============================     */
 
 
@@ -287,6 +316,27 @@ class SQLWrapper
         $item = $this->safe_fetch_all_array();
         return $item;
     }
+
+    public function create_new_item_var($p_item_name, $p_sku, $p_manufacturer, $p_selling_price, $p_part_number, $p_serial_number, $p_purchase_price, $p_barcode_code, $p_description, $p_warehouse_location, $p_stock)
+    {
+        $m_query_string = $this->c_obj_sql_queries->create_new_item();
+
+        $m_arr_query_parameters = [
+            ':local_item_name' => $p_item_name,
+            ':local_sku' => $p_sku,
+            ':local_manufacturer' => $p_manufacturer,
+            ':local_selling_price' => $p_selling_price,
+            ':local_part_number' => $p_part_number,
+            ':local_serial_number' => $p_serial_number,
+            ':local_purchase_price' => $p_purchase_price,
+            ':local_barcode_code' => $p_barcode_code,
+            ':local_description' => $p_description,
+            ':local_warehouse_location' => $p_warehouse_location,
+            ':local_stock' => $p_stock
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
     /** ========================= ITEMS END ==============================     */
 
 
@@ -307,6 +357,28 @@ class SQLWrapper
 
         $customer = $this->safe_fetch_all_array();
         return $customer;
+    }
+
+    public function create_new_customer_var($p_salutation, $p_first_name, $p_last_name, $p_company_name, $p_email, $p_alt_email, $p_phone_number, $p_alt_phone_number, $p_website, $p_billing_address, $p_pref_currency, $p_notes)
+    {
+        $m_query_string = $this->c_obj_sql_queries->create_new_customer();
+
+        $m_arr_query_parameters = [
+            ':local_salutation' => $p_salutation,
+            ':local_first_name' => $p_first_name,
+            ':local_last_name' => $p_last_name,
+            ':local_company_name' => $p_company_name,
+            ':local_email' => $p_email,
+            ':local_alt_email' => $p_alt_email,
+            ':local_phone_number' => $p_phone_number,
+            ':local_alt_phone_number' => $p_alt_phone_number,
+            ':local_website' => $p_website,
+            ':local_billing_address' => $p_billing_address,
+            ':local_pref_currency' => $p_pref_currency,
+            ':local_notes' => $p_notes
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
     /** ========================= CUSTOMERS ==============================     */
 

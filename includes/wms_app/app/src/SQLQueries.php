@@ -134,10 +134,6 @@ class SQLQueries
     /** ========================= LOGIN STUFF END ==============================     */
 
 
-
-
-
-
     /** ========================= SALES ORDERS ==============================     */
     public static function get_sales_orders()
     {
@@ -150,22 +146,43 @@ class SQLQueries
     public static function create_sales_order_id()
     {
         $m_query_string = "INSERT INTO salesorders ";
-        $m_query_string .= "SET company_name = '' ";
+        $m_query_string .= "SET customer_id = '' ";
         return $m_query_string;
     }
 
     public static function delete_empty_orders()
     {
         $m_query_string = "DELETE FROM salesorders ";
-        $m_query_string .= "WHERE company_name = '' ";
-        $m_query_string .= "OR so_number = '' ";
+        $m_query_string .= "WHERE so_number = '' ";
         return $m_query_string;
     }
+
+    public static function create_sales_order()
+    {
+        $m_query_string = "UPDATE salesorders ";
+        $m_query_string .= "SET customer_id = :local_customer_id, ";
+        $m_query_string .= "so_number = :local_so_number, ";
+        $m_query_string .= "so_date = :local_so_date ";
+        $m_query_string .= "WHERE ID = :local_ID ";
+        return $m_query_string;
+    }
+
+    public static function get_all_on_sales_order()
+    {
+        $m_query_string = "SELECT * FROM salesorders ";
+        $m_query_string .= "INNER JOIN order_items ";
+        $m_query_string .= "ON salesorders.ID = order_items.order_id ";
+        $m_query_string .= "INNER JOIN items ";
+        $m_query_string .= "ON items.ID = order_items.item_id ";
+        $m_query_string .= "INNER JOIN customers ";
+        $m_query_string .= "ON customers.ID = salesorders.customer_id ";
+        return $m_query_string;
+    }
+
+
+
+
     /**========================= SALES ORDERS END ==============================     */
-
-
-
-
 
 
     /** ========================= ITEMS ==============================     */
@@ -184,11 +201,25 @@ class SQLQueries
         $m_query_string .= "WHERE ID = :local_item_id ";
         return $m_query_string;
     }
+
+    public static function create_new_item()
+    {
+        $m_query_string = "INSERT INTO items ";
+        $m_query_string .= "SET item_name = :local_item_name, ";
+        $m_query_string .= "sku = :local_sku, ";
+        $m_query_string .= "manufacturer = :local_manufacturer, ";
+        $m_query_string .= "selling_price = :local_selling_price, ";
+        $m_query_string .= "part_number = :local_part_number, ";
+        $m_query_string .= "serial_number = :local_serial_number, ";
+        $m_query_string .= "purchase_price = :local_purchase_price, ";
+        $m_query_string .= "barcode_code = :local_barcode_code, ";
+        $m_query_string .= "description = :local_description, ";
+        $m_query_string .= "warehouse_location = :local_warehouse_location, ";
+        $m_query_string .= "stock = :local_stock ";
+        return $m_query_string;
+    }
+
     /** ========================= ITEMS END ==============================     */
-
-
-
-
 
 
     /** ========================= ORDER ITEMS ==============================     */
@@ -211,17 +242,30 @@ class SQLQueries
     /** ========================= ORDER ITEMS END ==============================     */
 
 
-
-
-
-
-
     /** ========================= CUSTOMERS ==============================     */
     public static function get_customers()
     {
         $m_query_string = "SELECT * ";
         $m_query_string .= "FROM customers ";
         $m_query_string .= "ORDER BY first_name DESC ";
+        return $m_query_string;
+    }
+
+    public static function create_new_customer()
+    {
+        $m_query_string = "INSERT INTO customers ";
+        $m_query_string .= "SET salutation = :local_salutation, ";
+        $m_query_string .= "first_name = :local_first_name, ";
+        $m_query_string .= "last_name = :local_last_name, ";
+        $m_query_string .= "company_name = :local_company_name, ";
+        $m_query_string .= "email = :local_email, ";
+        $m_query_string .= "alt_email = :local_alt_email, ";
+        $m_query_string .= "phone_number = :local_phone_number, ";
+        $m_query_string .= "alt_phone_number = :local_alt_phone_number, ";
+        $m_query_string .= "website = :local_website, ";
+        $m_query_string .= "billing_address = :local_billing_address, ";
+        $m_query_string .= "pref_currency = :local_pref_currency, ";
+        $m_query_string .= "notes = :local_notes ";
         return $m_query_string;
     }
     /** ========================= CUSTOMERS END ==============================     */

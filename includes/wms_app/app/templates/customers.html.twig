@@ -1,0 +1,66 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+
+        <div class="container-row">
+            <h1 class="big-title">Customers</h1>
+            <a class="button-small shadow" href="{{ action_new_customer }}">
+                <i class="fas fa-plus plus"></i>
+                <span class="btn-text">New Customer</span>
+            </a>
+        </div>
+
+
+        <div class="row-col-inputs">
+
+            <div class="col-inputs shadow shell" id="customers-table">
+
+                <div class="scroll-container">
+
+                    <input class="input-search search" type="text" name="search" placeholder="Search">
+
+                    <table>
+
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="salutation">Salutation<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="name">Name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="companyName">Company Name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="email">Email<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="phoneNumber">Phone Number<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="website">Website<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="billingAddres">Billing Address<i class="arrow fas fa-angle-up"></i></th>
+                        </tr>
+
+                        <tbody class="list">
+
+                        {% for customer in all_customers %}
+
+                            <tr>
+                                <td class="salutation"> {{ customer['salutation'] }} </td>
+                                <td class="name"> {{ customer['first_name'] }} {{ customer['last_name'] }}</td>
+                                <td class="companyName"> {{ customer['company_name'] }} </td>
+                                <td class="email"> {{ customer['email'] }} </td>
+                                <td class="phoneNumber"> {{ customer['phone_number'] }} </td>
+                                <td class="website"> {{ customer['website'] }} </td>
+                                <td class="billingAddress"> {{ customer['billing_address'] }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}

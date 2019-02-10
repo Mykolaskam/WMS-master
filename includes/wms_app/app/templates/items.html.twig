@@ -1,0 +1,66 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Items{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+
+        <div class="container-row">
+            <h1 class="big-title">Items</h1>
+            <a class="button-small shadow" href="{{ action_new_item }}">
+                <i class="fas fa-plus plus"></i>
+                <span class="btn-text">New Item</span>
+            </a>
+        </div>
+
+
+        <div class="row-col-inputs">
+
+            <div class="col-inputs shadow shell" id="items-table">
+
+                <div class="scroll-container">
+
+                    <input class="input-search search" type="text" name="search" placeholder="Search">
+
+                    <table>
+
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="itemName">Item Name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="sku">SKU<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="manufacturer">Manufacturer<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="sellingPrice">Selling Price<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="purchasePrice">Purchase Price<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="warehouselocation">Warehouse Location<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="stock">Stock<i class="arrow fas fa-angle-up"></i></th>
+                        </tr>
+
+                        <tbody class="list">
+
+                        {% for item in all_items %}
+
+                            <tr>
+                                <td class="itemName"> {{ item['item_name'] }} </td>
+                                <td class="sku"> {{ item['sku'] }} </td>
+                                <td class="manufacturer"> {{ item['manufacturer'] }} </td>
+                                <td class="text-center sellingPrice"> {{ item['selling_price'] }} </td>
+                                <td class="text-center purchasePrice"> {{ item['purchase_price'] }} </td>
+                                <td class="text-center warehouselocation"> {{ item['warehouse_location'] }} </td>
+                                <td class="text-center stock"> {{ item['stock'] }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}
