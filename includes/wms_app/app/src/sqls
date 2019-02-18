@@ -4,3 +4,37 @@ INNER JOIN order_items
 ON salesorders.ID = order_items.order_id
 INNER JOIN items
 ON items.ID = order_items.item_id;
+
+
+
+
+SELECT customers.first_name,
+customers.last_name,
+salesorders.so_number,
+salesorders.so_date,
+salesorders.packed,
+salesorders.shipped,
+salesorders.invoiced,
+salesorders.amount
+FROM salesorders
+INNER JOIN order_items
+ON salesorders.ID = order_items.order_id
+INNER JOIN customers
+ON customers.ID = salesorders.customer_id;
+
+
+SELECT items.*, order_items.quantity
+FROM items
+INNER JOIN order_items
+ON items.ID = order_items.item_id
+WHERE items.ID = 1;
+
+SELECT items.*, order_items.quantity
+FROM items
+INNER JOIN order_items
+ON items.ID = order_items.item_id
+WHERE items.ID = 1 OR items.ID = 4
+AND order_items.order_id = 579;
+
+
+

@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
-{% block title %}New Customer{% endblock %}
+{% block title %}New Vendor{% endblock %}
 
 {% block content %}
 
     <main class="main-body">
-        <form action="{{ action_create_customer }}" method="post">
+        <form action="{{ action_create_vendor }}" method="post">
             <div class="container-row">
-                <h1 class="big-title">Add New Customer</h1>
+                <h1 class="big-title">Add New Vendor</h1>
                 <!--       <a id="addItem" class="button-small shadow addItem">
                            <i class="fas fa-plus plus"></i>
                            <span class="btn-text">Add Customer</span>
@@ -17,7 +17,7 @@
                 <div class="col-inputs shadow shell">
 
                     <div class="input-container">
-                        <h2 class="col-title">Customer Information</h2>
+                        <h2 class="col-title">Vendor Information</h2>
                         <div class="line-blue"></div>
                     </div>
 
@@ -62,7 +62,7 @@
                 <div class="col-inputs shadow shell">
 
                     <div class="input-container">
-                        <h2 class="col-title">Customer Information</h2>
+                        <h2 class="col-title">Vendor Information</h2>
                         <div class="line-blue"></div>
                     </div>
 
@@ -90,67 +90,19 @@
                         <label for="">Notes</label>
                         <textarea name="notes" rows="7" cols="20"></textarea>
                     </div>
-                    
+
                 </div>
 
             </div>
-
-
+            
             <div class="row-col-inputs">
                 <div class="col-inputs">
-                    <button type="submit">Create Item</button>
+                    <button type="submit">Create Vendor</button>
                 </div>
             </div>
 
         </form>
 
-
     </main>
-
-
-
-    <!-- The Modal -->
-    <div id="Modal" class="Modal">
-        <!-- Modal content -->
-        <div class="modal-content shell shadow">
-            <!--     <span class="close">&times;</span> -->
-            <div class="input-container">
-                <h1 class="big-title">Add Item</h1>
-            </div>
-
-            <form action="{{ action_add_item_to_list }}" method="post">
-                <div class="input-container">
-                    <label for="">Item</label>
-                    <select name="item">
-                        {% for item in items_array %}
-
-                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }}
-                                ({{ item['stock'] }})
-                            </option>
-
-                        {% endfor %}
-                    </select>
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please select an item</span>
-                </div>
-
-                <div class="input-container">
-                    <label for=""> Quantity</label>
-                    <input type="text" name="quantity">
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please enter quantity</span>
-                </div>
-
-                <div class="input-container">
-                    <button type="submit"><i class="fas fa-plus plus"></i>Create Item</button>
-                </div>
-
-
-            </form>
-
-        </div>
-    </div>
-
-
 
 {% endblock %}

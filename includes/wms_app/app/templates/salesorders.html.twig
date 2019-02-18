@@ -44,7 +44,7 @@
 
                         {% for order in all_salesorders %}
                             <tr>
-                                <td class="customerName"> {{ order['first_name'] }} {{ order['last_name'] }} </td>
+                                <td class="customerName"> {{ order['customer_name'] }}  </td>
                                 <td class="SONumber"> {{ order['so_number'] }} </td>
                                 <td class="SODate"> {{ order['so_date'] }} </td>
                                 <td class="packed text-center">

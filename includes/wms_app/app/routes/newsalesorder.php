@@ -82,9 +82,33 @@ $app->post('/newsalesorder', function (Request $request, Response $response) {
         $sanitised_orderID = $validator->sanitise_string($orderID);
         $sanitised_date = $validator->sanitise_string($date);
 
-        $wrapper_sql->create_sales_order_var($sanitised_customer, $sanitised_orderID, $sanitised_date, $session_wrapper->get_session('sales_order_id'));
+        $customer_name_array[0] = $wrapper_sql->get_customer_by_id_var($sanitised_customer);
+        $customer_name = "";
+        foreach ($customer_name_array[0] as $customer) {
+            $customer_name = ($customer['first_name'] . " " . $customer['last_name']);
+        }
 
-        $sales_order->set_values('1', '2', '3', '4', '5', '6', '7', '8', '9');
+        //get amount
+        $order_items = $wrapper_sql->get_item_var($session_wrapper->get_session('sales_order_id'));
+
+        //get item id and quantity from each order item
+        //get selling price from each item
+        $amount = null;
+        foreach ($order_items as $order_item) {
+
+            $item = $wrapper_sql->get_items_by_id_var($order_item["item_id"]);
+
+            $amount += ($item[0]["selling_price"] * $order_item["quantity"]);
+
+        }
+
+
+        //substract item quantity from stock
+
+
+        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, $session_wrapper->get_session('sales_order_id'));
+
+        //    $sales_order->set_values('1', '2', '3', '4', '5', '6', '7', '8', '9');
 
 
         return $this->response->withRedirect('/wms/index.php/salesorders');
@@ -146,11 +170,15 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
         $real_item->set_sql_queries($sql_queries);
         $order_items_array = $real_item->get_order_items_from_database($order_items->get_order_id());
 
-
+        $sum = null;
         foreach ($order_items_array as $item) {
-            $real_items_array[] = $real_item->get_items_from_database($item['item_id']);
-            //    $real_item[] = $order_items->get_quantity();
-            //        var_dump($real_item);
+
+            unset($real_items_array);
+            $real_items_array[] = $wrapper_sql->get_items_with_quantity_var($item['item_id'], $session_wrapper->get_session('sales_order_id'));
+
+            foreach ($real_items_array as $it) {
+                $sum += ($it[0]['quantity'] * $it[0]['selling_price']);
+            }
         }
 
 
@@ -170,12 +198,13 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
                 'js_path' => JS_PATH,
                 'items_array' => $items_array,
                 'real_items_array' => $real_items_array,
-                'qty' => $qty,
                 'customers_array' => $customers_array,
+                'sum' => $sum,
                 'order_id' => $session_wrapper->get_session('order_id'),
                 'action_add_item_to_list' => '/wms/index.php/newsalesorder_modal',
                 'action_create_so' => '/wms/index.php/newsalesorder'
             ]);
+
 
     } else {
 

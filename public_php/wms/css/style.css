@@ -23,6 +23,7 @@ html {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -422,6 +423,14 @@ input, textarea {
     font-size: 100%;
     color: black;
     min-width: 250px;
+}
+
+.passed {
+    border: 2px solid #49D662;
+}
+
+.failed {
+    border: 2px solid rgb(206, 0, 0);;
 }
 
 select:focus, input:focus {

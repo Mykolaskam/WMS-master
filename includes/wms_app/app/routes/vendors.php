@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->get('/customers', function (Request $request, Response $response, $args) {
+$app->get('/vendors', function (Request $request, Response $response, $args) {
 
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
@@ -21,16 +21,16 @@ $app->get('/customers', function (Request $request, Response $response, $args) {
     if ($wrapper_sql->session_var_exists(session_id())) {
 
 
-        $all_customers = $wrapper_sql->get_customers_var();
+        $all_vendors = $wrapper_sql->get_vendors_var();
 
         return $this->view->render($response,
-            'customers.html.twig',
+            'vendors.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
-                'all_customers' => $all_customers,
-                'action_new_customer' => '/wms/index.php/newcustomer',
+                'all_vendors' => $all_vendors,
+                'action_new_vendor' => '/wms/index.php/newvendor',
 
             ]);
 
@@ -41,10 +41,10 @@ $app->get('/customers', function (Request $request, Response $response, $args) {
     }
 
 
-})->setName('customers');
+})->setName('vendors');
 
 
-$app->get('/newcustomer', function (Request $request, Response $response, $args) {
+$app->get('/newvendor', function (Request $request, Response $response, $args) {
 
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
@@ -63,22 +63,22 @@ $app->get('/newcustomer', function (Request $request, Response $response, $args)
 
 
         return $this->view->render($response,
-            'newcustomer.html.twig',
+            'newvendor.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
-                'action_create_customer' => '/wms/index.php/newcustomer',
+                'action_create_vendor' => '/wms/index.php/newvendor',
 
             ]);
 
     }
 
 
-})->setName('newcustomer');
+})->setName('newvendor');
 
 
-$app->post('/newcustomer', function (Request $request, Response $response, $args) {
+$app->post('/newvendor', function (Request $request, Response $response, $args) {
 
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
@@ -123,7 +123,7 @@ $app->post('/newcustomer', function (Request $request, Response $response, $args
         $sanitised_pref_currency = $validator->sanitise_string($pref_currency);
         $sanitised_notes = $validator->sanitise_string($notes);
 
-        $wrapper_sql->create_new_customer_var(
+        $wrapper_sql->create_new_vendor_var(
             $sanitised_salutation,
             $sanitised_first_name,
             $sanitised_last_name,
@@ -138,7 +138,7 @@ $app->post('/newcustomer', function (Request $request, Response $response, $args
             $sanitised_notes);
 
 
-        return $this->response->withRedirect('/wms/index.php/customers');
+        return $this->response->withRedirect('/wms/index.php/vendors');
 
     } else {
 
@@ -147,4 +147,4 @@ $app->post('/newcustomer', function (Request $request, Response $response, $args
     }
 
 
-})->setName('newcustomer');
+})->setName('newvendor');

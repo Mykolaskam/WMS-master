@@ -4,7 +4,7 @@
 {% block content %}
 
     <main class="main-body">
-        <form action="{{ action_create_so }}" method="post">
+        <form action="{{ action_create_so }}" method="post" onsubmit="return checkForm(this);">
             <div class="container-row">
                 <h1 class="big-title">Add New SO</h1>
 
@@ -38,12 +38,12 @@
 
                     <div class="input-container">
                         <label for=""> Sales Order ID</label>
-                        <input value="SO-{{ order_id }}" type="text" name="orderID" readonly>
+                        <input class="" value="SO-{{ order_id }}" type="text" name="orderID" readonly>
                     </div>
 
                     <div class="input-container">
                         <label for=""> Date</label>
-                        <input type="date" name="date">
+                        <input class="failed" type="date" name="date" value="{{ "now"|date("Y-m-d") }}">
                         <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
                     </div>
 
@@ -92,13 +92,14 @@
                                 <tbody class="list">
 
                                 {% for item in real_items_array %}
+
                                     {% for i in item %}
                                         <tr>
                                             <td class="">{{ i['item_name'] }}</td>
                                             <td class="">{{ i['sku'] }}</td>
                                             <td class="">{{ i['purchase_price'] }}</td>
-                                            <td class="text-center">{{ qty }}</td>
-                                            <td class="text-center">{{ i['selling_price'] }}</td>
+                                            <td class="text-center">{{ i['quantity'] }}</td>
+                                            <td class="text-center">{{ i['selling_price'] * i['quantity'] }}</td>
                                             <td class="text-center">
                                                 <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
                                                 </div>
@@ -119,13 +120,22 @@
 
             </div>
 
-
             <div class="row-col-inputs">
-                <button type="submit">Create SO</button>
+
+                <div class="row-inputs shadow shell">
+                    <div class="input-container">
+                        <h2>Total Amount: {{ sum }}</h2>
+                    </div>
+                    <div class="row-inputs">
+                        <div class="input-container">
+                            <button type="submit">Create SO</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </form>
-
 
     </main>
 

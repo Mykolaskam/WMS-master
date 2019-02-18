@@ -132,7 +132,9 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
 
 
             <div class=\"row-col-inputs\">
-                <button type=\"submit\">Create Item</button>
+                <div class=\"col-inputs\">
+                    <button type=\"submit\">Create Item</button>
+                </div>
             </div>
 
         </form>
@@ -152,21 +154,21 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
             </div>
 
             <form action=\"";
-        // line 114
+        // line 116
         echo twig_escape_filter($this->env, ($context["action_add_item_to_list"] ?? null), "html", null, true);
         echo "\" method=\"post\">
                 <div class=\"input-container\">
                     <label for=\"\">Item</label>
                     <select name=\"item\">
                         ";
-        // line 118
+        // line 120
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["items_array"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 119
+            // line 121
             echo "
                             <option value=\"";
-            // line 120
+            // line 122
             echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = $context["item"]) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["ID"] ?? null) : null), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = $context["item"]) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a["item_name"] ?? null) : null), "html", null, true);
@@ -174,7 +176,7 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
             echo twig_escape_filter($this->env, (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["item"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["sku"] ?? null) : null), "html", null, true);
             echo "
                                 (";
-            // line 121
+            // line 123
             echo twig_escape_filter($this->env, (($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["item"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["stock"] ?? null) : null), "html", null, true);
             echo ")
                             </option>
@@ -184,7 +186,7 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 125
+        // line 127
         echo "                    </select>
                     <span class=\"input-info\"><i
                                 class=\"question-mark far fa-question-circle\"></i>Please select an item</span>
@@ -224,7 +226,7 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
 
     public function getDebugInfo()
     {
-        return array (  188 => 125,  178 => 121,  170 => 120,  167 => 119,  163 => 118,  156 => 114,  46 => 7,  42 => 5,  39 => 4,  33 => 2,  15 => 1,);
+        return array (  190 => 127,  180 => 123,  172 => 122,  169 => 121,  165 => 120,  158 => 116,  46 => 7,  42 => 5,  39 => 4,  33 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

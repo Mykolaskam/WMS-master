@@ -96,7 +96,10 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
         // line 29
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("customers"), "html", null, true);
         echo "\">Customers</a>
-            <a class=\"menu-item\" href=\"\">Vendors</a>
+            <a class=\"menu-item\" href=\"";
+        // line 30
+        echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("vendors"), "html", null, true);
+        echo "\">Vendors</a>
             <a class=\"menu-item\" href=\"\">Purchase Orders</a>
             <a class=\"menu-item\" href=\"";
         // line 32
@@ -138,7 +141,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 
     public function getDebugInfo()
     {
-        return array (  125 => 46,  122 => 45,  113 => 39,  103 => 32,  97 => 29,  93 => 28,  81 => 18,  78 => 17,  73 => 6,  63 => 52,  57 => 48,  55 => 45,  52 => 44,  50 => 17,  41 => 11,  33 => 6,  26 => 1,);
+        return array (  128 => 46,  125 => 45,  116 => 39,  106 => 32,  101 => 30,  97 => 29,  93 => 28,  81 => 18,  78 => 17,  73 => 6,  63 => 52,  57 => 48,  55 => 45,  52 => 44,  50 => 17,  41 => 11,  33 => 6,  26 => 1,);
     }
 
     public function getSourceContext()

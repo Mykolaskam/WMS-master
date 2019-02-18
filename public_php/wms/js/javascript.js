@@ -16,6 +16,23 @@ $('.table-titles').on('click', 'th', function () {
 /*----------------------*/
 
 
+
+
+function checkForm(form)
+{
+    // validation fails if the input is blank
+    if(form.orderID.value != "") {
+        orderID.classList.add("failed");
+        alert("Error: Input is empty!");
+        form.orderID.focus();
+        return false;
+    }
+}
+
+
+
+
+
 //Menu button
 
 $('#menu').on('click', function () {
@@ -58,7 +75,7 @@ var ItemsOptions = {
     ]
 };
 
-//Sort Functions ITEMS
+//Sort Functions CUSTOMERS
 var CustomersOptions = {
     valueNames: [
         'salutation',
@@ -67,13 +84,27 @@ var CustomersOptions = {
         'email',
         'phoneNumber',
         'website',
-        'billingAddres'
+        'billingAddress'
+    ]
+};
+
+//Sort Functions VENDORS
+var VendorsOptions = {
+    valueNames: [
+        'Vsalutation',
+        'Vname',
+        'VcompanyName',
+        'Vemail',
+        'VphoneNumber',
+        'Vwebsite',
+        'VbillingAddress'
     ]
 };
 
 var SOtable = new List('so-table', SOOptions);
 var ItemsTable = new List('items-table', ItemsOptions);
 var CustomersTable = new List('customers-table', CustomersOptions);
+var VendorsTable = new List('vendors-table', VendorsOptions);
 
 /*----------------------*/
 

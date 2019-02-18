@@ -1,0 +1,66 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Vendors{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+
+        <div class="container-row">
+            <h1 class="big-title">Vendors</h1>
+            <a class="button-small shadow" href="{{ action_new_vendor }}">
+                <i class="fas fa-plus plus"></i>
+                <span class="btn-text">New Vendor</span>
+            </a>
+        </div>
+
+
+        <div class="row-col-inputs">
+
+            <div class="col-inputs shadow shell" id="vendors-table">
+
+                <div class="scroll-container">
+
+                    <input class="input-search search" type="text" name="search" placeholder="Search">
+
+                    <table>
+
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="Vsalutation">Salutation<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="Vname">Name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="VcompanyName">Company Name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="Vemail">Email<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="VphoneNumber">Phone Number<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="Vwebsite">Website<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="VbillingAddres">Billing Address<i class="arrow fas fa-angle-up"></i></th>
+                        </tr>
+
+                        <tbody class="list">
+
+                        {% for vendor in all_vendors %}
+
+                            <tr>
+                                <td class="Vsalutation"> {{ vendor['salutation'] }} </td>
+                                <td class="Vname"> {{ vendor['first_name'] }} {{ vendor['last_name'] }}</td>
+                                <td class="VcompanyName"> {{ vendor['company_name'] }} </td>
+                                <td class="Vemail"> {{ vendor['email'] }} </td>
+                                <td class="VphoneNumber"> {{ vendor['phone_number'] }} </td>
+                                <td class="Vwebsite"> {{ vendor['website'] }} </td>
+                                <td class="VbillingAddress"> {{ vendor['billing_address'] }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}
