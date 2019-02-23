@@ -143,6 +143,14 @@ class SQLQueries
         return $m_query_string;
     }
 
+    public static function get_sales_order_by_id()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE ID = :local_id";
+        return $m_query_string;
+    }
+
     public static function create_sales_order_id()
     {
         $m_query_string = "INSERT INTO salesorders ";
@@ -154,6 +162,13 @@ class SQLQueries
     {
         $m_query_string = "DELETE FROM salesorders ";
         $m_query_string .= "WHERE so_number = '' ";
+        return $m_query_string;
+    }
+
+    public static function delete_sales_order()
+    {
+        $m_query_string = "DELETE FROM salesorders ";
+        $m_query_string .= "WHERE ID = :local_id ";
         return $m_query_string;
     }
 
@@ -240,6 +255,33 @@ class SQLQueries
         $m_query_string = "SELECT * ";
         $m_query_string .= "FROM order_items ";
         $m_query_string .= "WHERE order_id = :local_order_id ";
+        return $m_query_string;
+    }
+
+    public static function delete_order_item()
+    {
+        $m_query_string = "DELETE ";
+        $m_query_string .= "FROM order_items ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        $m_query_string .= "AND item_id = :local_item_id ";
+        return $m_query_string;
+    }
+
+    public static function order_item_added()
+    {
+        $m_query_string = "SELECT ID ";
+        $m_query_string .= "FROM order_items ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        $m_query_string .= "AND item_id = :local_item_id ";
+        return $m_query_string;
+    }
+
+    public static function update_order_item()
+    {
+        $m_query_string = "UPDATE order_items ";
+        $m_query_string .= "SET quantity = quantity + :local_quantity ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        $m_query_string .= "AND item_id = :local_item_id ";
         return $m_query_string;
     }
 

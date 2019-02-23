@@ -17,17 +17,20 @@ $('.table-titles').on('click', 'th', function () {
 
 
 
+//
+// function checkForm(form)
+// {
+//     // validation fails if the input is blank
+//     if(form.orderID.value != "") {
+//         orderID.classList.add("failed");
+//         alert("Error: Input is empty!");
+//         form.orderID.focus();
+//         return false;
+//     }
+// }
 
-function checkForm(form)
-{
-    // validation fails if the input is blank
-    if(form.orderID.value != "") {
-        orderID.classList.add("failed");
-        alert("Error: Input is empty!");
-        form.orderID.focus();
-        return false;
-    }
-}
+
+
 
 
 

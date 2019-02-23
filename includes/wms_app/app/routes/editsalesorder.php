@@ -3,8 +3,9 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
+$app->get('/deletesalesorder/{id3}', function ($request, $response, $args) {
 
-$app->get('/newsalesorder', function (Request $request, Response $response) {
+    $item_id = $args['id3'];
 
 
     $wrapper_sql = $this->get('sql_wrapper');
@@ -17,15 +18,80 @@ $app->get('/newsalesorder', function (Request $request, Response $response) {
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
 
+    if ($wrapper_sql->session_var_exists(session_id())) {
+
+        $wrapper_sql->delete_sales_order_var($session_wrapper->get_session('sales_order_id'));
+
+        return $this->response->withRedirect('/wms/index.php/salesorders');
+
+    }
+
+})->setName('deletesalesorder');
+
+
+$app->get('/removeorderitem/{id2}', function ($request, $response, $args) {
+
+    $item_id = $args['id2'];
+
+
+    $wrapper_sql = $this->get('sql_wrapper');
+    $db_handle = $this->get('dbase');
+    $sql_queries = $this->get('sql_queries');
+    $session_model = $this->get('session_model');
+    $session_wrapper = $this->get('session_wrapper');
+    $validator = $this->get('validator');
+
+    $wrapper_sql->set_db_handle($db_handle);
+    $wrapper_sql->set_sql_queries($sql_queries);
 
     if ($wrapper_sql->session_var_exists(session_id())) {
 
-        $wrapper_sql->create_sales_order_id_var();
-        $last_id = $wrapper_sql->last_inserted_ID();
+        $wrapper_sql->delete_order_item_var($session_wrapper->get_session('sales_order_id'), $item_id);
 
-        $session_wrapper->set_session('sales_order_id', $last_id);
-        $order_id = uniqid();
-        $session_wrapper->set_session('order_id', $order_id);
+        return $this->response->withRedirect('/wms/index.php/editsalesorder/' . $session_wrapper->get_session('sales_order_id'));
+
+    }
+
+})->setName('removeorderitem');
+
+$app->get('/editsalesorder/{id}', function ($request, $response, $args) {
+
+    $sales_order_id = $args['id'];
+
+
+    $wrapper_sql = $this->get('sql_wrapper');
+    $db_handle = $this->get('dbase');
+    $sql_queries = $this->get('sql_queries');
+    $session_model = $this->get('session_model');
+    $session_wrapper = $this->get('session_wrapper');
+    $validator = $this->get('validator');
+
+    $wrapper_sql->set_db_handle($db_handle);
+    $wrapper_sql->set_sql_queries($sql_queries);
+
+    $session_wrapper->set_session('sales_order_id', $args['id']);
+
+    if ($wrapper_sql->session_var_exists(session_id())) {
+
+        $the_order = $wrapper_sql->get_sales_order_by_id_var($sales_order_id);
+
+        unset($order_items_array);
+        $order_items_array = $wrapper_sql->get_item_var($sales_order_id);
+
+        unset($real_items_array);
+        $real_items_array = null;
+        foreach ($order_items_array as $item) {
+            $real_items_array[] = $wrapper_sql->get_items_with_quantity_var($item['item_id'], $sales_order_id);
+        }
+
+        $total_amount = null;
+        $total_quantity = null;
+        if (!empty($real_items_array)) {
+            foreach ($real_items_array as $i) {
+                $total_amount += ($i[0]["selling_price"] * $i[0]["quantity"]);
+                $total_quantity += $i[0]["quantity"];
+            }
+        }
 
         $items_array = [];
         $items_array = $wrapper_sql->get_items_var();
@@ -34,15 +100,18 @@ $app->get('/newsalesorder', function (Request $request, Response $response) {
         $customers_array = $wrapper_sql->get_customers_var();
 
         return $this->view->render($response,
-            'newSO.html.twig',
+            'editSO.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
-                'order_id' => $order_id,
+                'the_order' => $the_order,
                 'items_array' => $items_array,
                 'customers_array' => $customers_array,
-                'action_add_item_to_list' => '/wms/index.php/newsalesorder_modal',
+                'real_items_array' => $real_items_array,
+                'total_amount' => $total_amount,
+                'total_quantity' => $total_quantity,
+                'action_add_item_to_list' => '/wms/index.php/editsalesorder_modal',
             ]);
 
     } else {
@@ -51,11 +120,10 @@ $app->get('/newsalesorder', function (Request $request, Response $response) {
 
     }
 
+})->setName('editsalesorder');
 
-})->setName('newsalesorder');
 
-
-$app->post('/newsalesorder', function (Request $request, Response $response) {
+$app->post('/editsalesorder', function (Request $request, Response $response) {
 
 
     $wrapper_sql = $this->get('sql_wrapper');
@@ -103,7 +171,12 @@ $app->post('/newsalesorder', function (Request $request, Response $response) {
         }
 
 
+        //substract item quantity from stock
+
+
         $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, $session_wrapper->get_session('sales_order_id'));
+
+        //    $sales_order->set_values('1', '2', '3', '4', '5', '6', '7', '8', '9');
 
 
         return $this->response->withRedirect('/wms/index.php/salesorders');
@@ -115,14 +188,10 @@ $app->post('/newsalesorder', function (Request $request, Response $response) {
     }
 
 
-})->setName('newsalesorder');
-
-$app->get('/newsalesorderid/{id}', function ($request, $response, $args) {
-    return $response->write("Hello " . $args['id']);
-})->setName('newsalesorderid');
+})->setName('editsalesorder');
 
 
-$app->post('/newsalesorder_modal', function (Request $request, Response $response) {
+$app->post('/editsalesorder_modal', function (Request $request, Response $response) {
 
 
     $wrapper_sql = $this->get('sql_wrapper');
@@ -176,6 +245,8 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
 
         }
 
+        $the_order = $wrapper_sql->get_sales_order_by_id_var($session_wrapper->get_session('sales_order_id'));
+
 
         unset($order_items_array);
         $order_items_array = $real_item->get_order_items_from_database($order_items->get_order_id());
@@ -201,19 +272,20 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
         $customers_array = $wrapper_sql->get_customers_var();
 
         return $this->view->render($response,
-            'newSO.html.twig',
+            'editSO.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
+                'the_order' => $the_order,
                 'items_array' => $items_array,
                 'real_items_array' => $real_items_array,
                 'customers_array' => $customers_array,
                 'total_amount' => $total_amount,
                 'total_quantity' => $total_quantity,
                 'order_id' => $session_wrapper->get_session('order_id'),
-                'action_add_item_to_list' => '/wms/index.php/newsalesorder_modal',
-                'action_create_so' => '/wms/index.php/newsalesorder'
+                'action_add_item_to_list' => '/wms/index.php/editsalesorder_modal',
+                'action_create_so' => '/wms/index.php/editsalesorder'
             ]);
 
 
@@ -224,4 +296,4 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
     }
 
 
-})->setName('newsalesorder');
+})->setName('editsalesorder');

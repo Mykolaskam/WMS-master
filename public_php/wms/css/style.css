@@ -7,7 +7,7 @@
 }
 
 a {
-    text-decoration: none
+    text-decoration: none;
 }
 
 html {
@@ -62,6 +62,41 @@ button {
     padding: 15px 30px;
     min-width: 250px;
     background-color: #007AFF;
+    color: white;
+    font-size: 100%;
+    cursor: pointer;
+
+}
+
+.button {
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    padding: 15px 30px;
+    min-width: 250px;
+    background-color: #007AFF;
+    color: white;
+    font-size: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+button:hover {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
+
+.button-red {
+    margin: 15px 0;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    padding: 15px 30px;
+    min-width: 250px;
+    background-color: rgb(206, 0, 0);;
     color: white;
     font-size: 100%;
     cursor: pointer;
@@ -123,15 +158,16 @@ h3 {
 
 
 .top-bar {
-
-    width: calc(100% - 200px);
-    margin-left: 200px;
+    width: 100%;
+    margin-left: 0;
     height: 60px;
     background-color: white;
     position: fixed;
     align-items: center;
     justify-content: space-between;
     z-index: 3;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
 }
 
 
@@ -237,6 +273,10 @@ main {
     border-radius: 100px;
     font-size: 80%;
 }
+.button-small:hover {
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+}
 
 
 .plus {
@@ -309,7 +349,7 @@ table {
     border-spacing: 0;
     overflow-x: scroll;
     table-layout: fixed;
-    margin: 0;
+    margin: 0 0 10px 0;
     min-width: 100%;
 }
 
@@ -354,7 +394,6 @@ tr:hover {
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
     cursor: pointer;
     border-radius: 10px;
-
 }
 
 
@@ -433,6 +472,7 @@ input, textarea {
     border: 2px solid rgb(206, 0, 0);;
 }
 
+
 select:focus, input:focus {
     border: 2px solid #007AFF;
 }
@@ -508,6 +548,10 @@ select:focus, input:focus {
     color: #D0021B;
     cursor: pointer;
     font-size: 120%;
+}
+
+.remove-item:hover {
+    transform: scale(1.5);
 }
 
 .add-item {
@@ -813,6 +857,17 @@ input:checked + .slider:before {
 
 
 @media screen and (min-width: 530px) {
+
+    .top-bar {
+        width: calc(100% - 200px);
+        margin-left: 200px;
+        height: 60px;
+        background-color: white;
+        position: fixed;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 3;
+    }
 
     .side-modal-container-row {
         padding-top: 20px;

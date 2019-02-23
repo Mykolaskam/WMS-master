@@ -233,11 +233,18 @@ class SQLWrapper
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
 
+    public function delete_sales_order_var($id)
+    {
+        $m_query_string = $this->c_obj_sql_queries->delete_sales_order();
 
-    /**
-     * function returns and array of messages from the database messages table. The query is executed using safe_query with passed query string and passed parameters but in this case no parameters needed to be set.
-     * @return mixed
-     */
+        $m_arr_query_parameters = [
+            ':local_id' => $id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+
     public function get_sales_orders_var()
     {
 
@@ -249,6 +256,21 @@ class SQLWrapper
 
         $message = $this->safe_fetch_all_array();
         return $message;
+    }
+
+    public function get_sales_order_by_id_var($id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_sales_order_by_id();
+
+        $m_arr_query_parameters = [
+            ':local_id' => $id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $sales_order = $this->safe_fetch_all_array();
+        return $sales_order;
     }
 
     public function create_sales_order_var($customer_id, $customer_name, $so_number, $so_date, $amount, $ID)
@@ -324,6 +346,7 @@ class SQLWrapper
         ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
+
         $item_with_quantity = $this->safe_fetch_all_array();
         return $item_with_quantity;
     }
@@ -472,6 +495,53 @@ class SQLWrapper
 
         $item = $this->safe_fetch_all_array();
         return $item;
+    }
+
+    public function delete_order_item_var($order_id, $item_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->delete_order_item();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $order_id,
+            ':local_item_id' => $item_id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+    }
+
+    public function order_item_added_var($order_id, $item_id)
+    {
+
+        $var_exists = false;
+
+        $m_query_string = $this->c_obj_sql_queries->order_item_added();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $order_id,
+            ':local_item_id' => $item_id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        if ($this->count_rows() > 0) {
+            $var_exists = true;
+        }
+        return $var_exists;
+    }
+
+    public function update_order_item_var($p_order_id, $p_item_id, $p_quantity)
+    {
+        $m_query_string = $this->c_obj_sql_queries->update_order_item();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $p_order_id,
+            ':local_item_id' => $p_item_id,
+            ':local_quantity' => $p_quantity
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
     /** ========================= ORDER ITEMS END ==============================     */
 

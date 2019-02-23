@@ -32,7 +32,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
     // line 2
     public function block_title($context, array $blocks = array())
     {
-        echo "New Saler Order";
+        echo "New Sales Order";
     }
 
     // line 4
@@ -157,57 +157,48 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
 
                                 <tbody class=\"list\">
 
+
                                 ";
-        // line 94
+        // line 95
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["real_items_array"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 95
-            echo "
-                                    ";
             // line 96
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($context["item"]);
-            foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 97
-                echo "                                        <tr>
-                                            <td class=\"\">";
-                // line 98
-                echo twig_escape_filter($this->env, (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = $context["i"]) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["item_name"] ?? null) : null), "html", null, true);
-                echo "</td>
-                                            <td class=\"\">";
-                // line 99
-                echo twig_escape_filter($this->env, (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["i"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["sku"] ?? null) : null), "html", null, true);
-                echo "</td>
-                                            <td class=\"\">";
-                // line 100
-                echo twig_escape_filter($this->env, (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["i"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["purchase_price"] ?? null) : null), "html", null, true);
-                echo "</td>
-                                            <td class=\"text-center\">";
-                // line 101
-                echo twig_escape_filter($this->env, (($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["i"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["quantity"] ?? null) : null), "html", null, true);
-                echo "</td>
-                                            <td class=\"text-center\">";
-                // line 102
-                echo twig_escape_filter($this->env, ((($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 = $context["i"]) && is_array($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0) || $__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 instanceof ArrayAccess ? ($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0["selling_price"] ?? null) : null) * (($__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866 = $context["i"]) && is_array($__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866) || $__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866 instanceof ArrayAccess ? ($__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866["quantity"] ?? null) : null)), "html", null, true);
-                echo "</td>
-                                            <td class=\"text-center\">
-                                                <div id=\"removeItem\" class=\"remove-item\"><i class=\"far fa-trash-alt\"></i>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 109
-            echo "                                ";
+            echo "
+                                    <tr>
+                                        <td class=\"\">";
+            // line 98
+            echo twig_escape_filter($this->env, (($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 = (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["item"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105[0] ?? null) : null)) && is_array($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217) || $__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217 instanceof ArrayAccess ? ($__internal_add9db1f328aaed12ef1a33890510da978cc9cf3e50f6769d368473a9c90c217["item_name"] ?? null) : null), "html", null, true);
+            echo "</td>
+                                        <td class=\"\">";
+            // line 99
+            echo twig_escape_filter($this->env, (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = (($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["item"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1[0] ?? null) : null)) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["sku"] ?? null) : null), "html", null, true);
+            echo "</td>
+                                        <td class=\"\">";
+            // line 100
+            echo twig_escape_filter($this->env, (($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 = (($__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866 = $context["item"]) && is_array($__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866) || $__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866 instanceof ArrayAccess ? ($__internal_602f93ae9072ac758dc9cd47ca50516bbc1210f73d2a40b01287f102c3c40866[0] ?? null) : null)) && is_array($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0) || $__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0 instanceof ArrayAccess ? ($__internal_bd1cf16c37e30917ff4f54b7320429bcc2bb63615cd8a735bfe06a3f1b5c82a0["purchase_price"] ?? null) : null), "html", null, true);
+            echo "</td>
+                                        <td class=\"text-center\">";
+            // line 101
+            echo twig_escape_filter($this->env, (($__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f = (($__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7 = $context["item"]) && is_array($__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7) || $__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7 instanceof ArrayAccess ? ($__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7[0] ?? null) : null)) && is_array($__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f) || $__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f instanceof ArrayAccess ? ($__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f["quantity"] ?? null) : null), "html", null, true);
+            echo "</td>
+                                        <td class=\"text-center\">£";
+            // line 102
+            echo twig_escape_filter($this->env, ((($__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289 = (($__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18 = $context["item"]) && is_array($__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18) || $__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18 instanceof ArrayAccess ? ($__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18[0] ?? null) : null)) && is_array($__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289) || $__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289 instanceof ArrayAccess ? ($__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289["selling_price"] ?? null) : null) * (($__internal_90d913d778d5b09eba503796cc624cad16d1bef853f6e54f02eb01d7ed891018 = (($__internal_5c0169d493d4872ad26d34703fc2ce22459eddaa09bc03024c8105160dc27413 = $context["item"]) && is_array($__internal_5c0169d493d4872ad26d34703fc2ce22459eddaa09bc03024c8105160dc27413) || $__internal_5c0169d493d4872ad26d34703fc2ce22459eddaa09bc03024c8105160dc27413 instanceof ArrayAccess ? ($__internal_5c0169d493d4872ad26d34703fc2ce22459eddaa09bc03024c8105160dc27413[0] ?? null) : null)) && is_array($__internal_90d913d778d5b09eba503796cc624cad16d1bef853f6e54f02eb01d7ed891018) || $__internal_90d913d778d5b09eba503796cc624cad16d1bef853f6e54f02eb01d7ed891018 instanceof ArrayAccess ? ($__internal_90d913d778d5b09eba503796cc624cad16d1bef853f6e54f02eb01d7ed891018["quantity"] ?? null) : null)), "html", null, true);
+            echo "</td>
+                                        <td class=\"text-center\">
+                                            <div id=\"removeItem\" class=\"remove-item\"><i class=\"far fa-trash-alt\"></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 110
+        // line 111
         echo "
                                 </tbody>
 
@@ -224,16 +215,23 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
             <div class=\"row-col-inputs\">
 
                 <div class=\"row-inputs shadow shell\">
+
                     <div class=\"input-container\">
-                        <h2>Total Amount: ";
-        // line 127
-        echo twig_escape_filter($this->env, ($context["sum"] ?? null), "html", null, true);
+                        <h2>Total Amount: £";
+        // line 129
+        echo twig_escape_filter($this->env, ($context["total_amount"] ?? null), "html", null, true);
         echo "</h2>
                     </div>
-                    <div class=\"row-inputs\">
-                        <div class=\"input-container\">
-                            <button type=\"submit\">Create SO</button>
-                        </div>
+                    <div class=\"input-container\">
+                        <h2>Total Items: ";
+        // line 132
+        echo twig_escape_filter($this->env, ($context["total_quantity"] ?? null), "html", null, true);
+        echo "</h2>
+                    </div>
+                    <div class=\"col-inputs\">
+
+                        <button type=\"submit\">Create SO</button>
+
                     </div>
                 </div>
 
@@ -255,30 +253,30 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
             </div>
 
             <form action=\"";
-        // line 153
+        // line 158
         echo twig_escape_filter($this->env, ($context["action_add_item_to_list"] ?? null), "html", null, true);
         echo "\" method=\"post\">
                 <div class=\"input-container\">
                     <label for=\"\">Item</label>
                     <select name=\"item\">
                         ";
-        // line 157
+        // line 162
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["items_array"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 158
+            // line 163
             echo "
                             <option value=\"";
-            // line 159
-            echo twig_escape_filter($this->env, (($__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f = $context["item"]) && is_array($__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f) || $__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f instanceof ArrayAccess ? ($__internal_de222b1ef20cf829a938a4545cbb79f4996337944397dd43b1919bce7726ae2f["ID"] ?? null) : null), "html", null, true);
+            // line 164
+            echo twig_escape_filter($this->env, (($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 = $context["item"]) && is_array($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7) || $__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 instanceof ArrayAccess ? ($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7["ID"] ?? null) : null), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, (($__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7 = $context["item"]) && is_array($__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7) || $__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7 instanceof ArrayAccess ? ($__internal_517751e212021442e58cf8c5cde586337a42455f06659ad64a123ef99fab52e7["item_name"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c = $context["item"]) && is_array($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c) || $__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c instanceof ArrayAccess ? ($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c["item_name"] ?? null) : null), "html", null, true);
             echo " - ";
-            echo twig_escape_filter($this->env, (($__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289 = $context["item"]) && is_array($__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289) || $__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289 instanceof ArrayAccess ? ($__internal_89dde7175ba0b16509237b3e9e7cf99ba9e1b72bd3e7efcbe667781538aca289["sku"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 = $context["item"]) && is_array($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40) || $__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 instanceof ArrayAccess ? ($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40["sku"] ?? null) : null), "html", null, true);
             echo "
                                 (";
-            // line 160
-            echo twig_escape_filter($this->env, (($__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18 = $context["item"]) && is_array($__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18) || $__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18 instanceof ArrayAccess ? ($__internal_869a4b51bf6f65c335ddd8115360d724846983ee5a04751d683ca60a03391d18["stock"] ?? null) : null), "html", null, true);
+            // line 165
+            echo twig_escape_filter($this->env, (($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 = $context["item"]) && is_array($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79) || $__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 instanceof ArrayAccess ? ($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79["stock"] ?? null) : null), "html", null, true);
             echo ")
                             </option>
 
@@ -287,7 +285,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 164
+        // line 169
         echo "                    </select>
                     <span class=\"input-info\"><i
                                 class=\"question-mark far fa-question-circle\"></i>Please select an item</span>
@@ -327,7 +325,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
 
     public function getDebugInfo()
     {
-        return array (  291 => 164,  281 => 160,  273 => 159,  270 => 158,  266 => 157,  259 => 153,  230 => 127,  211 => 110,  205 => 109,  192 => 102,  188 => 101,  184 => 100,  180 => 99,  176 => 98,  173 => 97,  169 => 96,  166 => 95,  162 => 94,  111 => 46,  103 => 41,  92 => 32,  82 => 28,  74 => 27,  71 => 26,  67 => 25,  46 => 7,  42 => 5,  39 => 4,  33 => 2,  15 => 1,);
+        return array (  289 => 169,  279 => 165,  271 => 164,  268 => 163,  264 => 162,  257 => 158,  228 => 132,  222 => 129,  202 => 111,  187 => 102,  183 => 101,  179 => 100,  175 => 99,  171 => 98,  167 => 96,  163 => 95,  111 => 46,  103 => 41,  92 => 32,  82 => 28,  74 => 27,  71 => 26,  67 => 25,  46 => 7,  42 => 5,  39 => 4,  33 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
