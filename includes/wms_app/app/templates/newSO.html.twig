@@ -11,44 +11,6 @@
             </div>
 
             <div class="row-col-inputs">
-                <div class="col-inputs shadow shell">
-
-                    <div class="input-container">
-                        <h2 class="col-title">General Information</h2>
-                        <div class="line-blue"></div>
-                    </div>
-
-                    <div class="input-container">
-                        <div class="input-field ">
-                            <label>Customer</label>
-                            <select name="customer">
-                                {% for customer in customers_array %}
-
-                                    <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
-                                        - "{{ customer['company_name'] }}"
-                                    </option>
-
-                                {% endfor %}
-                            </select>
-
-                        </div>
-
-                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a customer</span>
-                    </div>
-
-                    <div class="input-container">
-                        <label for=""> Sales Order ID</label>
-                        <input class="" value="SO-{{ order_id }}" type="text" name="orderID" readonly>
-                    </div>
-
-                    <div class="input-container">
-                        <label for=""> Date</label>
-                        <input class="failed" type="date" name="date" value="{{ "now"|date("Y-m-d") }}">
-                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
-                    </div>
-
-                </div>
-
 
                 <div class="col-inputs shadow shell" id="so-items">
 
@@ -109,6 +71,25 @@
 
                                 {% endfor %}
 
+                                <tr></tr>
+
+                                <tr>
+                                    <td class=""><h3>Total Items</h3></td>
+                                    <td class=""></td>
+                                    <td class=""></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center blue">{{ total_quantity }}</td>
+                                    <td class="text-center"></td>
+                                </tr>
+                                <tr>
+                                    <td class=""><h2>Total Amount</h2></td>
+                                    <td class=""></td>
+                                    <td class=""></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center blue"><h2 class="blue">£{{ total_amount }}</h2></td>
+                                    <td class="text-center"></td>
+                                </tr>
+
                                 </tbody>
 
                             </table>
@@ -119,23 +100,47 @@
 
                 </div>
 
-            </div>
-
-            <div class="row-col-inputs">
-
-                <div class="row-inputs shadow shell">
+                <div class="col-inputs shadow shell">
 
                     <div class="input-container">
-                        <h2>Total Amount: £{{ total_amount }}</h2>
+                        <h2 class="col-title">General Information</h2>
+                        <div class="line-blue"></div>
                     </div>
-                    <div class="input-container">
-                        <h2>Total Items: {{ total_quantity }}</h2>
-                    </div>
-                    <div class="col-inputs">
 
+                    <div class="input-container">
+                        <div class="input-field ">
+                            <label>Customer</label>
+                            <select name="customer">
+                                {% for customer in customers_array %}
+
+                                    <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
+                                        - "{{ customer['company_name'] }}"
+                                    </option>
+
+                                {% endfor %}
+                            </select>
+
+                        </div>
+
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a customer</span>
+                    </div>
+
+                    <div class="input-container">
+                        <label for=""> Sales Order ID</label>
+                        <input class="" value="SO-{{ order_id }}" type="text" name="orderID" readonly>
+                    </div>
+
+                    <div class="input-container">
+                        <label for=""> Date</label>
+                        <input class="" type="date" name="date" value="{{ "now"|date("Y-m-d") }}">
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
+                    </div>
+
+                    <div class="input-container">
                         <button type="submit">Create SO</button>
-
                     </div>
+
+
                 </div>
 
             </div>

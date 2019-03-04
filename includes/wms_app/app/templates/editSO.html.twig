@@ -6,64 +6,12 @@
     <main class="main-body">
         <form action="{{ action_update_so }}" method="post" onsubmit="return checkForm(this);">
             <div class="container-row">
-                <h1 class="big-title">Edit SO</h1>
+                <h1 class="big-title">Edit Sales Order</h1>
 
             </div>
 
+
             <div class="row-col-inputs">
-                <div class="col-inputs shadow shell">
-
-                    <div class="input-container">
-                        <h2 class="col-title">General Information</h2>
-                        <div class="line-blue"></div>
-                    </div>
-
-                    <div class="input-container">
-                        <div class="input-field ">
-                            <label>Customer</label>
-
-                            <select name="customer">
-
-                                {% for o in the_order %}
-
-                                    <option value="{{ o['customer_id'] }}">{{ o['customer_name'] }}
-                                    </option>
-
-                                {% endfor %}
-                                {% for customer in customers_array %}
-
-                                    <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
-                                        - "{{ customer['company_name'] }}"
-                                    </option>
-
-                                {% endfor %}
-                            </select>
-
-                        </div>
-
-                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a customer</span>
-                    </div>
-
-                    {% for o in the_order %}
-                        <div class="input-container">
-                            <label for=""> Sales Order ID</label>
-                            <input class="" value="{{ o["so_number"] }}" type="text" name="orderID" readonly>
-                        </div>
-
-                        <div class="input-container">
-                            <label for=""> Date</label>
-                            <input class="failed" type="date" name="date" value="{{ o["so_date"] }}">
-                            <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
-                        </div>
-
-                        <div class="input-container">
-                            <button type="submit">Update</button>
-                        </div>
-
-                    {% endfor %}
-
-                </div>
-
 
                 <div class="col-inputs shadow shell" id="so-items">
 
@@ -124,6 +72,29 @@
                                     </tr>
 
                                 {% endfor %}
+
+                                <tr></tr>
+                                <tr></tr>
+
+
+                                <tr class="no-hover">
+                                    <td class=""><h3>Total Items</h3></td>
+                                    <td class=""></td>
+                                    <td class=""></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center blue">{{ total_quantity }}</td>
+                                    <td class="text-center"></td>
+                                </tr>
+
+                                <tr class="no-hover">
+                                    <td class=""><h2>Total Amount</h2></td>
+                                    <td class=""></td>
+                                    <td class=""></td>
+                                    <td class="text-center"></td>
+                                    <td class="text-center blue"><h2 class="blue">£{{ total_amount }}</h2></td>
+                                    <td class="text-center"></td>
+                                </tr>
+
                                 </tbody>
 
                             </table>
@@ -134,28 +105,61 @@
 
                 </div>
 
-            </div>
 
-            <div class="row-col-inputs">
-
-                <div class="row-inputs shadow shell">
+                <div class="col-inputs shadow shell">
 
                     <div class="input-container">
-                        <h2>Total Amount: £{{ total_amount }}</h2>
+                        <h2 class="col-title">General Information</h2>
+                        <div class="line-blue"></div>
                     </div>
-                    <div class="input-container">
-                        <h2>Total Items: {{ total_quantity }}</h2>
-                    </div>
-                    <div class="col-inputs">
 
-                        <div class="input-container">
-                            <a class="button button-red" onclick="window.location='/wms/index.php/deletesalesorder/{% for item in real_items_array %} {{ item[0]['ID'] }} {% endfor %}s';">
-                                Delete
-                            </a>
+                    <div class="input-container">
+                        <div class="input-field ">
+                            <label>Customer</label>
+
+                            <select class="" name="customer">
+
+                                {% for o in the_order %}
+
+                                    <option value="{{ o['customer_id'] }}">{{ o['customer_name'] }}
+                                    </option>
+
+                                {% endfor %}
+                                {% for customer in customers_array %}
+
+                                    <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
+                                        - "{{ customer['company_name'] }}"
+                                    </option>
+
+                                {% endfor %}
+                            </select>
+
                         </div>
 
-
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a customer</span>
                     </div>
+
+                    {% for o in the_order %}
+                        <div class="input-container">
+                            <label for=""> Sales Order ID</label>
+                            <input class="" value="{{ o["so_number"] }}" type="text" name="orderID" readonly>
+                        </div>
+
+                        <div class="input-container">
+                            <label for=""> Date</label>
+                            <input class="" type="date" name="date" value="{{ o["so_date"] }}">
+                            <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
+                        </div>
+
+                        <div class="input-container">
+                            <button type="submit">Update</button>
+
+                            <a class="button button-red" onclick="window.location='/wms/index.php/deletesalesorder/{% for item in real_items_array %} {{ item[0]['ID'] }} {% endfor %}';">
+                                Delete </a>
+                        </div>
+
+                    {% endfor %}
+
                 </div>
 
             </div>

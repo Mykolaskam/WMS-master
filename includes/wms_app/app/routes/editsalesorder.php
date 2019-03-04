@@ -86,6 +86,8 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
 
         $total_amount = null;
         $total_quantity = null;
+        $total_amount = 0;
+        $total_quantity = 0;
         if (!empty($real_items_array)) {
             foreach ($real_items_array as $i) {
                 $total_amount += ($i[0]["selling_price"] * $i[0]["quantity"]);
@@ -99,12 +101,14 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
         $customers_array = [];
         $customers_array = $wrapper_sql->get_customers_var();
 
+
         return $this->view->render($response,
             'editSO.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
+                'action_update_so' => '/wms/index.php/editsalesorder',
                 'the_order' => $the_order,
                 'items_array' => $items_array,
                 'customers_array' => $customers_array,
@@ -153,7 +157,7 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         $customer_name_array[0] = $wrapper_sql->get_customer_by_id_var($sanitised_customer);
         $customer_name = "";
         foreach ($customer_name_array[0] as $customer) {
-            $customer_name = ($customer['first_name'] . " " . $customer['last_name']);
+            var_dump($customer_name = ($customer['first_name'] . " " . $customer['last_name']));
         }
 
         //get amount
@@ -162,6 +166,7 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         //get item id and quantity from each order item
         //get selling price from each item
         $amount = null;
+        $amount = 0;
         foreach ($order_items as $order_item) {
 
             $item = $wrapper_sql->get_items_by_id_var($order_item["item_id"]);
@@ -171,12 +176,7 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         }
 
 
-        //substract item quantity from stock
-
-
         $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, $session_wrapper->get_session('sales_order_id'));
-
-        //    $sales_order->set_values('1', '2', '3', '4', '5', '6', '7', '8', '9');
 
 
         return $this->response->withRedirect('/wms/index.php/salesorders');
@@ -217,8 +217,10 @@ $app->post('/editsalesorder_modal', function (Request $request, Response $respon
 
         $arr_tainted_params = $request->getParsedBody();
 
-        $item = $arr_tainted_params['item'];
-        $qty = $arr_tainted_params['quantity'];
+        if (!empty($arr_tainted_params)) {
+            $item = $arr_tainted_params['item'];
+            $qty = $arr_tainted_params['quantity'];
+        }
 
         $item_sanitised = $validator->sanitise_string($item);
         $qty_sanitised = $validator->sanitise_string($qty);
@@ -277,6 +279,7 @@ $app->post('/editsalesorder_modal', function (Request $request, Response $respon
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
+                'action_update_so' => '/wms/index.php/editsalesorder',
                 'the_order' => $the_order,
                 'items_array' => $items_array,
                 'real_items_array' => $real_items_array,

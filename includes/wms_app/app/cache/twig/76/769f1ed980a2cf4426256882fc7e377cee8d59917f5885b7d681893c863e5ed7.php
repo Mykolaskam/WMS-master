@@ -57,7 +57,7 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
                 <div class=\"col-inputs shadow shell\">
 
                     <div class=\"input-container\">
-                        <h2 class=\"col-title\">Item Information</h2>
+                        <h2 class=\"col-title\">Item Information (1/2)</h2>
                         <div class=\"line-blue\"></div>
                     </div>
 
@@ -97,7 +97,7 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
                 <div class=\"col-inputs shadow shell\">
 
                     <div class=\"input-container\">
-                        <h2 class=\"col-title\">Technical Information</h2>
+                        <h2 class=\"col-title\">Item Information (2/2)</h2>
                         <div class=\"line-blue\"></div>
                     </div>
 

@@ -87,7 +87,10 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 
         <h4 class=\"menu-header\">Manage</h4>
         <div class=\"menu-items\">
-            <a class=\"menu-item\" href=\"\">Dashboard</a>
+            <a class=\"menu-item\" href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("dashboard"), "html", null, true);
+        echo "\">Dashboard</a>
             <a class=\"menu-item\" href=\"";
         // line 28
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("items"), "html", null, true);
@@ -141,7 +144,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 
     public function getDebugInfo()
     {
-        return array (  128 => 46,  125 => 45,  116 => 39,  106 => 32,  101 => 30,  97 => 29,  93 => 28,  81 => 18,  78 => 17,  73 => 6,  63 => 52,  57 => 48,  55 => 45,  52 => 44,  50 => 17,  41 => 11,  33 => 6,  26 => 1,);
+        return array (  131 => 46,  128 => 45,  119 => 39,  109 => 32,  104 => 30,  100 => 29,  96 => 28,  92 => 27,  81 => 18,  78 => 17,  73 => 6,  63 => 52,  57 => 48,  55 => 45,  52 => 44,  50 => 17,  41 => 11,  33 => 6,  26 => 1,);
     }
 
     public function getSourceContext()

@@ -33,12 +33,19 @@ $app->get('/newsalesorder', function (Request $request, Response $response) {
         $customers_array = [];
         $customers_array = $wrapper_sql->get_customers_var();
 
+        $total_amount = null;
+        $total_quantity = null;
+        $total_amount = 0;
+        $total_quantity = 0;
+
         return $this->view->render($response,
             'newSO.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
+                'total_amount' => $total_amount,
+                'total_quantity' => $total_quantity,
                 'order_id' => $order_id,
                 'items_array' => $items_array,
                 'customers_array' => $customers_array,
@@ -188,6 +195,8 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
 
         $total_amount = null;
         $total_quantity = null;
+        $total_amount = 0;
+        $total_quantity = 0;
         foreach ($real_items_array as $i) {
             $total_amount += ($i[0]["selling_price"] * $i[0]["quantity"]);
             $total_quantity += $i[0]["quantity"];

@@ -1,0 +1,85 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+
+        <div class="container-row">
+            <h1 class="big-title">Dashboard</h1>
+        </div>
+
+        <div class="row-col-inputs">
+
+            <div class="shadow shell indicator-box pointer" onclick="window.location='/wms/index.php/editsalesorder/{{ order['ID'] }}';">
+                <div>
+                    <h2 class="large-no">0</h2>
+                    <h3>To be Packed</h3>
+                </div>
+            </div>
+
+            <div class="shadow shell indicator-box pointer">
+                <div>
+                    <h2 class="large-no">0</h2>
+                    <h3>To be Shipped</h3>
+                </div>
+            </div>
+
+            <div class="shadow shell indicator-box pointer">
+                <div>
+                    <h2 class="large-no">0</h2>
+                    <h3>To be Invoiced</h3>
+                </div>
+            </div>
+
+            <div class="shadow shell indicator-box pointer">
+                <div>
+                    <h2 class="large-no">0</h2>
+                    <h3>To be packed</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row-col-inputs">
+
+            <div class="col-inputs shadow shell">
+
+                <div class="scroll-container">
+
+                    <div class="input-search"></div>
+
+                    <table>
+
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="customerName">Customer Name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SONumber">SO Number<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SODate">SO Date<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="amount">Amount<i class="arrow fas fa-angle-up"></i></th>
+                        </tr>
+
+                        <tbody class="list">
+
+                        {% for order in all_salesorders %}
+
+                            <tr onclick="window.location='/wms/index.php/editsalesorder/{{ order['ID'] }}';">
+                                <td class="customerName"> {{ order['customer_name'] }} </td>
+                                <td class="SONumber"> {{ order['so_number'] }} </td>
+                                <td class="SODate"> {{ order['so_date'] }} </td>
+                                <td class="amount text-center"> £{{ order['amount'] }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+{% endblock %}

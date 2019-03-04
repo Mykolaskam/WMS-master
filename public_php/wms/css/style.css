@@ -19,6 +19,37 @@ html {
     overflow-x: hidden;
 }
 
+.go-down {
+    justify-self: end;
+    bottom: 0;
+}
+
+.indicator-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 100%;
+    margin: 10px auto;
+    height: 200px;
+
+    min-width: 50px;
+    max-width: 300px;
+}
+
+.large-no {
+    color: #007AFF;
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.pointer:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -81,6 +112,10 @@ button {
     font-size: 100%;
     cursor: pointer;
     text-align: center;
+}
+
+.blue {
+    color: #007AFF;
 }
 
 button:hover {
@@ -162,7 +197,7 @@ h3 {
     margin-left: 0;
     height: 60px;
     background-color: white;
-    position: fixed;
+
     align-items: center;
     justify-content: space-between;
     z-index: 3;
@@ -392,7 +427,7 @@ tr:hover {
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.11),
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
-    cursor: pointer;
+    cursor: auto;
     border-radius: 10px;
 }
 
@@ -412,6 +447,11 @@ tr.table-titles:hover {
 
 .scroll-container {
     overflow-x: scroll;
+}
+
+ .no-hover:hover {
+    box-shadow: none;
+     cursor: auto;
 }
 
 td,
@@ -671,24 +711,7 @@ input:checked + .slider:before {
         padding-bottom: 10%;
     }
 
-    .side-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0;
-        height: 100vh;
-        width: 200px;
-        position: fixed;
-        background: #031B4D;
-        display: block;
-    }
 
-    main {
-        padding-top: 130px;
-        margin-left: 200px;
-        width: calc(100% - 200px);
-        height: 100vh;
-    }
 
     .modal-content {
         width: 33%;
@@ -724,6 +747,26 @@ input:checked + .slider:before {
 /* DESKTOP STYLES */
 
 @media screen and (min-width: 1200px) {
+
+    .side-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+        margin-top: -60px;
+        height: 100vh;
+        width: 200px;
+        position: fixed;
+        background: #031B4D;
+        display: block;
+    }
+
+    main {
+        padding-top: 130px;
+        margin-left: 200px;
+        width: calc(100% - 200px);
+        height: 100vh;
+    }
 
     .col-inputs {
         margin: 10px;
@@ -863,7 +906,7 @@ input:checked + .slider:before {
         margin-left: 200px;
         height: 60px;
         background-color: white;
-        position: fixed;
+
         align-items: center;
         justify-content: space-between;
         z-index: 3;
