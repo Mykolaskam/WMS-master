@@ -179,6 +179,11 @@ class SQLQueries
         $m_query_string .= "customer_name = :local_customer_name, ";
         $m_query_string .= "so_number = :local_so_number, ";
         $m_query_string .= "so_date = :local_so_date, ";
+
+        $m_query_string .= "packed = :local_so_packed, ";
+        $m_query_string .= "shipped = :local_so_shipped, ";
+        $m_query_string .= "invoiced = :local_so_invoiced, ";
+
         $m_query_string .= "amount = :local_amount ";
         $m_query_string .= "WHERE ID = :local_ID ";
         return $m_query_string;

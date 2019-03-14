@@ -13,6 +13,72 @@
 
             <div class="row-col-inputs">
 
+                <div class="col-inputs shadow shell">
+                    <div class="input-container ">
+                        <div class="row2-inputs">
+                            <h2>Packed</h2>
+
+                            {% if the_order[0]['packed'] == "on" %}
+                                {% set packed = 'checked' %}
+                            {% endif %}
+
+                            {% if the_order[0]['packed'] == "off" %}
+                                {% set packed = '' %}
+                            {% endif %}
+
+                            <label class="switch">
+                                <input type="checkbox" name="switchPacked" {{ packed }}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-inputs shadow shell">
+                    <div class="input-container ">
+                        <div class="row2-inputs">
+                            <h2>Shipped</h2>
+
+                            {% if the_order[0]['shipped'] == "on" %}
+                                {% set shipped = 'checked' %}
+                            {% endif %}
+
+                            {% if the_order[0]['shipped'] == "off" %}
+                                {% set shipped = '' %}
+                            {% endif %}
+
+                            <label class="switch">
+                                <input type="checkbox" name="switchShipped" {{ shipped }}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-inputs shadow shell">
+                    <div class="input-container ">
+                        <div class="row2-inputs">
+                            <h2>Invoiced</h2>
+
+                            {% if the_order[0]['invoiced'] == "on" %}
+                                {% set invoiced = 'checked' %}
+                            {% endif %}
+
+                            {% if the_order[0]['invoiced'] == "off" %}
+                                {% set invoiced = '' %}
+                            {% endif %}
+
+                            <label class="switch">
+                                <input type="checkbox" name="switchInvoiced" {{ invoiced }}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row-col-inputs">
+
                 <div class="col-inputs shadow shell" id="so-items">
 
                     <div class="input-container">

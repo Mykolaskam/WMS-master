@@ -110,7 +110,7 @@ $app->post('/newsalesorder', function (Request $request, Response $response) {
         }
 
 
-        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, $session_wrapper->get_session('sales_order_id'));
+        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, "off", "off", "off", $session_wrapper->get_session('sales_order_id'));
 
 
         return $this->response->withRedirect('/wms/index.php/salesorders');
@@ -234,3 +234,29 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
 
 
 })->setName('newsalesorder');
+
+
+$app->get('/newSOremoveorderitem/{id2}', function ($request, $response, $args) {
+
+    $item_id = $args['id2'];
+
+
+    $wrapper_sql = $this->get('sql_wrapper');
+    $db_handle = $this->get('dbase');
+    $sql_queries = $this->get('sql_queries');
+    $session_model = $this->get('session_model');
+    $session_wrapper = $this->get('session_wrapper');
+    $validator = $this->get('validator');
+
+    $wrapper_sql->set_db_handle($db_handle);
+    $wrapper_sql->set_sql_queries($sql_queries);
+
+    if ($wrapper_sql->session_var_exists(session_id())) {
+
+        $wrapper_sql->delete_order_item_var($session_wrapper->get_session('sales_order_id'), $item_id);
+
+        return $this->response->withRedirect('/wms/index.php/newsalesorder');
+
+    }
+
+})->setName('newSOremoveorderitem');

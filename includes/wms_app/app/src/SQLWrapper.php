@@ -273,7 +273,7 @@ class SQLWrapper
         return $sales_order;
     }
 
-    public function create_sales_order_var($customer_id, $customer_name, $so_number, $so_date, $amount, $ID)
+    public function create_sales_order_var($customer_id, $customer_name, $so_number, $so_date, $so_packed, $so_shipped, $so_invoiced, $amount, $ID)
     {
 
         $m_query_string = $this->c_obj_sql_queries->create_sales_order();
@@ -283,6 +283,9 @@ class SQLWrapper
             ':local_customer_name' => $customer_name,
             ':local_so_number' => $so_number,
             ':local_so_date' => $so_date,
+            ':local_so_packed' => $so_packed,
+            ':local_so_shipped' => $so_shipped,
+            ':local_so_invoiced' => $so_invoiced,
             ':local_amount' => $amount,
             ':local_ID' => $ID
         ];

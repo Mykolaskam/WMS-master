@@ -43,7 +43,7 @@
                                     <th class="button-sort sort sku" data-sort="sku">SKU<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
-                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Purchase Price<i
+                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Selling Price<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
                                     <th class="text-center quantity" data-sort="quantity">Quantity</th>
@@ -59,12 +59,14 @@
                                     <tr>
                                         <td class="">{{ item[0]['item_name'] }}</td>
                                         <td class="">{{ item[0]['sku'] }}</td>
-                                        <td class="">{{ item[0]['purchase_price'] }}</td>
+                                        <td class="">{{ item[0]['selling_price'] }}</td>
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
                                         <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">
-                                            <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
-                                            </div>
+                                            <a onclick="window.location='/wms/index.php/newSOremoveorderitem/{{ item[0]['ID'] }}';">
+                                                <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
+                                                </div>
+                                            </a>
                                         </td>
                                     </tr>
 

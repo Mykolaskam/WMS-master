@@ -75,6 +75,9 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
 
         $the_order = $wrapper_sql->get_sales_order_by_id_var($sales_order_id);
 
+        var_dump($the_order[0]);
+
+
         unset($order_items_array);
         $order_items_array = $wrapper_sql->get_item_var($sales_order_id);
 
@@ -150,6 +153,26 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         $orderID = $arr_tainted_params['orderID'];
         $date = $arr_tainted_params['date'];
 
+
+        if (isset($arr_tainted_params['switchPacked'])){
+            $switchPacked = "on";
+        } else {
+            $switchPacked = "off";
+        }
+
+        if (isset($arr_tainted_params['switchShipped'])){
+            $switchShipped = "on";
+        } else {
+            $switchShipped = "off";
+        }
+
+        if (isset($arr_tainted_params['switchInvoiced'])){
+            $switchInvoiced = "on";
+        } else {
+            $switchInvoiced = "off";
+        }
+
+
         $sanitised_customer = $validator->sanitise_string($customer);
         $sanitised_orderID = $validator->sanitise_string($orderID);
         $sanitised_date = $validator->sanitise_string($date);
@@ -157,7 +180,7 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         $customer_name_array[0] = $wrapper_sql->get_customer_by_id_var($sanitised_customer);
         $customer_name = "";
         foreach ($customer_name_array[0] as $customer) {
-            var_dump($customer_name = ($customer['first_name'] . " " . $customer['last_name']));
+            $customer_name = ($customer['first_name'] . " " . $customer['last_name']);
         }
 
         //get amount
@@ -176,7 +199,7 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         }
 
 
-        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, $session_wrapper->get_session('sales_order_id'));
+        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $switchPacked, $switchShipped, $switchInvoiced, $amount, $session_wrapper->get_session('sales_order_id'));
 
 
         return $this->response->withRedirect('/wms/index.php/salesorders');
