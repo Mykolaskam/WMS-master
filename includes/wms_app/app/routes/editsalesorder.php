@@ -75,8 +75,6 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
 
         $the_order = $wrapper_sql->get_sales_order_by_id_var($sales_order_id);
 
-        var_dump($the_order[0]);
-
 
         unset($order_items_array);
         $order_items_array = $wrapper_sql->get_item_var($sales_order_id);

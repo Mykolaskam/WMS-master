@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="842b8b29-8b3b-42b7-a5d6-86395138770f" name="Default Changelist" comment="connection to database, basic routing and use of twig for information display">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a0/a0a9830c17c9528c5432ee6be72c9585a0e9c2bee08a51274f5f28ecb9212137.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a0/a0a9830c17c9528c5432ee6be72c9585a0e9c2bee08a51274f5f28ecb9212137.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ca/ca5a9e083fbfc6dcb535c044b50a0f5a589ab334bdff7b89d47a1280cf7e7dd0.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ca/ca5a9e083fbfc6dcb535c044b50a0f5a589ab334bdff7b89d47a1280cf7e7dd0.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/src/sqls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_php/wms/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_php/wms/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="112" column="148" selection-start-line="112" selection-start-column="148" selection-end-line="112" selection-end-column="148" />
+            <state relative-caret-position="360">
+              <caret line="112" column="118" lean-forward="true" selection-start-line="112" selection-start-column="118" selection-end-line="112" selection-end-column="118" />
               <folding>
                 <element signature="e#7#58#0#PHP" expanded="true" />
               </folding>
@@ -63,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="114" column="41" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
+            <state relative-caret-position="235">
+              <caret line="75" column="78" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
               <folding>
                 <element signature="e#7#58#0#PHP" expanded="true" />
               </folding>
@@ -72,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="-187">
               <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
             </state>
           </provider>
@@ -214,9 +205,9 @@
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" />
         <option value="$PROJECT_DIR$/public_php/wms/css/style.css" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" />
       </list>
     </option>
   </component>
@@ -389,12 +380,12 @@
       <workItem from="1549736188809" duration="44049000" />
       <workItem from="1550407982458" duration="61043000" />
       <workItem from="1551102356062" duration="2779000" />
-      <workItem from="1552305586123" duration="11569000" />
+      <workItem from="1552305586123" duration="11749000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222495000" />
+    <option name="totallyTimeSpent" value="222675000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -707,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="53" column="81" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/salesorders.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
@@ -724,30 +708,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php">
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="112" column="148" selection-start-line="112" selection-start-column="148" selection-end-line="112" selection-end-column="148" />
-          <folding>
-            <element signature="e#7#58#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-187">
+          <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="114" column="41" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
+        <state relative-caret-position="235">
+          <caret line="75" column="78" selection-start-line="75" selection-start-column="78" selection-end-line="75" selection-end-column="78" />
           <folding>
             <element signature="e#7#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig">
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="49" column="86" selection-start-line="49" selection-start-column="86" selection-end-line="49" selection-end-column="86" />
+        <state relative-caret-position="330">
+          <caret line="53" column="81" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="112" column="118" lean-forward="true" selection-start-line="112" selection-start-column="118" selection-end-line="112" selection-end-column="118" />
+          <folding>
+            <element signature="e#7#58#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

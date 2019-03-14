@@ -110,7 +110,7 @@ $app->post('/newsalesorder', function (Request $request, Response $response) {
         }
 
 
-        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $amount, "off", "off", "off", $session_wrapper->get_session('sales_order_id'));
+        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, "off", "off", "off", $amount, $session_wrapper->get_session('sales_order_id'));
 
 
         return $this->response->withRedirect('/wms/index.php/salesorders');
