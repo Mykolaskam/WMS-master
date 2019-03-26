@@ -1,81 +1,14 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Edit Sales Order{% endblock %}
+{% block title %}New Sales Order{% endblock %}
 
 {% block content %}
 
     <main class="main-body">
-        <form action="{{ action_update_so }}" method="post" onsubmit="return checkForm(this);">
+        <form action="{{ action_create_po }}" method="post" onsubmit="return checkForm(this);">
             <div class="container-row">
-                <h1 class="big-title">Edit Sales Order</h1>
+                <h1 class="big-title">Add New PO</h1>
 
             </div>
-
-
-            <div class="row-col-inputs">
-
-                <div class="col-inputs shadow shell">
-                    <div class="input-container ">
-                        <div class="row2-inputs">
-                            <h2 class="col-title">Packed</h2>
-
-                            {% if the_order[0]['packed'] == "on" %}
-                                {% set packed = 'checked' %}
-                            {% endif %}
-
-                            {% if the_order[0]['packed'] == "off" %}
-                                {% set packed = '' %}
-                            {% endif %}
-
-                            <label class="switch">
-                                <input type="checkbox" name="switchPacked" {{ packed }}>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-inputs shadow shell">
-                    <div class="input-container ">
-                        <div class="row2-inputs">
-                            <h2 class="col-title">Shipped</h2>
-
-                            {% if the_order[0]['shipped'] == "on" %}
-                                {% set shipped = 'checked' %}
-                            {% endif %}
-
-                            {% if the_order[0]['shipped'] == "off" %}
-                                {% set shipped = '' %}
-                            {% endif %}
-
-                            <label class="switch">
-                                <input type="checkbox" name="switchShipped" {{ shipped }}>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-inputs shadow shell">
-                    <div class="input-container ">
-                        <div class="row2-inputs">
-                            <h2 class="col-title">Invoiced</h2>
-
-                            {% if the_order[0]['invoiced'] == "on" %}
-                                {% set invoiced = 'checked' %}
-                            {% endif %}
-
-                            {% if the_order[0]['invoiced'] == "off" %}
-                                {% set invoiced = '' %}
-                            {% endif %}
-
-                            <label class="switch">
-                                <input type="checkbox" name="switchInvoiced" {{ invoiced }}>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
 
             <div class="row-col-inputs">
 
@@ -110,7 +43,7 @@
                                     <th class="button-sort sort sku" data-sort="sku">SKU<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
-                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Purchase Price<i
+                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Selling Price<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
                                     <th class="text-center quantity" data-sort="quantity">Quantity</th>
@@ -126,24 +59,23 @@
                                     <tr>
                                         <td class="">{{ item[0]['item_name'] }}</td>
                                         <td class="">{{ item[0]['sku'] }}</td>
-                                        <td class="">{{ item[0]['purchase_price'] }}</td>
+                                        <td class="">{{ item[0]['selling_price'] }}</td>
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
                                         <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">
-                                            <a onclick="window.location='/wms/index.php/editSOremoveorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
+                                            <a onclick="window.location='/wms/index.php/newSOremoveorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
                                                 <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
                                                 </div>
                                             </a>
                                         </td>
                                     </tr>
 
+
                                 {% endfor %}
 
                                 <tr></tr>
-                                <tr></tr>
 
-
-                                <tr class="no-hover">
+                                <tr>
                                     <td class=""><h3>Total Items</h3></td>
                                     <td class=""></td>
                                     <td class=""></td>
@@ -151,8 +83,7 @@
                                     <td class="text-center blue">{{ total_quantity }}</td>
                                     <td class="text-center"></td>
                                 </tr>
-
-                                <tr class="no-hover">
+                                <tr>
                                     <td class=""><h2>Total Amount</h2></td>
                                     <td class=""></td>
                                     <td class=""></td>
@@ -171,7 +102,6 @@
 
                 </div>
 
-
                 <div class="col-inputs shadow shell">
 
                     <div class="input-container">
@@ -182,19 +112,11 @@
                     <div class="input-container">
                         <div class="input-field ">
                             <label>Customer</label>
+                            <select name="customer">
+                                {% for vendor in vendors_array %}
 
-                            <select class="" name="customer">
-
-                                {% for o in the_order %}
-
-                                    <option value="{{ o['customer_id'] }}">{{ o['customer_name'] }}
-                                    </option>
-
-                                {% endfor %}
-                                {% for customer in customers_array %}
-
-                                    <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
-                                        - "{{ customer['company_name'] }}"
+                                    <option value="{{ vendor['ID'] }}">{{ vendor['first_name'] }} {{ vendor['last_name'] }}
+                                        - From "{{ vendor['company_name'] }}"
                                     </option>
 
                                 {% endfor %}
@@ -202,29 +124,24 @@
 
                         </div>
 
-                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a customer</span>
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select a vendor</span>
                     </div>
 
-                    {% for o in the_order %}
-                        <div class="input-container">
-                            <label for=""> Sales Order ID</label>
-                            <input class="" value="{{ o["so_number"] }}" type="text" name="orderID" readonly>
-                        </div>
+                    <div class="input-container">
+                        <label for=""> Purchase Order ID</label>
+                        <input class="" value="SO-{{ order_id }}" type="text" name="orderID" readonly>
+                    </div>
 
-                        <div class="input-container">
-                            <label for=""> Date</label>
-                            <input class="" type="date" name="date" value="{{ o["so_date"] }}">
-                            <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
-                        </div>
+                    <div class="input-container">
+                        <label for=""> Date</label>
+                        <input class="" type="date" name="date" value="{{ "now"|date("Y-m-d") }}">
+                        <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select POdate</span>
+                    </div>
 
-                        <div class="input-container">
-                            <button type="submit">Update</button>
+                    <div class="input-container">
+                        <button type="submit">Create PO</button>
+                    </div>
 
-                            <a class="button button-red" onclick="window.location='/wms/index.php/deletesalesorder/{% for item in real_items_array %} {{ item[0]['ID'] }} {% endfor %}';">
-                                Delete </a>
-                        </div>
-
-                    {% endfor %}
 
                 </div>
 
@@ -248,22 +165,22 @@
             <form action="{{ action_add_item_to_list }}" method="post">
                 <div class="input-container">
                     <label for="">Item</label>
-                    <select name="item">
+                    <select name="item" id="SO-items">
                         {% for item in items_array %}
 
-                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }}
-                                ({{ item['stock'] }})
+                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }} - [ {{ item['stock'] }} ] In stock
                             </option>
 
                         {% endfor %}
                     </select>
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please select an item</span>
+                    <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select an item</span>
                 </div>
 
+
+
                 <div class="input-container">
-                    <label for=""> Quantity</label>
-                    <input type="text" name="quantity">
+                    <label for="quantity"> Quantity</label>
+                    <input autocomplete="off" type="number" name="quantity" min="1" required>
                     <span class="input-info"><i
                                 class="question-mark far fa-question-circle"></i>Please enter quantity</span>
                 </div>

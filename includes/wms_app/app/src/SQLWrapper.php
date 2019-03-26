@@ -310,6 +310,111 @@ class SQLWrapper
     /** ========================= SALES ORDERS END ==============================     */
 
 
+
+
+
+
+
+    /** ========================= PURCHASE ORDERS ==============================     */
+    public function create_purchase_order_id_var()
+    {
+        $m_query_string = $this->c_obj_sql_queries->create_purchase_order_id();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+
+    public function delete_empty_purchase_orders_var()
+    {
+        $m_query_string = $this->c_obj_sql_queries->delete_empty_purchase_orders();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function delete_purchase_order_var($id)
+    {
+        $m_query_string = $this->c_obj_sql_queries->delete_purchase_order();
+
+        $m_arr_query_parameters = [
+            ':local_id' => $id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+
+    public function get_purchase_orders_var()
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_purchase_orders();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $message = $this->safe_fetch_all_array();
+        return $message;
+    }
+
+    public function get_purchase_order_by_id_var($id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_purchase_order_by_id();
+
+        $m_arr_query_parameters = [
+            ':local_id' => $id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $purchase_order = $this->safe_fetch_all_array();
+        return $purchase_order;
+    }
+
+    public function create_purchase_order_var($customer_id, $customer_name, $po_number, $po_date, $po_received, $po_billed, $amount, $ID)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->create_purchase_order();
+
+        $m_arr_query_parameters = [
+            ':local_customer_id' => $customer_id,
+            ':local_customer_name' => $customer_name,
+            ':local_po_number' => $po_number,
+            ':local_po_date' => $po_date,
+            ':local_po_packed' => $po_received,
+            ':local_po_shipped' => $po_billed,
+            ':local_amount' => $amount,
+            ':local_ID' => $ID
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function get_all_on_purchase_order_var()
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_all_on_purchase_order();
+
+        $m_arr_query_parameters = [];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $message = $this->safe_fetch_all_array();
+        return $message;
+    }
+
+
+    /** ========================= PURCHASE ORDERS END ==============================     */
+
+
+
+
+
+
     /** ========================= ITEMS ==============================     */
     public function get_items_var()
     {
@@ -429,10 +534,10 @@ class SQLWrapper
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
-    /** ========================= CUSTOMERS ==============================     */
+    /** ========================= CUSTOMERS END ==============================     */
 
 
-    /** ========================= CUSTOMERS ==============================     */
+    /** ========================= VENDORS ==============================     */
     public function get_vendors_var()
     {
 
@@ -467,7 +572,7 @@ class SQLWrapper
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
-    /** ========================= CUSTOMERS ==============================     */
+    /** ========================= VENDORS END ==============================     */
 
 
     /** ========================= ORDER ITEMS ==============================     */
@@ -546,7 +651,136 @@ class SQLWrapper
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
     }
+
+    public function minus_quantity_item_var($p_item_id, $p_quantity)
+    {
+        $m_query_string = $this->c_obj_sql_queries->minus_quantity_item();
+
+        $m_arr_query_parameters = [
+            ':local_item_id' => $p_item_id,
+            ':local_quantity' => $p_quantity
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function plus_quantity_item_var($p_item_id, $p_quantity)
+    {
+        $m_query_string = $this->c_obj_sql_queries->plus_quantity_item();
+
+        $m_arr_query_parameters = [
+            ':local_item_id' => $p_item_id,
+            ':local_quantity' => $p_quantity
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
     /** ========================= ORDER ITEMS END ==============================     */
+
+
+    /** ========================= PURCHASE ORDER ITEMS ==============================     */
+    public function add_item_to_purchase_order_items_var($p_order_id, $p_item_id, $p_quantity)
+    {
+        $m_query_string = $this->c_obj_sql_queries->add_item_to_purchase_order_items();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $p_order_id,
+            ':local_item_id' => $p_item_id,
+            ':local_quantity' => $p_quantity
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+
+//    public function get_item_var($p_order_id)
+//    {
+//
+//        $m_query_string = $this->c_obj_sql_queries->get_item();
+//
+//        $m_arr_query_parameters = [
+//            ':local_order_id' => $p_order_id
+//        ];
+//
+//        $this->safe_query($m_query_string, $m_arr_query_parameters);
+//
+//        $item = $this->safe_fetch_all_array();
+//        return $item;
+//    }
+
+    public function delete_purchase_order_item_var($order_id, $item_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->delete_purchase_order_item();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $order_id,
+            ':local_item_id' => $item_id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+    }
+
+    public function purchase_order_item_added_var($order_id, $item_id)
+    {
+
+        $var_exists = false;
+
+        $m_query_string = $this->c_obj_sql_queries->purchase_order_item_added();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $order_id,
+            ':local_item_id' => $item_id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        if ($this->count_rows() > 0) {
+            $var_exists = true;
+        }
+        return $var_exists;
+    }
+
+    public function update_purchase_order_item_var($p_order_id, $p_item_id, $p_quantity)
+    {
+        $m_query_string = $this->c_obj_sql_queries->update_purchase_order_item();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $p_order_id,
+            ':local_item_id' => $p_item_id,
+            ':local_quantity' => $p_quantity
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+//
+//    public function minus_quantity_item_var($p_item_id, $p_quantity)
+//    {
+//        $m_query_string = $this->c_obj_sql_queries->minus_quantity_item();
+//
+//        $m_arr_query_parameters = [
+//            ':local_item_id' => $p_item_id,
+//            ':local_quantity' => $p_quantity
+//        ];
+//
+//        $this->safe_query($m_query_string, $m_arr_query_parameters);
+//    }
+//
+//    public function plus_quantity_item_var($p_item_id, $p_quantity)
+//    {
+//        $m_query_string = $this->c_obj_sql_queries->plus_quantity_item();
+//
+//        $m_arr_query_parameters = [
+//            ':local_item_id' => $p_item_id,
+//            ':local_quantity' => $p_quantity
+//        ];
+//
+//        $this->safe_query($m_query_string, $m_arr_query_parameters);
+//    }
+    /** ========================= ORDER ITEMS END ==============================     */
+
+
 
 
     /**

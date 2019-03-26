@@ -28,32 +28,32 @@
 
                     <div class="input-container">
                         <label for="">First Name</label>
-                        <input value="" type="text" name="first_name">
+                        <input autocomplete="off" value="" type="text" name="first_name">
                     </div>
 
                     <div class="input-container">
                         <label for="">Last Name</label>
-                        <input value="" type="text" name="last_name">
+                        <input autocomplete="off" value="" type="text" name="last_name">
                     </div>
 
                     <div class="input-container">
                         <label for="">Email</label>
-                        <input value="" type="text" name="email">
+                        <input autocomplete="off" value="" type="text" name="email">
                     </div>
 
                     <div class="input-container">
                         <label for="">Alt. Email</label>
-                        <input value="" type="text" name="alt_email">
+                        <input autocomplete="off" value="" type="text" name="alt_email">
                     </div>
 
                     <div class="input-container">
                         <label for="">Phone Number</label>
-                        <input value="" type="text" name="phone_number">
+                        <input autocomplete="off" value="" type="text" name="phone_number">
                     </div>
 
                     <div class="input-container">
                         <label for="">Alt. Phone Number</label>
-                        <input value="" type="text" name="alt_phone_number">
+                        <input autocomplete="off" value="" type="text" name="alt_phone_number">
                     </div>
 
                 </div>
@@ -68,88 +68,43 @@
 
                     <div class="input-container">
                         <label for="">Company Name</label>
-                        <input value="" type="text" name="company_name">
+                        <input autocomplete="off" value="" type="text" name="company_name">
                     </div>
 
                     <div class="input-container">
                         <label for="">Website</label>
-                        <input value="" type="text" name="website">
+                        <input autocomplete="off" value="" type="text" name="website">
                     </div>
 
                     <div class="input-container">
                         <label for="">Pref. Curreency</label>
-                        <input value="" type="text" name="pref_currency">
+                        <input autocomplete="off" value="" type="text" name="pref_currency">
                     </div>
 
                     <div class="input-container">
                         <label for="">Billing Address</label>
-                        <textarea name="billing_address" rows="7" cols="20"></textarea>
+                        <textarea autocomplete="off" name="billing_address" rows="4" cols="20"></textarea>
                     </div>
 
                     <div class="input-container">
                         <label for="">Notes</label>
-                        <textarea name="notes" rows="7" cols="20"></textarea>
+                        <textarea autocomplete="off" name="notes" rows="4" cols="20"></textarea>
                     </div>
-                    
+
+                    <div class="input-container">
+                        <button type="submit">Create Item</button>
+                    </div>
+
                 </div>
 
             </div>
 
-
-            <div class="row-col-inputs">
-                <div class="col-inputs">
-                    <button type="submit">Create Item</button>
-                </div>
-            </div>
 
         </form>
-
 
     </main>
 
 
-
-    <!-- The Modal -->
-    <div id="Modal" class="Modal">
-        <!-- Modal content -->
-        <div class="modal-content shell shadow">
-            <!--     <span class="close">&times;</span> -->
-            <div class="input-container">
-                <h1 class="big-title">Add Item</h1>
-            </div>
-
-            <form action="{{ action_add_item_to_list }}" method="post">
-                <div class="input-container">
-                    <label for="">Item</label>
-                    <select name="item">
-                        {% for item in items_array %}
-
-                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }}
-                                ({{ item['stock'] }})
-                            </option>
-
-                        {% endfor %}
-                    </select>
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please select an item</span>
-                </div>
-
-                <div class="input-container">
-                    <label for=""> Quantity</label>
-                    <input type="text" name="quantity">
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please enter quantity</span>
-                </div>
-
-                <div class="input-container">
-                    <button type="submit"><i class="fas fa-plus plus"></i>Create Item</button>
-                </div>
-
-
-            </form>
-
-        </div>
-    </div>
 
 
 

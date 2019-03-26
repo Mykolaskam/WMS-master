@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ css_path }}"/>
 </head>
 
@@ -21,16 +22,17 @@
 
     <div id="side-menu" class="shadow side-menu">
         <h2 class="logo">WMS</h2>
+        <h2 class="logo2">Lite</h2>
 
         <h4 class="menu-header">Manage</h4>
         <div class="menu-items">
             <a class="menu-item" href="{{ path_for('dashboard') }}">Dashboard</a>
-            <a class="menu-item" href="{{ path_for('items') }}">Items</a>
             <a class="menu-item" href="{{ path_for('customers') }}">Customers</a>
             <a class="menu-item" href="{{ path_for('vendors') }}">Vendors</a>
-            <a class="menu-item" href="">Purchase Orders</a>
+            <a class="menu-item" href="{{ path_for('items') }}">Items</a>
             <a class="menu-item" href="{{ path_for('salesorders') }}">Sales Orders</a>
             <a class="menu-item" href="">Invoices</a>
+            <a class="menu-item" href="{{ path_for('purchaseorders') }}">Purchase Orders</a>
             <a class="menu-item" href="">Bills</a>
         </div>
 
@@ -49,6 +51,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script src="{{ js_path }}"></script>
 
 

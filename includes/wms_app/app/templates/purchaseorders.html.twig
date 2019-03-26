@@ -1,0 +1,74 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Sales Orders{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+
+        <div class="container-row">
+            <h1 class="big-title">Purchase Orders</h1>
+            <a class="button-small shadow" href="{{ action_new_po }}">
+                <i class="fas fa-plus plus"></i>
+                <span class="btn-text">New PO</span>
+            </a>
+        </div>
+
+
+        <div class="row-col-inputs">
+
+            <div class="col-inputs shadow shell" id="so-table">
+
+                <div class="scroll-container">
+
+                    <input class="input-search search" type="text" name="search" placeholder="Search">
+
+                    <table>
+
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="customerName">Vendor Name<i
+                                        class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SONumber">PO Number<i
+                                        class="arrow fas fa-angle-up"></i>
+                            </th>
+                            <th class="button-sort sort" data-sort="SODate">PO Date<i class="arrow fas fa-angle-up"></i>
+                            </th>
+                            <th class="text-center">Received</th>
+                            <th class="text-center">Billed</th>
+                            <th class="text-center button-sort sort" data-sort="amount">Amount<i class="arrow fas fa-angle-up"></i></th>
+                        </tr>
+
+                        <tbody class="list">
+
+                        {% for PO in all_purchaseorders %}
+
+                            <tr onclick="window.location='/wms/index.php/editpurchaseorder/{{ PO['ID'] }}';">
+
+                                <td class="customerName"> {{ PO['vendor_name'] }} </td>
+
+                                <td class="SONumber"> {{ PO['po_number'] }} </td>
+                                <td class="SODate"> {{ PO['po_date'] }} </td>
+                                <td class="packed text-center">
+                                    <div class="indicator {{ PO['received'] }}"></div>
+                                </td>
+                                <td class=" shipped text-center">
+                                    <div class="indicator {{ PO['billed'] }}"></div>
+                                </td>
+                                <td class="amount text-center"> £{{ PO['amount'] }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+{% endblock %}

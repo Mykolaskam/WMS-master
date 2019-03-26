@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
-{% block title %}Edit Sales Order{% endblock %}
+{% block title %}Edit Purchase Order{% endblock %}
 
 {% block content %}
 
     <main class="main-body">
-        <form action="{{ action_update_so }}" method="post" onsubmit="return checkForm(this);">
+        <form action="{{ action_update_po }}" method="post" onsubmit="return checkForm(this);">
             <div class="container-row">
-                <h1 class="big-title">Edit Sales Order</h1>
+                <h1 class="big-title">Edit Purchase Order</h1>
 
             </div>
 
@@ -16,18 +16,18 @@
                 <div class="col-inputs shadow shell">
                     <div class="input-container ">
                         <div class="row2-inputs">
-                            <h2 class="col-title">Packed</h2>
+                            <h2 class="col-title">Billed</h2>
 
-                            {% if the_order[0]['packed'] == "on" %}
-                                {% set packed = 'checked' %}
+                            {% if the_order[0]['billed'] == "on" %}
+                                {% set billed = 'checked' %}
                             {% endif %}
 
-                            {% if the_order[0]['packed'] == "off" %}
-                                {% set packed = '' %}
+                            {% if the_order[0]['billed'] == "off" %}
+                                {% set billed = '' %}
                             {% endif %}
 
                             <label class="switch">
-                                <input type="checkbox" name="switchPacked" {{ packed }}>
+                                <input type="checkbox" name="switchPacked" {{ billed }}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -36,38 +36,18 @@
                 <div class="col-inputs shadow shell">
                     <div class="input-container ">
                         <div class="row2-inputs">
-                            <h2 class="col-title">Shipped</h2>
+                            <h2 class="col-title">Received</h2>
 
-                            {% if the_order[0]['shipped'] == "on" %}
-                                {% set shipped = 'checked' %}
+                            {% if the_order[0]['received'] == "on" %}
+                                {% set received = 'checked' %}
                             {% endif %}
 
-                            {% if the_order[0]['shipped'] == "off" %}
-                                {% set shipped = '' %}
-                            {% endif %}
-
-                            <label class="switch">
-                                <input type="checkbox" name="switchShipped" {{ shipped }}>
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-inputs shadow shell">
-                    <div class="input-container ">
-                        <div class="row2-inputs">
-                            <h2 class="col-title">Invoiced</h2>
-
-                            {% if the_order[0]['invoiced'] == "on" %}
-                                {% set invoiced = 'checked' %}
-                            {% endif %}
-
-                            {% if the_order[0]['invoiced'] == "off" %}
-                                {% set invoiced = '' %}
+                            {% if the_order[0]['received'] == "off" %}
+                                {% set received = '' %}
                             {% endif %}
 
                             <label class="switch">
-                                <input type="checkbox" name="switchInvoiced" {{ invoiced }}>
+                                <input type="checkbox" name="switchShipped" {{ received }}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -130,7 +110,7 @@
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
                                         <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">
-                                            <a onclick="window.location='/wms/index.php/editSOremoveorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
+                                            <a onclick="window.location='/wms/index.php/editPOremovepurchaseorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
                                                 <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
                                                 </div>
                                             </a>

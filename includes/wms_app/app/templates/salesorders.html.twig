@@ -42,24 +42,24 @@
 
                         <tbody class="list">
 
-                        {% for order in all_salesorders %}
+                        {% for SO in all_salesorders %}
 
-                            <tr onclick="window.location='/wms/index.php/editsalesorder/{{ order['ID'] }}';">
+                            <tr onclick="window.location='/wms/index.php/editsalesorder/{{ SO['ID'] }}';">
 
-                                <td class="customerName"> {{ order['customer_name'] }} </td>
+                                <td class="customerName"> {{ SO['customer_name'] }} </td>
 
-                                <td class="SONumber"> {{ order['so_number'] }} </td>
-                                <td class="SODate"> {{ order['so_date'] }} </td>
+                                <td class="SONumber"> {{ SO['so_number'] }} </td>
+                                <td class="SODate"> {{ SO['so_date'] }} </td>
                                 <td class="packed text-center">
-                                    <div class="indicator {{ order['packed'] }}"></div>
+                                    <div class="indicator {{ SO['packed'] }}"></div>
                                 </td>
                                 <td class=" shipped text-center">
-                                    <div class="indicator {{ order['shipped'] }}"></div>
+                                    <div class="indicator {{ SO['shipped'] }}"></div>
                                 </td>
                                 <td class="invoiced text-center">
-                                    <div class="indicator {{ order['invoiced'] }}"></div>
+                                    <div class="indicator {{ SO['invoiced'] }}"></div>
                                 </td>
-                                <td class="amount text-center"> £{{ order['amount'] }} </td>
+                                <td class="amount text-center"> £{{ SO['amount'] }} </td>
                             </tr>
 
                         {% endfor %}

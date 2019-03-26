@@ -105,6 +105,13 @@ $container['order_items'] = function ($container) {
     return $order_items;
 };
 
+$container['purchase_order_items'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'PurchaseOrderItems.php';
+    $purchase_order_items = new PurchaseOrderItems();
+    return $purchase_order_items;
+};
+
 $container['item'] = function ($container) {
     $class_path = $container->get('settings')['class_path'];
     require $class_path . 'Item.php';

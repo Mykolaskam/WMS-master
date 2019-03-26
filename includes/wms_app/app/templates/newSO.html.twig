@@ -63,7 +63,7 @@
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
                                         <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">
-                                            <a onclick="window.location='/wms/index.php/newSOremoveorderitem/{{ item[0]['ID'] }}';">
+                                            <a onclick="window.location='/wms/index.php/newSOremoveorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
                                                 <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
                                                 </div>
                                             </a>
@@ -116,7 +116,7 @@
                                 {% for customer in customers_array %}
 
                                     <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
-                                        - "{{ customer['company_name'] }}"
+                                        - From "{{ customer['company_name'] }}"
                                     </option>
 
                                 {% endfor %}
@@ -165,22 +165,22 @@
             <form action="{{ action_add_item_to_list }}" method="post">
                 <div class="input-container">
                     <label for="">Item</label>
-                    <select name="item">
+                    <select name="item" id="SO-items">
                         {% for item in items_array %}
 
-                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }}
-                                ({{ item['stock'] }})
+                            <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }} - [ {{ item['stock'] }} ] In stock
                             </option>
 
                         {% endfor %}
                     </select>
-                    <span class="input-info"><i
-                                class="question-mark far fa-question-circle"></i>Please select an item</span>
+                    <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select an item</span>
                 </div>
 
+
+
                 <div class="input-container">
-                    <label for=""> Quantity</label>
-                    <input type="text" name="quantity">
+                    <label for="quantity"> Quantity</label>
+                    <input autocomplete="off" type="number" name="quantity" min="1" required>
                     <span class="input-info"><i
                                 class="question-mark far fa-question-circle"></i>Please enter quantity</span>
                 </div>

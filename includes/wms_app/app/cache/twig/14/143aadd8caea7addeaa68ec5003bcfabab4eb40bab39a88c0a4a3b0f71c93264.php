@@ -123,23 +123,22 @@ class __TwigTemplate_32372e9c2e394dccdc3447227a201ca24a05b12d0e3381ed17a08dc8935
 
                     <div class=\"input-container\">
                         <label for=\"\">Billing Address</label>
-                        <textarea name=\"billing_address\" rows=\"7\" cols=\"20\"></textarea>
+                        <textarea name=\"billing_address\" rows=\"4\" cols=\"20\"></textarea>
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Notes</label>
-                        <textarea name=\"notes\" rows=\"7\" cols=\"20\"></textarea>
+                        <textarea name=\"notes\" rows=\"4\" cols=\"20\"></textarea>
+                    </div>
+
+                    <div class=\"input-container\">
+                        <button type=\"submit\">Create Vendor</button>
                     </div>
 
                 </div>
 
             </div>
-            
-            <div class=\"row-col-inputs\">
-                <div class=\"col-inputs\">
-                    <button type=\"submit\">Create Vendor</button>
-                </div>
-            </div>
+
 
         </form>
 

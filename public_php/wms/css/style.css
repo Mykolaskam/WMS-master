@@ -209,10 +209,21 @@ h3 {
 .logo {
     text-align: center;
     color: #007AFF;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
     font-size: 150%;
     font-weight: 700;
 }
+
+.logo2 {
+    text-align: center;
+    color: #7bb8ff;
+    margin: 0px auto 20px auto;
+    font-size: 100%;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+
 
 a.menu-button {
     font-size: 150%;
@@ -245,7 +256,7 @@ a.menu-button {
 }
 
 main {
-    padding-top: 130px;
+    padding-top: 40px;
     width: 100%;
 }
 
@@ -305,7 +316,7 @@ main {
     color: white;
     background-color: #007AFF;
     padding: 8px 20px;
-    border-radius: 100px;
+    border-radius: 4px;
     font-size: 80%;
 }
 .button-small:hover {
@@ -775,7 +786,7 @@ input:checked + .slider:before {
     }
 
     main {
-        padding-top: 130px;
+        padding-top: 70px;
         margin-left: 200px;
         width: calc(100% - 200px);
         height: 100vh;

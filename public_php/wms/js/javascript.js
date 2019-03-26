@@ -141,3 +141,12 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+
+$(document).ready(function() {
+    $("#SO-items").select2();
+});
+
+$(document).ready(function() {
+    $("#SO-items").select2({ width: 'resolve' });
+});

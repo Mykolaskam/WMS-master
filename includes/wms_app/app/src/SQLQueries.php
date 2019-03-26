@@ -201,9 +201,76 @@ class SQLQueries
         return $m_query_string;
     }
 
-
-
     /**========================= SALES ORDERS END ==============================     */
+
+
+    /** ========================= PURCHASE ORDERS ==============================     */
+    public static function get_purchase_orders()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM purchaseorders ";
+        $m_query_string .= "ORDER BY po_date DESC ";
+        return $m_query_string;
+    }
+
+    public static function get_purchase_order_by_id()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM purchaseorders ";
+        $m_query_string .= "WHERE ID = :local_id";
+        return $m_query_string;
+    }
+
+    public static function create_purchase_order_id()
+    {
+        $m_query_string = "INSERT INTO purchaseorders ";
+        $m_query_string .= "SET customer_id = '' ";
+        return $m_query_string;
+    }
+
+    public static function delete_empty_purchase_orders()
+    {
+        $m_query_string = "DELETE FROM purchaseorders ";
+        $m_query_string .= "WHERE po_number = '' ";
+        return $m_query_string;
+    }
+
+    public static function delete_purchase_order()
+    {
+        $m_query_string = "DELETE FROM purchaseorders ";
+        $m_query_string .= "WHERE ID = :local_id ";
+        return $m_query_string;
+    }
+
+    public static function create_purchase_order()
+    {
+        $m_query_string = "UPDATE purchaseorders ";
+        $m_query_string .= "SET customer_id = :local_customer_id, ";
+        $m_query_string .= "customer_name = :local_customer_name, ";
+        $m_query_string .= "po_number = :local_po_number, ";
+        $m_query_string .= "po_date = :local_po_date, ";
+
+        $m_query_string .= "received = :local_po_received, ";
+        $m_query_string .= "billed = :local_po_billed, ";
+
+        $m_query_string .= "amount = :local_amount ";
+        $m_query_string .= "WHERE ID = :local_ID ";
+        return $m_query_string;
+    }
+
+    public static function get_all_on_purchase_order()
+    {
+        $m_query_string = "SELECT * FROM purchaseorders ";
+        $m_query_string .= "INNER JOIN purchase_order_items ";
+        $m_query_string .= "ON salesorders.ID = purchase_order_items.order_id ";
+        $m_query_string .= "INNER JOIN items ";
+        $m_query_string .= "ON items.ID = purchase_order_items.item_id ";
+        $m_query_string .= "INNER JOIN vendors ";
+        $m_query_string .= "ON vendors.ID = purchaseorders.customer_id ";
+        return $m_query_string;
+    }
+
+    /**========================= PURCHASE ORDERS END ==============================     */
 
 
     /** ========================= ITEMS ==============================     */
@@ -298,7 +365,86 @@ class SQLQueries
         $m_query_string .= "quantity = :local_quantity ";
         return $m_query_string;
     }
+
+    public static function minus_quantity_item()
+    {
+        $m_query_string = "UPDATE items ";
+        $m_query_string .= "SET stock = stock - :local_quantity ";
+        $m_query_string .= "WHERE ID = :local_item_id ";
+        return $m_query_string;
+    }
+
+    public static function plus_quantity_item()
+    {
+        $m_query_string = "UPDATE items ";
+        $m_query_string .= "SET stock = stock + :local_quantity ";
+        $m_query_string .= "WHERE ID = :local_item_id ";
+        return $m_query_string;
+    }
     /** ========================= ORDER ITEMS END ==============================     */
+
+
+    /** ========================= PURCHASE ORDER ITEMS ==============================     */
+    public static function get_purchase_item()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM purchase_order_items ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        return $m_query_string;
+    }
+
+    public static function delete_purchase_order_item()
+    {
+        $m_query_string = "DELETE ";
+        $m_query_string .= "FROM purchase_order_items ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        $m_query_string .= "AND item_id = :local_item_id ";
+        return $m_query_string;
+    }
+
+    public static function purchase_order_item_added()
+    {
+        $m_query_string = "SELECT ID ";
+        $m_query_string .= "FROM purchase_order_items ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        $m_query_string .= "AND item_id = :local_item_id ";
+        return $m_query_string;
+    }
+
+    public static function update_purchase_order_item()
+    {
+        $m_query_string = "UPDATE purchase_order_items ";
+        $m_query_string .= "SET quantity = quantity + :local_quantity ";
+        $m_query_string .= "WHERE order_id = :local_order_id ";
+        $m_query_string .= "AND item_id = :local_item_id ";
+        return $m_query_string;
+    }
+
+    public static function add_item_to_purchase_order_items()
+    {
+        $m_query_string = "INSERT INTO purchase_order_items ";
+        $m_query_string .= "SET order_id = :local_order_id, ";
+        $m_query_string .= "item_id = :local_item_id, ";
+        $m_query_string .= "quantity = :local_quantity ";
+        return $m_query_string;
+    }
+
+//    public static function minus_quantity_item()
+//    {
+//        $m_query_string = "UPDATE items ";
+//        $m_query_string .= "SET stock = stock - :local_quantity ";
+//        $m_query_string .= "WHERE ID = :local_item_id ";
+//        return $m_query_string;
+//    }
+//
+//    public static function plus_quantity_item()
+//    {
+//        $m_query_string = "UPDATE items ";
+//        $m_query_string .= "SET stock = stock + :local_quantity ";
+//        $m_query_string .= "WHERE ID = :local_item_id ";
+//        return $m_query_string;
+//    }
+    /** ========================= PURCHASE ORDER ITEMS END ==============================     */
 
 
     /** ========================= CUSTOMERS ==============================     */

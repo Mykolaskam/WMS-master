@@ -3,7 +3,7 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-$app->get('/deletesalesorder/{id3}', function ($request, $response, $args) {
+$app->get('/deletepurchasesorder/{id3}', function ($request, $response, $args) {
 
     $item_id = $args['id3'];
 
@@ -20,16 +20,16 @@ $app->get('/deletesalesorder/{id3}', function ($request, $response, $args) {
 
     if ($wrapper_sql->session_var_exists(session_id())) {
 
-        $wrapper_sql->delete_sales_order_var($session_wrapper->get_session('sales_order_id'));
+        $wrapper_sql->delete_purchase_order_var($session_wrapper->get_session('sales_order_id'));
 
-        return $this->response->withRedirect('/wms/index.php/salesorders');
+        return $this->response->withRedirect('/wms/index.php/purchaseorders');
 
     }
 
-})->setName('deletesalesorder');
+})->setName('deletepurchasesorder');
 
 
-$app->get('/removeorderitem/{id2}', function ($request, $response, $args) {
+$app->get('/removepurchaseorderitem/{id2}', function ($request, $response, $args) {
 
     $item_id = $args['id2'];
 
@@ -52,11 +52,11 @@ $app->get('/removeorderitem/{id2}', function ($request, $response, $args) {
 
     }
 
-})->setName('removeorderitem');
+})->setName('removepurchaseorderitem');
 
-$app->get('/editsalesorder/{id}', function ($request, $response, $args) {
+$app->get('/editpurchaseorder/{id}', function ($request, $response, $args) {
 
-    $sales_order_id = $args['id'];
+    $purchase_order_id = $args['id'];
 
 
     $wrapper_sql = $this->get('sql_wrapper');
@@ -73,16 +73,16 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
 
     if ($wrapper_sql->session_var_exists(session_id())) {
 
-        $the_order = $wrapper_sql->get_sales_order_by_id_var($sales_order_id);
+        $the_order = $wrapper_sql->get_purchase_order_by_id_var($purchase_order_id);
 
 
         unset($order_items_array);
-        $order_items_array = $wrapper_sql->get_item_var($sales_order_id);
+        $order_items_array = $wrapper_sql->get_item_var($purchase_order_id);
 
         unset($real_items_array);
         $real_items_array = null;
         foreach ($order_items_array as $item) {
-            $real_items_array[] = $wrapper_sql->get_items_with_quantity_var($item['item_id'], $sales_order_id);
+            $real_items_array[] = $wrapper_sql->get_items_with_quantity_var($item['item_id'], $purchase_order_id);
         }
 
         $total_amount = null;
@@ -100,23 +100,23 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
         $items_array = $wrapper_sql->get_items_var();
 
         $customers_array = [];
-        $customers_array = $wrapper_sql->get_customers_var();
+        $customers_array = $wrapper_sql->get_vendors_var();
 
 
         return $this->view->render($response,
-            'editSO.html.twig',
+            'editPO.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
-                'action_update_so' => '/wms/index.php/editsalesorder',
+                'action_update_po' => '/wms/index.php/editsalesorder',
                 'the_order' => $the_order,
                 'items_array' => $items_array,
                 'customers_array' => $customers_array,
                 'real_items_array' => $real_items_array,
                 'total_amount' => $total_amount,
                 'total_quantity' => $total_quantity,
-                'action_add_item_to_list' => '/wms/index.php/editsalesorder_modal',
+                'action_add_item_to_list' => '/wms/index.php/editpurchaseorder_modal',
             ]);
 
     } else {
@@ -125,10 +125,10 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
 
     }
 
-})->setName('editsalesorder');
+})->setName('editpurchaseorder');
 
 
-$app->post('/editsalesorder', function (Request $request, Response $response) {
+$app->post('/editpurchaseorder', function (Request $request, Response $response) {
 
 
     $wrapper_sql = $this->get('sql_wrapper');
@@ -209,10 +209,10 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
     }
 
 
-})->setName('editsalesorder');
+})->setName('editpurchaseorder');
 
 
-$app->post('/editsalesorder_modal', function (Request $request, Response $response) {
+$app->post('/editpurchaseorder_modal', function (Request $request, Response $response) {
 
 
     $wrapper_sql = $this->get('sql_wrapper');
@@ -312,8 +312,8 @@ $app->post('/editsalesorder_modal', function (Request $request, Response $respon
                 'total_amount' => $total_amount,
                 'total_quantity' => $total_quantity,
                 'order_id' => $session_wrapper->get_session('order_id'),
-                'action_add_item_to_list' => '/wms/index.php/editsalesorder_modal',
-                'action_create_so' => '/wms/index.php/editsalesorder'
+                'action_add_item_to_list' => '/wms/index.php/editpurchaseorder_modal',
+                'action_create_po' => '/wms/index.php/editpurchaseorder'
             ]);
 
 
@@ -324,11 +324,11 @@ $app->post('/editsalesorder_modal', function (Request $request, Response $respon
     }
 
 
-})->setName('editsalesorder');
+})->setName('editpurchaseorder');
 
 
 
-$app->get('/editSOremoveorderitem/{id}/{qty}', function ($request, $response, $args) {
+$app->get('/editPOremovepurchaseorderitem/{id}/{qty}', function ($request, $response, $args) {
 
     $item_id = $args['id'];
     $item_quantity = $args['qty'];
@@ -346,13 +346,13 @@ $app->get('/editSOremoveorderitem/{id}/{qty}', function ($request, $response, $a
 
     if ($wrapper_sql->session_var_exists(session_id())) {
 
-        $wrapper_sql->delete_order_item_var($session_wrapper->get_session('sales_order_id'), $item_id);
+        $wrapper_sql->delete_purchase_order_item_var($session_wrapper->get_session('sales_order_id'), $item_id);
 
         //returnt quantity to stock
         $wrapper_sql->plus_quantity_item_var($item_id, $item_quantity);
 
-        return $this->response->withRedirect('/wms/index.php/editsalesorder/' . $session_wrapper->get_session('sales_order_id'));
+        return $this->response->withRedirect('/wms/index.php/editpurchaseorder/' . $session_wrapper->get_session('sales_order_id'));
 
     }
 
-})->setName('editSOremoveorderitem');
+})->setName('editPOremovepurchaseorderitem');

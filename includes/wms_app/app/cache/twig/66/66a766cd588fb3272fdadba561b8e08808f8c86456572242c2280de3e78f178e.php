@@ -1,7 +1,7 @@
 <?php
 
-/* newSO.html.twig */
-class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f54822 extends Twig_Template
+/* newPO.html.twig */
+class __TwigTemplate_6c9bb5bb590464a544bfa1f994d506b7a27bfbe34f2a7f1c20000e82ee8e0295 extends Twig_Template
 {
     private $source;
 
@@ -12,7 +12,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "newSO.html.twig", 1);
+        $this->parent = $this->loadTemplate("layout.html.twig", "newPO.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'content' => array($this, 'block_content'),
@@ -43,10 +43,10 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
     <main class=\"main-body\">
         <form action=\"";
         // line 7
-        echo twig_escape_filter($this->env, ($context["action_create_so"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["action_create_po"] ?? null), "html", null, true);
         echo "\" method=\"post\" onsubmit=\"return checkForm(this);\">
             <div class=\"container-row\">
-                <h1 class=\"big-title\">Add New SO</h1>
+                <h1 class=\"big-title\">Add New PO</h1>
 
             </div>
 
@@ -192,39 +192,39 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
                                 ";
         // line 116
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["customers_array"] ?? null));
-        foreach ($context['_seq'] as $context["_key"] => $context["customer"]) {
+        $context['_seq'] = twig_ensure_traversable(($context["vendors_array"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["vendor"]) {
             // line 117
             echo "
                                     <option value=\"";
             // line 118
-            echo twig_escape_filter($this->env, (($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 = $context["customer"]) && is_array($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7) || $__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 instanceof ArrayAccess ? ($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7["ID"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 = $context["vendor"]) && is_array($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7) || $__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 instanceof ArrayAccess ? ($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7["ID"] ?? null) : null), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, (($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c = $context["customer"]) && is_array($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c) || $__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c instanceof ArrayAccess ? ($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c["first_name"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c = $context["vendor"]) && is_array($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c) || $__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c instanceof ArrayAccess ? ($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c["first_name"] ?? null) : null), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, (($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 = $context["customer"]) && is_array($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40) || $__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 instanceof ArrayAccess ? ($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40["last_name"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 = $context["vendor"]) && is_array($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40) || $__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 instanceof ArrayAccess ? ($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40["last_name"] ?? null) : null), "html", null, true);
             echo "
                                         - From \"";
             // line 119
-            echo twig_escape_filter($this->env, (($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 = $context["customer"]) && is_array($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79) || $__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 instanceof ArrayAccess ? ($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79["company_name"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 = $context["vendor"]) && is_array($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79) || $__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 instanceof ArrayAccess ? ($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79["company_name"] ?? null) : null), "html", null, true);
             echo "\"
                                     </option>
 
                                 ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['customer'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['vendor'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 123
         echo "                            </select>
 
                         </div>
 
-                        <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please select a customer</span>
+                        <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please select a vendor</span>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\"> Sales Order ID</label>
+                        <label for=\"\"> Purchase Order ID</label>
                         <input class=\"\" value=\"SO-";
         // line 132
         echo twig_escape_filter($this->env, ($context["order_id"] ?? null), "html", null, true);
@@ -237,11 +237,11 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
         // line 137
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y-m-d"), "html", null, true);
         echo "\">
-                        <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please Select SOdate</span>
+                        <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please Select POdate</span>
                     </div>
 
                     <div class=\"input-container\">
-                        <button type=\"submit\">Create SO</button>
+                        <button type=\"submit\">Create PO</button>
                     </div>
 
 
@@ -326,7 +326,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
 
     public function getTemplateName()
     {
-        return "newSO.html.twig";
+        return "newPO.html.twig";
     }
 
     public function isTraitable()
@@ -341,6 +341,6 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "newSO.html.twig", "/Applications/MAMP/htdocs/WMS-master/includes/wms_app/app/templates/newSO.html.twig");
+        return new Twig_Source("", "newPO.html.twig", "/Applications/MAMP/htdocs/WMS-master/includes/wms_app/app/templates/newPO.html.twig");
     }
 }
