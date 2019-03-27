@@ -310,11 +310,6 @@ class SQLWrapper
     /** ========================= SALES ORDERS END ==============================     */
 
 
-
-
-
-
-
     /** ========================= PURCHASE ORDERS ==============================     */
     public function create_purchase_order_id_var()
     {
@@ -375,18 +370,18 @@ class SQLWrapper
         return $purchase_order;
     }
 
-    public function create_purchase_order_var($customer_id, $customer_name, $po_number, $po_date, $po_received, $po_billed, $amount, $ID)
+    public function create_purchase_order_var($vendor_id, $vendor_name, $po_number, $po_date, $po_received, $po_billed, $amount, $ID)
     {
 
         $m_query_string = $this->c_obj_sql_queries->create_purchase_order();
 
         $m_arr_query_parameters = [
-            ':local_customer_id' => $customer_id,
-            ':local_customer_name' => $customer_name,
+            ':local_vendor_id' => $vendor_id,
+            ':local_vendor_name' => $vendor_name,
             ':local_po_number' => $po_number,
             ':local_po_date' => $po_date,
-            ':local_po_packed' => $po_received,
-            ':local_po_shipped' => $po_billed,
+            ':local_po_received' => $po_received,
+            ':local_po_billed' => $po_billed,
             ':local_amount' => $amount,
             ':local_ID' => $ID
         ];
@@ -411,14 +406,9 @@ class SQLWrapper
     /** ========================= PURCHASE ORDERS END ==============================     */
 
 
-
-
-
-
     /** ========================= ITEMS ==============================     */
     public function get_items_var()
     {
-
         $m_query_string = $this->c_obj_sql_queries->get_items();
 
         $m_arr_query_parameters = [];
@@ -441,6 +431,22 @@ class SQLWrapper
         $this->safe_query($m_query_string, $m_arr_query_parameters);
         $item = $this->safe_fetch_all_array();
         return $item;
+    }
+
+    public function get_purchase_items_with_quantity_var($item_id, $order_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_purchase_items_with_quantity();
+
+        $m_arr_query_parameters = [
+            ':local_item_id' => $item_id,
+            ':local_order_id' => $order_id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $item_with_quantity = $this->safe_fetch_all_array();
+        return $item_with_quantity;
     }
 
     public function get_items_with_quantity_var($item_id, $order_id)
@@ -500,6 +506,8 @@ class SQLWrapper
     }
 
 
+
+
     public function get_customers_var()
     {
 
@@ -551,6 +559,21 @@ class SQLWrapper
         return $vendor;
     }
 
+    public function get_vendor_by_id_var($p_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_vendor_by_id();
+
+        $m_arr_query_parameters = [
+            ':local_id' => $p_id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $customer = $this->safe_fetch_all_array();
+        return $customer;
+    }
+
     public function create_new_vendor_var($p_salutation, $p_first_name, $p_last_name, $p_company_name, $p_email, $p_alt_email, $p_phone_number, $p_alt_phone_number, $p_website, $p_billing_address, $p_pref_currency, $p_notes)
     {
         $m_query_string = $this->c_obj_sql_queries->create_new_vendor();
@@ -587,6 +610,21 @@ class SQLWrapper
         ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function get_purchase_item_var($p_order_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->get_purchase_item();
+
+        $m_arr_query_parameters = [
+            ':local_order_id' => $p_order_id
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $item = $this->safe_fetch_all_array();
+        return $item;
     }
 
 
@@ -779,8 +817,6 @@ class SQLWrapper
 //        $this->safe_query($m_query_string, $m_arr_query_parameters);
 //    }
     /** ========================= ORDER ITEMS END ==============================     */
-
-
 
 
     /**

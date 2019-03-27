@@ -43,7 +43,7 @@
                                     <th class="button-sort sort sku" data-sort="sku">SKU<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
-                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Selling Price<i
+                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Purchase Price<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
                                     <th class="text-center quantity" data-sort="quantity">Quantity</th>
@@ -59,11 +59,11 @@
                                     <tr>
                                         <td class="">{{ item[0]['item_name'] }}</td>
                                         <td class="">{{ item[0]['sku'] }}</td>
-                                        <td class="">{{ item[0]['selling_price'] }}</td>
+                                        <td class="">{{ item[0]['purchase_price'] }}</td>
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
-                                        <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
+                                        <td class="text-center">£{{ item[0]['purchase_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">
-                                            <a onclick="window.location='/wms/index.php/newSOremoveorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
+                                            <a onclick="window.location='/wms/index.php/newPOremovepurchaseitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
                                                 <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
                                                 </div>
                                             </a>
@@ -112,7 +112,7 @@
                     <div class="input-container">
                         <div class="input-field ">
                             <label>Customer</label>
-                            <select name="customer">
+                            <select name="vendor">
                                 {% for vendor in vendors_array %}
 
                                     <option value="{{ vendor['ID'] }}">{{ vendor['first_name'] }} {{ vendor['last_name'] }}
@@ -129,7 +129,7 @@
 
                     <div class="input-container">
                         <label for=""> Purchase Order ID</label>
-                        <input class="" value="SO-{{ order_id }}" type="text" name="orderID" readonly>
+                        <input class="" value="PO-{{ order_id }}" type="text" name="orderID" readonly>
                     </div>
 
                     <div class="input-container">
@@ -175,7 +175,6 @@
                     </select>
                     <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please select an item</span>
                 </div>
-
 
 
                 <div class="input-container">

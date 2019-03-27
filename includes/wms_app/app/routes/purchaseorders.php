@@ -20,7 +20,7 @@ $app->get('/purchaseorders', function (Request $request, Response $response) {
 
     if ($wrapper_sql->session_var_exists(session_id())) {
 
-        $wrapper_sql->delete_empty_orders_var();
+        $wrapper_sql->delete_empty_purchase_orders_var();
 
         $all_purchaseorders = $wrapper_sql->get_purchase_orders_var();
 

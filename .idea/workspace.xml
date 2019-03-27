@@ -2,36 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="842b8b29-8b3b-42b7-a5d6-86395138770f" name="Default Changelist" comment="connection to database, basic routing and use of twig for information display">
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/editpurchaseorder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/src/PurchaseOrderItems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editPO.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/purchaseorders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/0e/0eec595b5fb76c21b2752ff9666833c04752acf61173ad5ee29a599ca8363f6e.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/0e/0eec595b5fb76c21b2752ff9666833c04752acf61173ad5ee29a599ca8363f6e.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/14/143aadd8caea7addeaa68ec5003bcfabab4eb40bab39a88c0a4a3b0f71c93264.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/14/143aadd8caea7addeaa68ec5003bcfabab4eb40bab39a88c0a4a3b0f71c93264.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/76/769f1ed980a2cf4426256882fc7e377cee8d59917f5885b7d681893c863e5ed7.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/76/769f1ed980a2cf4426256882fc7e377cee8d59917f5885b7d681893c863e5ed7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/79/79e5ff17bf8d6cdae6a0a98472c31cabd730f3c7501b107c2a227f715abf1393.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/79/79e5ff17bf8d6cdae6a0a98472c31cabd730f3c7501b107c2a227f715abf1393.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a0/a0a9830c17c9528c5432ee6be72c9585a0e9c2bee08a51274f5f28ecb9212137.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a0/a0a9830c17c9528c5432ee6be72c9585a0e9c2bee08a51274f5f28ecb9212137.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ba/baa318e4e9e7e48f8183fd046577dfa3a9e3b55fae0fa4383ba211b31d0fbdd0.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ba/baa318e4e9e7e48f8183fd046577dfa3a9e3b55fae0fa4383ba211b31d0fbdd0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ca/ca5a9e083fbfc6dcb535c044b50a0f5a589ab334bdff7b89d47a1280cf7e7dd0.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ca/ca5a9e083fbfc6dcb535c044b50a0f5a589ab334bdff7b89d47a1280cf7e7dd0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/dependencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/dependencies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/66/66a766cd588fb3272fdadba561b8e08808f8c86456572242c2280de3e78f178e.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/66/66a766cd588fb3272fdadba561b8e08808f8c86456572242c2280de3e78f178e.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/src/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/src/Item.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newcustomer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newcustomer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newitem.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newitem.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newvendor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newvendor.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_php/wms/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_php/wms/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_php/wms/js/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_php/wms/js/javascript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,99 +35,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9984">
-              <caret line="395" column="53" selection-start-line="395" selection-start-column="27" selection-end-line="395" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="991">
-              <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
-              <folding>
-                <element signature="e#7#58#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/Item.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7904">
-              <caret line="309" column="5" selection-start-line="309" selection-start-column="5" selection-end-line="309" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/dependencies.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2860">
-              <caret line="110" column="40" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/OrderItems.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3458">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
-              <folding>
-                <element signature="e#6#98#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/PurchaseOrderItems.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3510">
-              <caret line="140" column="92" selection-start-line="140" selection-start-column="92" selection-end-line="140" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/purchaseorders.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1092">
-              <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8268">
-              <caret line="318" column="48" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/editpurchaseorder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9022">
-              <caret line="348" column="52" selection-start-line="348" selection-start-column="22" selection-end-line="348" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/editPO.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2912">
-              <caret line="112" column="117" selection-start-line="112" selection-start-column="117" selection-end-line="112" selection-end-column="117" />
+            <state relative-caret-position="424">
+              <caret line="382" column="49" lean-forward="true" selection-start-line="382" selection-start-column="49" selection-end-line="382" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -165,36 +56,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>col</find>
-      <find>top-bar</find>
-      <find>side-menu</find>
-      <find>shadow</find>
-      <find>ro</find>
-      <find>count_rows</find>
-      <find>rowCount</find>
-      <find>row-inputs</find>
-      <find>switch</find>
-      <find>create_sales_order_var</find>
-      <find>create_sales_order</find>
-      <find>red</find>
-      <find>indica</find>
-      <find>form</find>
-      <find>order_item</find>
-      <find>main</find>
-      <find>button-s</find>
+      <find>get_all_on_purchase_order</find>
+      <find>get_all_on</find>
+      <find>get_all</find>
+      <find>get_items_with_quantity_var</find>
+      <find>get_ve</find>
+      <find>get_items_with_quantity</find>
+      <find>real_items_a</find>
       <find>order_item_added_var</find>
-      <find>update_order_item</find>
-      <find>update_order_item_var</find>
-      <find>logo</find>
-      <find>get_cus</find>
-      <find>get_customer_by_id</find>
-      <find>last_ins</find>
-      <find>order_item_a</find>
-      <find>delete_purchase_order_item_var</find>
-      <find>delete_purchase_order_item</find>
-      <find>add_item_to_order_items_var</find>
+      <find>create_purchase_order_id</find>
       <find>create_purchase_order_id_var</find>
       <find>get_order_items_from_database</find>
+      <find>get_purchase_items_with_quantity_var</find>
+      <find>get_purchase_items_with_quantity</find>
+      <find>update_order_item_var</find>
+      <find>update_order_item</find>
+      <find>get_item_var</find>
+      <find>get_ite</find>
+      <find>c_obj_wrapper_user_db</find>
+      <find>get_item</find>
+      <find>get_purchase_item</find>
+      <find>delete_purchase_order_item</find>
+      <find>delete_order_item</find>
+      <find>customer</find>
+      <find>get_purchase_item_var</find>
+      <find>get_items_by_id</find>
+      <find>get__by_id</find>
+      <find>create_purchase_order_var</find>
+      <find>create_sales_order</find>
+      <find>create_purchase</find>
+      <find>create_purchase_order</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -210,7 +101,6 @@
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/SessionWrapper.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/SessionModel.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/login.php" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/src/Item.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/SalesOrder.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/menu.html.twig" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/register.html.twig" />
@@ -233,20 +123,21 @@
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/newcustomer.html.twig" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/newvendor.html.twig" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/public_php/wms/css/style.css" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/editsalesorder.php" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/purchaseorders.html.twig" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/editpurchaseorder.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/editPO.html.twig" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/PurchaseOrderItems.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/dependencies.php" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/src/Item.php" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php" />
       </list>
@@ -377,13 +268,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public_php/wms/js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/includes/wms_app/app/src" />
       <recent name="$PROJECT_DIR$/includes/wms_app/app/templates" />
       <recent name="$PROJECT_DIR$/includes/wms_app/app/routes" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public_php/wms/js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -422,17 +313,39 @@
       <workItem from="1550407982458" duration="61043000" />
       <workItem from="1551102356062" duration="2779000" />
       <workItem from="1552305586123" duration="30451000" />
-      <workItem from="1553543394657" duration="551000" />
+      <workItem from="1553543394657" duration="11317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241928000" />
+    <option name="totallyTimeSpent" value="252694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.24324325" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32948583" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32948583" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32948583" />
+      <window_info anchor="right" id="Database" order="0" weight="0.32985258" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout>
+    <layout-to-restore>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24324325" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -453,7 +366,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -463,22 +376,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="connection to database, basic routing and use of twig for information display" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/logout.php" />
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/switch.html.twig" />
-    <entry file="file://$PROJECT_DIR$/public_php/wms/css/modals.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="16" lean-forward="true" selection-end-line="138" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/registercheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="77" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SessionModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -542,13 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2067">
           <caret line="125" column="39" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -692,16 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="273" column="36" lean-forward="true" selection-start-line="245" selection-end-line="273" selection-end-column="36" />
-          <folding>
-            <element signature="e#7#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1586">
@@ -716,23 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3666">
-          <caret line="141" column="54" selection-start-line="141" selection-start-column="54" selection-end-line="141" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="e#7#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -740,62 +603,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9984">
-          <caret line="395" column="53" selection-start-line="395" selection-start-column="27" selection-end-line="395" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/Item.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7904">
-          <caret line="309" column="5" selection-start-line="309" selection-start-column="5" selection-end-line="309" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/dependencies.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2860">
-          <caret line="110" column="40" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/OrderItems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3458">
-          <caret line="138" selection-start-line="138" selection-end-line="138" />
-          <folding>
-            <element signature="e#6#98#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/PurchaseOrderItems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3510">
-          <caret line="140" column="92" selection-start-line="140" selection-start-column="92" selection-end-line="140" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/purchaseorders.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1092">
           <caret line="42" column="58" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8268">
-          <caret line="318" column="48" selection-start-line="318" selection-start-column="20" selection-end-line="318" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -813,13 +624,125 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php">
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/registercheck.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="991">
-          <caret line="196" column="25" selection-start-line="196" selection-start-column="25" selection-end-line="196" selection-end-column="25" />
+        <state relative-caret-position="655">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
           <folding>
             <element signature="e#7#58#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/LibSodiumWrapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1572" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/BcryptWrapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="55" column="7" lean-forward="true" selection-start-line="55" selection-start-column="7" selection-end-line="55" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/OrderItems.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="e#6#98#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/dependencies.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="110" column="40" selection-start-line="110" selection-start-column="40" selection-end-line="110" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/PurchaseOrderItems.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3042">
+          <caret line="122" column="7" lean-forward="true" selection-start-line="122" selection-start-column="7" selection-end-line="122" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SQLQueries.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newsalesorder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="192" column="29" selection-start-line="192" selection-start-column="29" selection-end-line="192" selection-end-column="29" />
+          <folding>
+            <element signature="e#7#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="131" column="48" selection-start-line="131" selection-start-column="48" selection-end-line="131" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/Item.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="931">
+          <caret line="318" column="69" selection-start-line="318" selection-start-column="69" selection-end-line="318" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/newpurchaseorder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="118" column="8" lean-forward="true" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="8" />
+          <folding>
+            <element signature="e#7#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/src/SQLWrapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="382" column="49" lean-forward="true" selection-start-line="382" selection-start-column="49" selection-end-line="382" selection-end-column="49" />
         </state>
       </provider>
     </entry>

@@ -309,6 +309,18 @@ class Item
         return $m_store_result;
     }
 
+    public function get_purchase_order_items_from_database($p_order_id)
+    {
+        $m_store_result = false;
+
+        $this->c_obj_wrapper_user_db->set_db_handle($this->c_obj_db_handle);
+        $this->c_obj_wrapper_user_db->set_sql_queries($this->c_obj_sql_queries);
+
+        $m_store_result = $this->c_obj_wrapper_user_db->get_purchase_item_var($p_order_id);
+
+        return $m_store_result;
+    }
+
 
     public function get_items_from_database($p_item_id)
     {

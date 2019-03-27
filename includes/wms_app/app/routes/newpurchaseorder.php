@@ -23,7 +23,8 @@ $app->get('/newpurchaseorder', function (Request $request, Response $response) {
         $wrapper_sql->create_purchase_order_id_var();
         $last_id = $wrapper_sql->last_inserted_ID();
 
-        $session_wrapper->set_session('sales_order_id', $last_id);
+        $session_wrapper->set_session('purchase_order_id', $last_id);
+        $session_wrapper->get_session('purchase_order_id');
         $order_id = uniqid();
         $session_wrapper->set_session('order_id', $order_id);
 
@@ -81,7 +82,7 @@ $app->post('/newpurchaseorder', function (Request $request, Response $response) 
 
         $arr_tainted_params = $request->getParsedBody();
 
-        $customer = $arr_tainted_params['customer'];
+        $customer = $arr_tainted_params['vendor'];
         $orderID = $arr_tainted_params['orderID'];
         $date = $arr_tainted_params['date'];
 
@@ -89,19 +90,22 @@ $app->post('/newpurchaseorder', function (Request $request, Response $response) 
         $sanitised_orderID = $validator->sanitise_string($orderID);
         $sanitised_date = $validator->sanitise_string($date);
 
-        $customer_name_array[0] = $wrapper_sql->get_customer_by_id_var($sanitised_customer);
+        $customer_name_array[0] = $wrapper_sql->get_vendor_by_id_var($sanitised_customer);
+
         $customer_name = "";
         foreach ($customer_name_array[0] as $customer) {
             $customer_name = ($customer['first_name'] . " " . $customer['last_name']);
         }
 
+
         //get amount
-        $order_items = $wrapper_sql->get_item_var($session_wrapper->get_session('sales_order_id'));
+        $purchase_order_items = $wrapper_sql->get_purchase_item_var($session_wrapper->get_session('purchase_order_id'));
 
         //get item id and quantity from each order item
         //get selling price from each item
+
         $amount = null;
-        foreach ($order_items as $order_item) {
+        foreach ($purchase_order_items as $order_item) {
 
             $item = $wrapper_sql->get_items_by_id_var($order_item["item_id"]);
 
@@ -109,11 +113,10 @@ $app->post('/newpurchaseorder', function (Request $request, Response $response) 
 
         }
 
+        $wrapper_sql->create_purchase_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, "off", "off", $amount, $session_wrapper->get_session('purchase_order_id'));
 
-        $wrapper_sql->create_sales_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, "off", "off", "off", $amount, $session_wrapper->get_session('sales_order_id'));
 
-
-        return $this->response->withRedirect('/wms/index.php/purchaseorders');
+           return $this->response->withRedirect('/wms/index.php/purchaseorders');
 
     } else {
 
@@ -161,7 +164,7 @@ $app->post('/newpurchaseorder_modal', function (Request $request, Response $resp
         $real_item->set_db_handle($db_handle);
         $real_item->set_sql_queries($sql_queries);
 
-        $purchase_order_items->set_order_id($session_wrapper->get_session('sales_order_id'));
+        $purchase_order_items->set_order_id($session_wrapper->get_session('purchase_order_id'));
         $purchase_order_items->set_item_id($item_sanitised);
         $purchase_order_items->set_quantity($qty_sanitised);
         $purchase_order_items->set_wrapper_user_db($wrapper_sql);
@@ -169,12 +172,12 @@ $app->post('/newpurchaseorder_modal', function (Request $request, Response $resp
         $purchase_order_items->set_sql_queries($sql_queries);
 
 
-        if ($wrapper_sql->order_item_added_var($session_wrapper->get_session('sales_order_id'), $purchase_order_items->get_item_id())) {
+        if ($wrapper_sql->purchase_order_item_added_var($session_wrapper->get_session('purchase_order_id'), $purchase_order_items->get_item_id())) {
 
-            $wrapper_sql->update_order_item_var($session_wrapper->get_session('sales_order_id'), $purchase_order_items->get_item_id(), $qty_sanitised);
+            $wrapper_sql->update_purchase_order_item_var($session_wrapper->get_session('purchase_order_id'), $purchase_order_items->get_item_id(), $qty_sanitised);
 
             //minus the quantity form items
-            $wrapper_sql->minus_quantity_item_var($purchase_order_items->get_item_id(), $qty_sanitised);
+            //  $wrapper_sql->minus_quantity_item_var($purchase_order_items->get_item_id(), $qty_sanitised);
             ////////
 
         } else {
@@ -182,27 +185,29 @@ $app->post('/newpurchaseorder_modal', function (Request $request, Response $resp
             $purchase_order_items->store_data();
 
             //minus the quantity form items
-            $wrapper_sql->minus_quantity_item_var($purchase_order_items->get_item_id(), $qty_sanitised);
+            //   $wrapper_sql->minus_quantity_item_var($purchase_order_items->get_item_id(), $qty_sanitised);
             ////////
 
         }
 
 
         unset($order_items_array);
-        $order_items_array = $real_item->get_order_items_from_database($purchase_order_items->get_order_id());
+        $order_items_array = $real_item->get_purchase_order_items_from_database($purchase_order_items->get_order_id());
 
-        unset($real_items_array);
+        unset($real_purchase_items_array);
 
         foreach ($order_items_array as $item) {
-            $real_items_array[] = $wrapper_sql->get_items_with_quantity_var($item['item_id'], $session_wrapper->get_session('sales_order_id'));
+            $real_purchase_items_array[] = $wrapper_sql->get_purchase_items_with_quantity_var($item['item_id'], $session_wrapper->get_session('purchase_order_id'));
         }
+
 
         $total_amount = null;
         $total_quantity = null;
         $total_amount = 0;
         $total_quantity = 0;
-        foreach ($real_items_array as $i) {
-            $total_amount += ($i[0]["selling_price"] * $i[0]["quantity"]);
+
+        foreach ($real_purchase_items_array as $i) {
+            $total_amount += ($i[0]["purchase_price"] * $i[0]["quantity"]);
             $total_quantity += $i[0]["quantity"];
         }
 
@@ -211,16 +216,16 @@ $app->post('/newpurchaseorder_modal', function (Request $request, Response $resp
         $items_array = $wrapper_sql->get_items_var();
 
         $vendors_array = [];
-        $vendors_array = $wrapper_sql->get_customers_var();
+        $vendors_array = $wrapper_sql->get_vendors_var();
 
         return $this->view->render($response,
-            'newSO.html.twig',
+            'newPO.html.twig',
             [
                 'css_path' => CSS_PATH,
                 'js_path' => JS_PATH,
 
                 'items_array' => $items_array,
-                'real_items_array' => $real_items_array,
+                'real_items_array' => $real_purchase_items_array,
                 'vendors_array' => $vendors_array,
                 'total_amount' => $total_amount,
                 'total_quantity' => $total_quantity,
@@ -258,10 +263,10 @@ $app->get('/newPOremovepurchaseitem/{id}/{qty}', function ($request, $response, 
 
     if ($wrapper_sql->session_var_exists(session_id())) {
 
-        $wrapper_sql->delete_order_item_var($session_wrapper->get_session('sales_order_id'), $item_id);
+        $wrapper_sql->delete_purchase_order_item_var($session_wrapper->get_session('purchase_order_id'), $item_id);
 
         //returnt quantity to stock
-        $wrapper_sql->plus_quantity_item_var($item_id, $item_quantity);
+        //   $wrapper_sql->plus_quantity_item_var($item_id, $item_quantity);
 
         return $this->response->withRedirect('/wms/index.php/newpurchaseorder');
 

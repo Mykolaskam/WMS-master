@@ -224,7 +224,7 @@ class SQLQueries
     public static function create_purchase_order_id()
     {
         $m_query_string = "INSERT INTO purchaseorders ";
-        $m_query_string .= "SET customer_id = '' ";
+        $m_query_string .= "SET vendor_id = '' ";
         return $m_query_string;
     }
 
@@ -245,8 +245,8 @@ class SQLQueries
     public static function create_purchase_order()
     {
         $m_query_string = "UPDATE purchaseorders ";
-        $m_query_string .= "SET customer_id = :local_customer_id, ";
-        $m_query_string .= "customer_name = :local_customer_name, ";
+        $m_query_string .= "SET vendor_id = :local_vendor_id, ";
+        $m_query_string .= "vendor_name = :local_vendor_name, ";
         $m_query_string .= "po_number = :local_po_number, ";
         $m_query_string .= "po_date = :local_po_date, ";
 
@@ -262,11 +262,11 @@ class SQLQueries
     {
         $m_query_string = "SELECT * FROM purchaseorders ";
         $m_query_string .= "INNER JOIN purchase_order_items ";
-        $m_query_string .= "ON salesorders.ID = purchase_order_items.order_id ";
+        $m_query_string .= "ON purchaseorders.ID = purchase_order_items.order_id ";
         $m_query_string .= "INNER JOIN items ";
         $m_query_string .= "ON items.ID = purchase_order_items.item_id ";
         $m_query_string .= "INNER JOIN vendors ";
-        $m_query_string .= "ON vendors.ID = purchaseorders.customer_id ";
+        $m_query_string .= "ON vendors.ID = purchaseorders.vendor_id ";
         return $m_query_string;
     }
 
@@ -287,6 +287,19 @@ class SQLQueries
         $m_query_string = "SELECT * ";
         $m_query_string .= "FROM items ";
         $m_query_string .= "WHERE ID = :local_item_id ";
+        return $m_query_string;
+    }
+
+    // CREATE ONE FOR POs
+
+    public static function get_purchase_items_with_quantity()
+    {
+        $m_query_string = "SELECT items.*, purchase_order_items.quantity ";
+        $m_query_string .= "FROM items ";
+        $m_query_string .= "INNER JOIN purchase_order_items ";
+        $m_query_string .= "ON items.ID = purchase_order_items.item_id ";
+        $m_query_string .= "WHERE items.ID = :local_item_id ";
+        $m_query_string .= "AND purchase_order_items.order_id = :local_order_id ";
         return $m_query_string;
     }
 
@@ -329,6 +342,8 @@ class SQLQueries
         $m_query_string .= "WHERE order_id = :local_order_id ";
         return $m_query_string;
     }
+
+
 
     public static function delete_order_item()
     {
@@ -457,6 +472,8 @@ class SQLQueries
     }
 
 
+
+
     public static function get_customers()
     {
         $m_query_string = "SELECT * ";
@@ -491,6 +508,14 @@ class SQLQueries
         $m_query_string = "SELECT * ";
         $m_query_string .= "FROM vendors ";
         $m_query_string .= "ORDER BY first_name DESC ";
+        return $m_query_string;
+    }
+
+    public static function get_vendor_by_id()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM vendors ";
+        $m_query_string .= "WHERE ID = :local_id ";
         return $m_query_string;
     }
 
