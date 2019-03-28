@@ -152,19 +152,19 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
         $date = $arr_tainted_params['date'];
 
 
-        if (isset($arr_tainted_params['switchPacked'])){
+        if (isset($arr_tainted_params['switchPacked'])) {
             $switchPacked = "on";
         } else {
             $switchPacked = "off";
         }
 
-        if (isset($arr_tainted_params['switchShipped'])){
+        if (isset($arr_tainted_params['switchShipped'])) {
             $switchShipped = "on";
         } else {
             $switchShipped = "off";
         }
 
-        if (isset($arr_tainted_params['switchInvoiced'])){
+        if (isset($arr_tainted_params['switchInvoiced'])) {
             $switchInvoiced = "on";
         } else {
             $switchInvoiced = "off";
@@ -325,7 +325,6 @@ $app->post('/editsalesorder_modal', function (Request $request, Response $respon
 
 
 })->setName('editsalesorder');
-
 
 
 $app->get('/editSOremoveorderitem/{id}/{qty}', function ($request, $response, $args) {

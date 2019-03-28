@@ -27,7 +27,7 @@
                             {% endif %}
 
                             <label class="switch">
-                                <input type="checkbox" name="switchPacked" {{ billed }}>
+                                <input type="checkbox" name="switchBilled" {{ billed }}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -47,7 +47,7 @@
                             {% endif %}
 
                             <label class="switch">
-                                <input type="checkbox" name="switchShipped" {{ received }}>
+                                <input type="checkbox" name="switchReceived" {{ received }}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -108,7 +108,7 @@
                                         <td class="">{{ item[0]['sku'] }}</td>
                                         <td class="">{{ item[0]['purchase_price'] }}</td>
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
-                                        <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
+                                        <td class="text-center">£{{ item[0]['purchase_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">
                                             <a onclick="window.location='/wms/index.php/editPOremovepurchaseorderitem/{{ item[0]['ID'] }}/{{ item[0]['quantity'] }}';">
                                                 <div id="removeItem" class="remove-item"><i class="far fa-trash-alt"></i>
@@ -161,13 +161,13 @@
 
                     <div class="input-container">
                         <div class="input-field ">
-                            <label>Customer</label>
+                            <label>Vendor</label>
 
                             <select class="" name="customer">
 
                                 {% for o in the_order %}
 
-                                    <option value="{{ o['customer_id'] }}">{{ o['customer_name'] }}
+                                    <option value="{{ o['vendor_id'] }}">{{ o['vendor_name'] }}
                                     </option>
 
                                 {% endfor %}
@@ -188,19 +188,19 @@
                     {% for o in the_order %}
                         <div class="input-container">
                             <label for=""> Sales Order ID</label>
-                            <input class="" value="{{ o["so_number"] }}" type="text" name="orderID" readonly>
+                            <input class="" value="{{ o["po_number"] }}" type="text" name="orderID" readonly>
                         </div>
 
                         <div class="input-container">
                             <label for=""> Date</label>
-                            <input class="" type="date" name="date" value="{{ o["so_date"] }}">
+                            <input class="" type="date" name="date" value="{{ o["po_date"] }}">
                             <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
                         </div>
 
                         <div class="input-container">
                             <button type="submit">Update</button>
 
-                            <a class="button button-red" onclick="window.location='/wms/index.php/deletesalesorder/{% for item in real_items_array %} {{ item[0]['ID'] }} {% endfor %}';">
+                            <a class="button button-red" onclick="window.location='/wms/index.php/deletepurchasesorder/{% for item in real_items_array %} {{ item[0]['ID'] }} {% endfor %}';">
                                 Delete </a>
                         </div>
 
@@ -243,7 +243,7 @@
 
                 <div class="input-container">
                     <label for=""> Quantity</label>
-                    <input type="text" name="quantity">
+                    <input autocomplete="off" type="number" name="quantity" min="1" required>
                     <span class="input-info"><i
                                 class="question-mark far fa-question-circle"></i>Please enter quantity</span>
                 </div>

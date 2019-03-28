@@ -94,7 +94,7 @@ $app->post('/newpurchaseorder', function (Request $request, Response $response) 
 
         $customer_name = "";
         foreach ($customer_name_array[0] as $customer) {
-            $customer_name = ($customer['first_name'] . " " . $customer['last_name']);
+            var_dump($customer_name = ($customer['first_name'] . " " . $customer['last_name']));
         }
 
 
@@ -109,14 +109,13 @@ $app->post('/newpurchaseorder', function (Request $request, Response $response) 
 
             $item = $wrapper_sql->get_items_by_id_var($order_item["item_id"]);
 
-            $amount += ($item[0]["selling_price"] * $order_item["quantity"]);
+            $amount += ($item[0]["purchase_price"] * $order_item["quantity"]);
 
         }
 
         $wrapper_sql->create_purchase_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, "off", "off", $amount, $session_wrapper->get_session('purchase_order_id'));
 
-
-           return $this->response->withRedirect('/wms/index.php/purchaseorders');
+        return $this->response->withRedirect('/wms/index.php/purchaseorders');
 
     } else {
 

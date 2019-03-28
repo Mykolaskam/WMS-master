@@ -224,7 +224,6 @@ h3 {
 }
 
 
-
 a.menu-button {
     font-size: 150%;
     color: #007AFF;
@@ -319,6 +318,7 @@ main {
     border-radius: 4px;
     font-size: 80%;
 }
+
 .button-small:hover {
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
@@ -460,9 +460,9 @@ tr.table-titles:hover {
     overflow-x: scroll;
 }
 
- .no-hover:hover {
+.no-hover:hover {
     box-shadow: none;
-     cursor: auto;
+    cursor: auto;
 }
 
 td,
@@ -492,8 +492,6 @@ th {
 }
 
 
-
-
 /***   New Sales Order   ***/
 
 label {
@@ -516,6 +514,10 @@ input, textarea {
     font-size: 100%;
     color: black;
     min-width: 250px;
+}
+
+input[type=checkbox] {
+    max-width: 60px !important;
 }
 
 .passed {
@@ -644,7 +646,7 @@ select:focus, input:focus {
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
+    max-width: 60px;
     height: 34px;
 }
 
@@ -700,6 +702,7 @@ input:checked + .slider:before {
 /**********************************/
 
 
+
 /* TABLET STYLES */
 
 
@@ -734,7 +737,6 @@ input:checked + .slider:before {
         width: 40%;
         padding-bottom: 10%;
     }
-
 
 
     .modal-content {
@@ -969,4 +971,3 @@ input:checked + .slider:before {
 .active {
     display: block;
 }
-

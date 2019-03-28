@@ -81,7 +81,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
         // line 28
         echo "
                             <label class=\"switch\">
-                                <input type=\"checkbox\" name=\"switchPacked\" ";
+                                <input type=\"checkbox\" name=\"switchBilled\" ";
         // line 30
         echo twig_escape_filter($this->env, ($context["billed"] ?? null), "html", null, true);
         echo ">
@@ -118,7 +118,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
         // line 48
         echo "
                             <label class=\"switch\">
-                                <input type=\"checkbox\" name=\"switchShipped\" ";
+                                <input type=\"checkbox\" name=\"switchReceived\" ";
         // line 50
         echo twig_escape_filter($this->env, ($context["received"] ?? null), "html", null, true);
         echo ">
@@ -201,7 +201,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
             echo "</td>
                                         <td class=\"text-center\">£";
             // line 111
-            echo twig_escape_filter($this->env, ((($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 = (($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c = $context["item"]) && is_array($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c) || $__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c instanceof ArrayAccess ? ($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c[0] ?? null) : null)) && is_array($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7) || $__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 instanceof ArrayAccess ? ($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7["selling_price"] ?? null) : null) * (($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 = (($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 = $context["item"]) && is_array($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79) || $__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 instanceof ArrayAccess ? ($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79[0] ?? null) : null)) && is_array($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40) || $__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 instanceof ArrayAccess ? ($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40["quantity"] ?? null) : null)), "html", null, true);
+            echo twig_escape_filter($this->env, ((($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 = (($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c = $context["item"]) && is_array($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c) || $__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c instanceof ArrayAccess ? ($__internal_c3328b7afe486068cdbdc8d1c3c828eef7c877ecbd31cfd5c6604f285bf56a4c[0] ?? null) : null)) && is_array($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7) || $__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7 instanceof ArrayAccess ? ($__internal_a5ce050c56e2fa0d875fbc5d7e5a277df72ffc991bd0164f3c078803c5d7b4e7["purchase_price"] ?? null) : null) * (($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 = (($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 = $context["item"]) && is_array($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79) || $__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79 instanceof ArrayAccess ? ($__internal_1b6627cccbecc270d890e9c3dd7f6b41e277f9eef79718257925048c26dc6d79[0] ?? null) : null)) && is_array($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40) || $__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40 instanceof ArrayAccess ? ($__internal_98440f958a27a294f74051b56287200cf8d4ccac3368b6ba585b36549e500d40["quantity"] ?? null) : null)), "html", null, true);
             echo "</td>
                                         <td class=\"text-center\">
                                             <a onclick=\"window.location='/wms/index.php/editPOremovepurchaseorderitem/";
@@ -271,7 +271,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
 
                     <div class=\"input-container\">
                         <div class=\"input-field \">
-                            <label>Customer</label>
+                            <label>Vendor</label>
 
                             <select class=\"\" name=\"customer\">
 
@@ -284,9 +284,9 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
             echo "
                                     <option value=\"";
             // line 170
-            echo twig_escape_filter($this->env, (($__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69 = $context["o"]) && is_array($__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69) || $__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69 instanceof ArrayAccess ? ($__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69["customer_id"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69 = $context["o"]) && is_array($__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69) || $__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69 instanceof ArrayAccess ? ($__internal_4450f16bcd6eee436ec803be9cb8dd13e40acb5f3c668ce291f0476abc1a5b69["vendor_id"] ?? null) : null), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, (($__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849 = $context["o"]) && is_array($__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849) || $__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849 instanceof ArrayAccess ? ($__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849["customer_name"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849 = $context["o"]) && is_array($__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849) || $__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849 instanceof ArrayAccess ? ($__internal_92ed32b8cbedc9f8b5b379c1ef395076f852e6115f19026df86a46e64a8be849["vendor_name"] ?? null) : null), "html", null, true);
             echo "
                                     </option>
 
@@ -339,7 +339,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
                             <label for=\"\"> Sales Order ID</label>
                             <input class=\"\" value=\"";
             // line 191
-            echo twig_escape_filter($this->env, (($__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad = $context["o"]) && is_array($__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad) || $__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad instanceof ArrayAccess ? ($__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad["so_number"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad = $context["o"]) && is_array($__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad) || $__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad instanceof ArrayAccess ? ($__internal_0668ed57f15eabeed8d9c4a45059ac93dfae05f7fa406a2dc49ae0ccb4f55bad["po_number"] ?? null) : null), "html", null, true);
             echo "\" type=\"text\" name=\"orderID\" readonly>
                         </div>
 
@@ -347,7 +347,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
                             <label for=\"\"> Date</label>
                             <input class=\"\" type=\"date\" name=\"date\" value=\"";
             // line 196
-            echo twig_escape_filter($this->env, (($__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323 = $context["o"]) && is_array($__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323) || $__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323 instanceof ArrayAccess ? ($__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323["so_date"] ?? null) : null), "html", null, true);
+            echo twig_escape_filter($this->env, (($__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323 = $context["o"]) && is_array($__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323) || $__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323 instanceof ArrayAccess ? ($__internal_e13139c4be4e2ff1c777544a2594638fcc3ca4c2221fe00c2149da0ddd1cc323["po_date"] ?? null) : null), "html", null, true);
             echo "\">
                             <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please Select SOdate</span>
                         </div>
@@ -355,7 +355,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
                         <div class=\"input-container\">
                             <button type=\"submit\">Update</button>
 
-                            <a class=\"button button-red\" onclick=\"window.location='/wms/index.php/deletesalesorder/";
+                            <a class=\"button button-red\" onclick=\"window.location='/wms/index.php/deletepurchasesorder/";
             // line 203
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["real_items_array"] ?? null));
@@ -438,7 +438,7 @@ class __TwigTemplate_5f14502bf24a4e7ba9f2c4f05ce380d564d29c2487dc23a5960b59b9f44
 
                 <div class=\"input-container\">
                     <label for=\"\"> Quantity</label>
-                    <input type=\"text\" name=\"quantity\">
+                    <input autocomplete=\"off\" type=\"number\" name=\"quantity\" min=\"1\" required>
                     <span class=\"input-info\"><i
                                 class=\"question-mark far fa-question-circle\"></i>Please enter quantity</span>
                 </div>
