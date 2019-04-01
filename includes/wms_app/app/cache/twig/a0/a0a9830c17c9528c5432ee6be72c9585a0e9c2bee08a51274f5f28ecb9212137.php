@@ -440,7 +440,7 @@ class __TwigTemplate_5bd9dc6871e29dfd47c0d861c8161fde1d143da4b2152522e32a3c554a9
         echo "\" method=\"post\">
                 <div class=\"input-container\">
                     <label for=\"\">Item</label>
-                    <select name=\"item\">
+                    <select name=\"item\" id=\"edit-PO-items\">
                         ";
         // line 252
         $context['_parent'] = $context;

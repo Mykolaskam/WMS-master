@@ -290,7 +290,14 @@ class SQLQueries
         return $m_query_string;
     }
 
-    // CREATE ONE FOR POs
+    public static function delete_item()
+    {
+        $m_query_string = "DELETE ";
+        $m_query_string .= "FROM items ";
+        $m_query_string .= "WHERE ID = :local_id ";
+        return $m_query_string;
+    }
+
 
     public static function get_purchase_items_with_quantity()
     {
@@ -328,6 +335,24 @@ class SQLQueries
         $m_query_string .= "description = :local_description, ";
         $m_query_string .= "warehouse_location = :local_warehouse_location, ";
         $m_query_string .= "stock = :local_stock ";
+        return $m_query_string;
+    }
+
+    public static function update_item()
+    {
+        $m_query_string = "UPDATE items ";
+        $m_query_string .= "SET item_name = :local_item_name, ";
+        $m_query_string .= "sku = :local_sku, ";
+        $m_query_string .= "manufacturer = :local_manufacturer, ";
+        $m_query_string .= "selling_price = :local_selling_price, ";
+        $m_query_string .= "part_number = :local_part_number, ";
+        $m_query_string .= "serial_number = :local_serial_number, ";
+        $m_query_string .= "purchase_price = :local_purchase_price, ";
+        $m_query_string .= "barcode_code = :local_barcode_code, ";
+        $m_query_string .= "description = :local_description, ";
+        $m_query_string .= "warehouse_location = :local_warehouse_location, ";
+        $m_query_string .= "stock = :local_stock ";
+        $m_query_string .= "WHERE ID = :local_id ";
         return $m_query_string;
     }
 

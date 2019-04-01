@@ -16,12 +16,17 @@ define('BCRYPT_COST', 12);
 $url_root = $_SERVER['SCRIPT_NAME'];
 $url_root = implode('/', explode('/', $url_root, -1));
 $css_path = $url_root . '/css/style.css';
+$css_folder_path = $url_root . '/css/snackbar.min.css';
+
 $js_path = $url_root . '/js/javascript.js';
+$js_folder_path = $url_root . '/js/snackbar.min.js';
 /**
  *
  */
 define('CSS_PATH', $css_path);
+define('CSS_FOLDER_PATH', $css_folder_path);
 define('JS_PATH', $js_path);
+define('JS_FOLDER_PATH', $js_folder_path);
 
 ini_set('display_errors', 'On');
 ini_set('html_errors', 'On');

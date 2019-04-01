@@ -1,0 +1,106 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Edit Item{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+        <form action="{{ action_update_item }}" method="post">
+            <div class="container-row">
+                <h1 class="big-title">Edit Item</h1>
+            </div>
+
+            <div class="row-col-inputs">
+                <div class="col-inputs shadow shell">
+
+
+                    <div class="input-container">
+                        <h2 class="col-title">Item Information (1/2)</h2>
+                        <div class="line-blue"></div>
+                    </div>
+
+                    {% for item in the_item %}
+
+                    <div class="input-container">
+                        <label for="">SKU</label>
+                        <input value="{{ item['sku'] }}" type="text" name="sku" autofocus>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Selling Price</label>
+                        <input value="{{ item['selling_price'] }}" type="text" name="selling_price">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Purchase Price</label>
+                        <input value="{{ item['purchase_price'] }}" type="text" name="purchase_price">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Barcode Code</label>
+                        <input value="{{ item['barcode_code'] }}" type="text" name="barcode_code">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Warehouse Location</label>
+                        <input value="{{ item['warehouse_location'] }}" type="text" name="warehouse_location">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">On-hand Stock</label>
+                        <input value="{{ item['stock'] }}" type="text" name="stock">
+                    </div>
+
+
+                </div>
+
+
+                <div class="col-inputs shadow shell">
+
+                    <div class="input-container">
+                        <h2 class="col-title">Item Information (2/2)</h2>
+                        <div class="line-blue"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Item Name</label>
+                        <input value="{{ item['item_name'] }}" type="text" name="item_name">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Manufacturer</label>
+                        <input value="{{ item['manufacturer'] }}" type="text" name="manufacturer">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Part Number</label>
+                        <input value="{{ item['part_number'] }}" type="text" name="part_number">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Serial Number</label>
+                        <input value="{{ item['serial_number'] }}" type="text" name="serial_number">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Description</label>
+                        <textarea name="description" rows="3" cols="20">{{ item['description'] }}</textarea>
+                    </div>
+
+
+                    <div class="input-container">
+                        <button type="submit">Update Item</button>
+
+                        <a class="button button-red" onclick="window.location='/wms/index.php/deleteitem';">Delete </a>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+{% endblock %}

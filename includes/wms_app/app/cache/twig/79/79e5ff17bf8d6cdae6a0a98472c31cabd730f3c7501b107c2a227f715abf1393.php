@@ -41,27 +41,36 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
         // line 12
         echo twig_escape_filter($this->env, ($context["css_path"] ?? null), "html", null, true);
         echo "\"/>
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
+        // line 13
+        echo twig_escape_filter($this->env, ($context["CSS_FOLDER_PATH"] ?? null), "html", null, true);
+        echo "\" />
+
 </head>
 
 <body>
 
 
 ";
-        // line 18
+        // line 20
         $this->displayBlock('menu', $context, $blocks);
-        // line 46
+        // line 48
         echo "
 ";
-        // line 47
+        // line 49
         $this->displayBlock('content', $context, $blocks);
-        // line 50
+        // line 52
         echo "
 
 <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js\"></script>
 <script src=\"";
-        // line 55
+        // line 57
+        echo twig_escape_filter($this->env, ($context["JS_FOLDER_PATH"] ?? null), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 58
         echo twig_escape_filter($this->env, ($context["js_path"] ?? null), "html", null, true);
         echo "\"></script>
 
@@ -76,10 +85,10 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
     {
     }
 
-    // line 18
+    // line 20
     public function block_menu($context, array $blocks = array())
     {
-        // line 19
+        // line 21
         echo "    <div class=\"top-bar\">
         <!--     <a id=\"menu\" class=\"menu-button\"><i class=\"fas fa-bars\"></i></a> -->
     </div>
@@ -91,37 +100,37 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
         <h4 class=\"menu-header\">Manage</h4>
         <div class=\"menu-items\">
             <a class=\"menu-item\" href=\"";
-        // line 29
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("dashboard"), "html", null, true);
         echo "\">Dashboard</a>
             <a class=\"menu-item\" href=\"";
-        // line 30
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("customers"), "html", null, true);
         echo "\">Customers</a>
             <a class=\"menu-item\" href=\"";
-        // line 31
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("vendors"), "html", null, true);
         echo "\">Vendors</a>
             <a class=\"menu-item\" href=\"";
-        // line 32
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("items"), "html", null, true);
         echo "\">Items</a>
             <a class=\"menu-item\" href=\"";
-        // line 33
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("salesorders"), "html", null, true);
         echo "\">Sales Orders</a>
-            <a class=\"menu-item\" href=\"\">Invoices</a>
+          <!--  <a class=\"menu-item\" href=\"\">Invoices</a> -->
             <a class=\"menu-item\" href=\"";
-        // line 35
+        // line 37
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("purchaseorders"), "html", null, true);
         echo "\">Purchase Orders</a>
-            <a class=\"menu-item\" href=\"\">Bills</a>
+          <!--  <a class=\"menu-item\" href=\"\">Bills</a> -->
         </div>
 
         <h4 class=\"menu-header\">Account</h4>
         <div class=\"menu-items\">
             <a class=\"menu-item\" href=\"";
-        // line 41
+        // line 43
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("logout"), "html", null, true);
         echo "\">Profile</a>
             <a class=\"menu-item\" href=\"#\">Help</a>
@@ -130,10 +139,10 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 ";
     }
 
-    // line 47
+    // line 49
     public function block_content($context, array $blocks = array())
     {
-        // line 48
+        // line 50
         echo "
 ";
     }
@@ -150,7 +159,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 
     public function getDebugInfo()
     {
-        return array (  137 => 48,  134 => 47,  125 => 41,  116 => 35,  111 => 33,  107 => 32,  103 => 31,  99 => 30,  95 => 29,  83 => 19,  80 => 18,  75 => 6,  65 => 55,  58 => 50,  56 => 47,  53 => 46,  51 => 18,  42 => 12,  33 => 6,  26 => 1,);
+        return array (  146 => 50,  143 => 49,  134 => 43,  125 => 37,  120 => 35,  116 => 34,  112 => 33,  108 => 32,  104 => 31,  92 => 21,  89 => 20,  84 => 6,  74 => 58,  70 => 57,  63 => 52,  61 => 49,  58 => 48,  56 => 20,  46 => 13,  42 => 12,  33 => 6,  26 => 1,);
     }
 
     public function getSourceContext()

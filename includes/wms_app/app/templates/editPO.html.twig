@@ -228,7 +228,7 @@
             <form action="{{ action_add_item_to_list }}" method="post">
                 <div class="input-container">
                     <label for="">Item</label>
-                    <select name="item">
+                    <select name="item" id="edit-PO-items">
                         {% for item in items_array %}
 
                             <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }}

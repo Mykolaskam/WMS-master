@@ -68,32 +68,32 @@ class __TwigTemplate_32372e9c2e394dccdc3447227a201ca24a05b12d0e3381ed17a08dc8935
 
                     <div class=\"input-container\">
                         <label for=\"\">First Name</label>
-                        <input value=\"\" type=\"text\" name=\"first_name\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"first_name\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Last Name</label>
-                        <input value=\"\" type=\"text\" name=\"last_name\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"last_name\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Email</label>
-                        <input value=\"\" type=\"text\" name=\"email\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"email\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Alt. Email</label>
-                        <input value=\"\" type=\"text\" name=\"alt_email\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"alt_email\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Phone Number</label>
-                        <input value=\"\" type=\"text\" name=\"phone_number\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"phone_number\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Alt. Phone Number</label>
-                        <input value=\"\" type=\"text\" name=\"alt_phone_number\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"alt_phone_number\">
                     </div>
 
                 </div>
@@ -108,27 +108,27 @@ class __TwigTemplate_32372e9c2e394dccdc3447227a201ca24a05b12d0e3381ed17a08dc8935
 
                     <div class=\"input-container\">
                         <label for=\"\">Company Name</label>
-                        <input value=\"\" type=\"text\" name=\"company_name\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"company_name\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Website</label>
-                        <input value=\"\" type=\"text\" name=\"website\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"website\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Pref. Curreency</label>
-                        <input value=\"\" type=\"text\" name=\"pref_currency\">
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"pref_currency\">
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Billing Address</label>
-                        <textarea name=\"billing_address\" rows=\"4\" cols=\"20\"></textarea>
+                        <textarea autocomplete=\"off\" name=\"billing_address\" rows=\"4\" cols=\"20\"></textarea>
                     </div>
 
                     <div class=\"input-container\">
                         <label for=\"\">Notes</label>
-                        <textarea name=\"notes\" rows=\"4\" cols=\"20\"></textarea>
+                        <textarea autocomplete=\"off\" name=\"notes\" rows=\"4\" cols=\"20\"></textarea>
                     </div>
 
                     <div class=\"input-container\">

@@ -111,7 +111,7 @@
 
                     <div class="input-container">
                         <div class="input-field ">
-                            <label>Customer</label>
+                            <label>Vendor</label>
                             <select name="vendor">
                                 {% for vendor in vendors_array %}
 
@@ -165,7 +165,7 @@
             <form action="{{ action_add_item_to_list }}" method="post">
                 <div class="input-container">
                     <label for="">Item</label>
-                    <select name="item" id="SO-items">
+                    <select name="item" id="PO-items">
                         {% for item in items_array %}
 
                             <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }} - [ {{ item['stock'] }} ] In stock

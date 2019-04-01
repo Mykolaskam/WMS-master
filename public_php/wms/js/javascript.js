@@ -150,3 +150,31 @@ $(document).ready(function() {
 $(document).ready(function() {
     $("#SO-items").select2({ width: 'resolve' });
 });
+
+$(document).ready(function() {
+    $("#PO-items").select2();
+});
+
+$(document).ready(function() {
+    $("#PO-items").select2({ width: 'resolve' });
+});
+
+$(document).ready(function() {
+    $("#edit-PO-items").select2();
+});
+
+$(document).ready(function() {
+    $("#edit-PO-items").select2({ width: 'resolve' });
+});
+
+$(document).ready(function() {
+    $("#edit-PO-items").select2();
+});
+
+$(document).ready(function() {
+    $("#edit-PO-items").select2({ width: 'resolve' });
+});
+
+$('.button').click(function() {
+    Snackbar.show({text: 'Example notification text.'});
+});

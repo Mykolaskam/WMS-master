@@ -187,7 +187,7 @@ class __TwigTemplate_6c9bb5bb590464a544bfa1f994d506b7a27bfbe34f2a7f1c20000e82ee8
 
                     <div class=\"input-container\">
                         <div class=\"input-field \">
-                            <label>Customer</label>
+                            <label>Vendor</label>
                             <select name=\"vendor\">
                                 ";
         // line 116
@@ -270,7 +270,7 @@ class __TwigTemplate_6c9bb5bb590464a544bfa1f994d506b7a27bfbe34f2a7f1c20000e82ee8
         echo "\" method=\"post\">
                 <div class=\"input-container\">
                     <label for=\"\">Item</label>
-                    <select name=\"item\" id=\"SO-items\">
+                    <select name=\"item\" id=\"PO-items\">
                         ";
         // line 169
         $context['_parent'] = $context;

@@ -3,6 +3,7 @@
 require 'routes/login.php';
 require 'routes/dashboard.php';
 require 'routes/items.php';
+require 'routes/edititem.php';
 require 'routes/customers.php';
 require 'routes/vendors.php';
 require 'routes/register.php';

@@ -143,6 +143,8 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
 
                 </div>
 
+              <!--  <button type=\"button\" class=\"button\">me</button> -->
+
             </div>
 
         </div>
@@ -150,55 +152,7 @@ class __TwigTemplate_f3fb72cdfe58bd9d37f78566e8645186263c424e56881d17d809538e5df
     </main>
 
 
-    <div class=\"Modal\">
 
-        <div class=\"side-modal-content shadow\">
-
-            <div class=\"side-modal-container-row-top shadow\">
-                <h2>S-00001</h2>
-                <a class=\"button-small shadow\" href=\"\">
-                    <i class=\"fas fa-edit edit-icon\"></i>
-                    <span class=\"btn-text\">Edit</span>
-                </a>
-
-                <!--    <span class=\"close-side-modal\">&times;</span> -->
-            </div>
-
-            <div class=\"side-modal-container\">
-
-                <div class=\"side-modal-container-row\">
-                    <h3>Allan Smith</h3>
-                    <span>12/12/2018</span>
-                </div>
-
-                <div class=\"side-modal-container-row\">
-                    <span>Packed</span>
-                    <label class=\"switch\">
-                        <input type=\"checkbox\">
-                        <span class=\"slider round\"></span>
-                    </label>
-                </div>
-
-                <div class=\"side-modal-container-row\">
-                    <span>Shipped</span>
-                    <label class=\"switch\">
-                        <input type=\"checkbox\">
-                        <span class=\"slider round\"></span>
-                    </label>
-                </div>
-
-                <div class=\"side-modal-container-row\">
-                    <span>Invoiced</span>
-                    <label class=\"switch\">
-                        <input type=\"checkbox\">
-                        <span class=\"slider round\"></span>
-                    </label>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
 
 ";
     }

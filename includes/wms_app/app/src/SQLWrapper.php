@@ -433,6 +433,19 @@ class SQLWrapper
         return $item;
     }
 
+    public function delete_item_var($item_id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->delete_item();
+
+        $m_arr_query_parameters = [
+            ':local_id' => $item_id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+    }
+
     public function get_purchase_items_with_quantity_var($item_id, $order_id)
     {
 
@@ -481,6 +494,28 @@ class SQLWrapper
             ':local_description' => $p_description,
             ':local_warehouse_location' => $p_warehouse_location,
             ':local_stock' => $p_stock
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function update_item_var($p_item_name, $p_sku, $p_manufacturer, $p_selling_price, $p_part_number, $p_serial_number, $p_purchase_price, $p_barcode_code, $p_description, $p_warehouse_location, $p_stock, $id)
+    {
+        $m_query_string = $this->c_obj_sql_queries->update_item();
+
+        $m_arr_query_parameters = [
+            ':local_item_name' => $p_item_name,
+            ':local_sku' => $p_sku,
+            ':local_manufacturer' => $p_manufacturer,
+            ':local_selling_price' => $p_selling_price,
+            ':local_part_number' => $p_part_number,
+            ':local_serial_number' => $p_serial_number,
+            ':local_purchase_price' => $p_purchase_price,
+            ':local_barcode_code' => $p_barcode_code,
+            ':local_description' => $p_description,
+            ':local_warehouse_location' => $p_warehouse_location,
+            ':local_stock' => $p_stock,
+            ':local_id' => $id
         ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);

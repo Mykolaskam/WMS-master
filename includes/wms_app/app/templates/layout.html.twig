@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{ css_path }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ CSS_FOLDER_PATH }}" />
+
 </head>
 
 <body>
@@ -31,9 +33,9 @@
             <a class="menu-item" href="{{ path_for('vendors') }}">Vendors</a>
             <a class="menu-item" href="{{ path_for('items') }}">Items</a>
             <a class="menu-item" href="{{ path_for('salesorders') }}">Sales Orders</a>
-            <a class="menu-item" href="">Invoices</a>
+          <!--  <a class="menu-item" href="">Invoices</a> -->
             <a class="menu-item" href="{{ path_for('purchaseorders') }}">Purchase Orders</a>
-            <a class="menu-item" href="">Bills</a>
+          <!--  <a class="menu-item" href="">Bills</a> -->
         </div>
 
         <h4 class="menu-header">Account</h4>
@@ -52,6 +54,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script src="{{ JS_FOLDER_PATH }}"></script>
 <script src="{{ js_path }}"></script>
 
 
