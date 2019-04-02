@@ -67,18 +67,18 @@ class __TwigTemplate_32372e9c2e394dccdc3447227a201ca24a05b12d0e3381ed17a08dc8935
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">First Name</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"first_name\">
+                        <label for=\"\">First Name (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"first_name\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Last Name</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"last_name\">
+                        <label for=\"\">Last Name (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"last_name\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Email</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"email\">
+                        <label for=\"\">Email (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"email\" required>
                     </div>
 
                     <div class=\"input-container\">
@@ -107,8 +107,8 @@ class __TwigTemplate_32372e9c2e394dccdc3447227a201ca24a05b12d0e3381ed17a08dc8935
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Company Name</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"company_name\">
+                        <label for=\"\">Company Name (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"company_name\" required>
                     </div>
 
                     <div class=\"input-container\">

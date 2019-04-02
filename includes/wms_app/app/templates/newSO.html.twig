@@ -111,8 +111,8 @@
 
                     <div class="input-container">
                         <div class="input-field ">
-                            <label>Customer</label>
-                            <select name="customer">
+                            <label>Customer (required)</label>
+                            <select name="customer" required>
                                 {% for customer in customers_array %}
 
                                     <option value="{{ customer['ID'] }}">{{ customer['first_name'] }} {{ customer['last_name'] }}
@@ -133,8 +133,8 @@
                     </div>
 
                     <div class="input-container">
-                        <label for=""> Date</label>
-                        <input class="" type="date" name="date" value="{{ "now"|date("Y-m-d") }}">
+                        <label for="">Date (required)</label>
+                        <input class="" type="date" name="date" value="{{ "now"|date("Y-m-d") }}" required>
                         <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
                     </div>
 
@@ -165,7 +165,7 @@
             <form action="{{ action_add_item_to_list }}" method="post">
                 <div class="input-container">
                     <label for="">Item</label>
-                    <select name="item" id="SO-items">
+                    <select name="item" id="SO-items" required>
                         {% for item in items_array %}
 
                             <option value="{{ item['ID'] }}">{{ item['item_name'] }} - {{ item['sku'] }} - [ {{ item['stock'] }} ] In stock
@@ -179,7 +179,7 @@
 
 
                 <div class="input-container">
-                    <label for="quantity"> Quantity</label>
+                    <label for="quantity"> Quantity (required)</label>
                     <input autocomplete="off" type="number" name="quantity" min="1" required>
                     <span class="input-info"><i
                                 class="question-mark far fa-question-circle"></i>Please enter quantity</span>

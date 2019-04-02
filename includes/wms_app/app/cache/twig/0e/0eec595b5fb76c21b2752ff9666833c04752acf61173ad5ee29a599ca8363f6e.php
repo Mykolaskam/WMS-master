@@ -67,18 +67,18 @@ class __TwigTemplate_df28ccef5a8e701709d603dc058b16417f46a9f5e496037e467a8edfa0a
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">First Name</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"first_name\">
+                        <label for=\"\">First Name (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"first_name\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Last Name</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"last_name\">
+                        <label for=\"\">Last Name (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"last_name\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Email</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"email\">
+                        <label for=\"\">Email (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"email\" required>
                     </div>
 
                     <div class=\"input-container\">
@@ -107,8 +107,8 @@ class __TwigTemplate_df28ccef5a8e701709d603dc058b16417f46a9f5e496037e467a8edfa0a
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Company Name</label>
-                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"company_name\">
+                        <label for=\"\">Company Name (required)</label>
+                        <input autocomplete=\"off\" value=\"\" type=\"text\" name=\"company_name\" required>
                     </div>
 
                     <div class=\"input-container\">
@@ -132,7 +132,7 @@ class __TwigTemplate_df28ccef5a8e701709d603dc058b16417f46a9f5e496037e467a8edfa0a
                     </div>
 
                     <div class=\"input-container\">
-                        <button type=\"submit\">Create Item</button>
+                        <button type=\"submit\">Create Customer</button>
                     </div>
 
                 </div>

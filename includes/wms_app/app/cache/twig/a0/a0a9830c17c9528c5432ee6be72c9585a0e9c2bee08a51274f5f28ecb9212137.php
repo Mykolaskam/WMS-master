@@ -308,9 +308,9 @@ class __TwigTemplate_5bd9dc6871e29dfd47c0d861c8161fde1d143da4b2152522e32a3c554a9
 
                     <div class=\"input-container\">
                         <div class=\"input-field \">
-                            <label>Customer</label>
+                            <label>Customer (required)</label>
 
-                            <select class=\"\" name=\"customer\">
+                            <select class=\"\" name=\"customer\" required>
 
                                 ";
         // line 188
@@ -381,11 +381,11 @@ class __TwigTemplate_5bd9dc6871e29dfd47c0d861c8161fde1d143da4b2152522e32a3c554a9
                         </div>
 
                         <div class=\"input-container\">
-                            <label for=\"\"> Date</label>
+                            <label for=\"\">Date (required)</label>
                             <input class=\"\" type=\"date\" name=\"date\" value=\"";
             // line 216
             echo twig_escape_filter($this->env, (($__internal_4abb1b337c0ef25ef376bdea173e8ce13160d926e1bcb921fd263a0c3744dc8f = $context["o"]) && is_array($__internal_4abb1b337c0ef25ef376bdea173e8ce13160d926e1bcb921fd263a0c3744dc8f) || $__internal_4abb1b337c0ef25ef376bdea173e8ce13160d926e1bcb921fd263a0c3744dc8f instanceof ArrayAccess ? ($__internal_4abb1b337c0ef25ef376bdea173e8ce13160d926e1bcb921fd263a0c3744dc8f["so_date"] ?? null) : null), "html", null, true);
-            echo "\">
+            echo "\" required>
                             <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please Select SOdate</span>
                         </div>
 

@@ -181,9 +181,9 @@
 
                     <div class="input-container">
                         <div class="input-field ">
-                            <label>Customer</label>
+                            <label>Customer (required)</label>
 
-                            <select class="" name="customer">
+                            <select class="" name="customer" required>
 
                                 {% for o in the_order %}
 
@@ -212,8 +212,8 @@
                         </div>
 
                         <div class="input-container">
-                            <label for=""> Date</label>
-                            <input class="" type="date" name="date" value="{{ o["so_date"] }}">
+                            <label for="">Date (required)</label>
+                            <input class="" type="date" name="date" value="{{ o["so_date"] }}" required>
                             <span class="input-info"><i class="question-mark far fa-question-circle"></i>Please Select SOdate</span>
                         </div>
 

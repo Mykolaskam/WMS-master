@@ -187,8 +187,8 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
 
                     <div class=\"input-container\">
                         <div class=\"input-field \">
-                            <label>Customer</label>
-                            <select name=\"customer\">
+                            <label>Customer (required)</label>
+                            <select name=\"customer\" required>
                                 ";
         // line 116
         $context['_parent'] = $context;
@@ -232,11 +232,11 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\"> Date</label>
+                        <label for=\"\">Date (required)</label>
                         <input class=\"\" type=\"date\" name=\"date\" value=\"";
         // line 137
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y-m-d"), "html", null, true);
-        echo "\">
+        echo "\" required>
                         <span class=\"input-info\"><i class=\"question-mark far fa-question-circle\"></i>Please Select SOdate</span>
                     </div>
 
@@ -270,7 +270,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
         echo "\" method=\"post\">
                 <div class=\"input-container\">
                     <label for=\"\">Item</label>
-                    <select name=\"item\" id=\"SO-items\">
+                    <select name=\"item\" id=\"SO-items\" required>
                         ";
         // line 169
         $context['_parent'] = $context;
@@ -303,7 +303,7 @@ class __TwigTemplate_3b387a507693444d24ead6f625313ed69f827ba2a0d444465541246583f
 
 
                 <div class=\"input-container\">
-                    <label for=\"quantity\"> Quantity</label>
+                    <label for=\"quantity\"> Quantity (required)</label>
                     <input autocomplete=\"off\" type=\"number\" name=\"quantity\" min=\"1\" required>
                     <span class=\"input-info\"><i
                                 class=\"question-mark far fa-question-circle\"></i>Please enter quantity</span>

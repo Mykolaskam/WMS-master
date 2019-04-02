@@ -77,27 +77,27 @@ class __TwigTemplate_b20dc4db4bcda3e6add927c8361ff17e7f6507fe9a2b3d1071ce40aa9a3
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">First Name</label>
+                        <label for=\"\">First Name (required)</label>
                         <input autocomplete=\"off\" value=\"";
             // line 33
             echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = $context["customer"]) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a["first_name"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"first_name\">
+            echo "\" type=\"text\" name=\"first_name\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Last Name</label>
+                        <label for=\"\">Last Name (required)</label>
                         <input autocomplete=\"off\" value=\"";
             // line 38
             echo twig_escape_filter($this->env, (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["customer"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["last_name"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"last_name\">
+            echo "\" type=\"text\" name=\"last_name\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Email</label>
+                        <label for=\"\">Email (required)</label>
                         <input autocomplete=\"off\" value=\"";
             // line 43
             echo twig_escape_filter($this->env, (($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 = $context["customer"]) && is_array($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9) || $__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9 instanceof ArrayAccess ? ($__internal_81ccf322d0988ca0aa9ae9943d772c435c5ff01fb50b956278e245e40ae66ab9["email"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"email\">
+            echo "\" type=\"text\" name=\"email\" required>
                     </div>
 
                     <div class=\"input-container\">
@@ -135,11 +135,11 @@ class __TwigTemplate_b20dc4db4bcda3e6add927c8361ff17e7f6507fe9a2b3d1071ce40aa9a3
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Company Name</label>
+                        <label for=\"\">Company Name (required)</label>
                         <input autocomplete=\"off\" value=\"";
             // line 73
             echo twig_escape_filter($this->env, (($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 = $context["customer"]) && is_array($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1) || $__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1 instanceof ArrayAccess ? ($__internal_3e040fa9f9bcf48a8b054d0953f4fffdaf331dc44bc1d96f1bb45abb085e61d1["company_name"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"company_name\">
+            echo "\" type=\"text\" name=\"company_name\" required>
                     </div>
 
                     <div class=\"input-container\">

@@ -132,7 +132,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
             <a class=\"menu-item\" href=\"";
         // line 43
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("logout"), "html", null, true);
-        echo "\">Profile</a>
+        echo "\">Log Out</a>
             <a class=\"menu-item\" href=\"#\">Help</a>
         </div>
     </div>
