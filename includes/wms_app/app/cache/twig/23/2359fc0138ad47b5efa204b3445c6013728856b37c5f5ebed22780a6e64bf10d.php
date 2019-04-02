@@ -66,27 +66,27 @@ class __TwigTemplate_ed7a53099990a51eddf0c0e780181132d4bd67150cab2bd4219959a9051
             // line 22
             echo "
                     <div class=\"input-container\">
-                        <label for=\"\">SKU</label>
+                        <label for=\"\">SKU (required)</label>
                         <input value=\"";
             // line 25
             echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = $context["item"]) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5["sku"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"sku\" autofocus>
+            echo "\" type=\"text\" name=\"sku\" autofocus required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Selling Price</label>
+                        <label for=\"\">Selling Price (required)</label>
                         <input value=\"";
             // line 30
             echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = $context["item"]) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a["selling_price"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"selling_price\">
+            echo "\" type=\"text\" name=\"selling_price\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Purchase Price</label>
+                        <label for=\"\">Purchase Price (required)</label>
                         <input value=\"";
             // line 35
             echo twig_escape_filter($this->env, (($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 = $context["item"]) && is_array($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57) || $__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57 instanceof ArrayAccess ? ($__internal_b0b3d6199cdf4d15a08b3fb98fe017ecb01164300193d18d78027218d843fc57["purchase_price"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"purchase_price\">
+            echo "\" type=\"text\" name=\"purchase_price\" required>
                     </div>
 
                     <div class=\"input-container\">
@@ -106,11 +106,11 @@ class __TwigTemplate_ed7a53099990a51eddf0c0e780181132d4bd67150cab2bd4219959a9051
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">On-hand Stock</label>
+                        <label for=\"\">On-hand Stock (required)</label>
                         <input value=\"";
             // line 50
             echo twig_escape_filter($this->env, (($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 = $context["item"]) && is_array($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105) || $__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105 instanceof ArrayAccess ? ($__internal_128c19eb75d89ae9acc1294da2e091b433005202cb9b9351ea0c5dd5f69ee105["stock"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"stock\">
+            echo "\" type=\"text\" name=\"stock\" required>
                     </div>
 
 
@@ -125,11 +125,11 @@ class __TwigTemplate_ed7a53099990a51eddf0c0e780181132d4bd67150cab2bd4219959a9051
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Item Name</label>
+                        <label for=\"\">Item Name (required)</label>
                         <input value=\"";
             // line 66
             echo twig_escape_filter($this->env, (($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 = $context["item"]) && is_array($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779) || $__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779 instanceof ArrayAccess ? ($__internal_921de08f973aabd87ecb31654784e2efda7404f12bd27e8e56991608c76e7779["item_name"] ?? null) : null), "html", null, true);
-            echo "\" type=\"text\" name=\"item_name\">
+            echo "\" type=\"text\" name=\"item_name\" required>
                     </div>
 
                     <div class=\"input-container\">

@@ -1,12 +1,12 @@
 {% extends 'layout.html.twig' %}
-{% block title %}New Vendor{% endblock %}
+{% block title %}Edit Vendor{% endblock %}
 
 {% block content %}
 
     <main class="main-body">
-        <form action="{{ action_create_vendor }}" method="post">
+        <form action="{{ action_update_vendor }}" method="post">
             <div class="container-row">
-                <h1 class="big-title">Add New Vendor</h1>
+                <h1 class="big-title">Edit Vendor</h1>
                 <!--       <a id="addItem" class="button-small shadow addItem">
                            <i class="fas fa-plus plus"></i>
                            <span class="btn-text">Add Customer</span>
@@ -21,39 +21,41 @@
                         <div class="line-blue"></div>
                     </div>
 
+                    {% for vendor in the_vendor %}
+
                     <div class="input-container">
                         <label for="">Salutation</label>
-                        <input value="" type="text" name="salutation" autofocus>
+                        <input value="{{ vendor['salutation'] }}" type="text" name="salutation" autofocus>
                     </div>
 
                     <div class="input-container">
                         <label for="">First Name (required)</label>
-                        <input autocomplete="off" value="" type="text" name="first_name" required>
+                        <input autocomplete="off" value="{{ vendor['first_name'] }}" type="text" name="first_name" required>
                     </div>
 
                     <div class="input-container">
                         <label for="">Last Name (required)</label>
-                        <input autocomplete="off" value="" type="text" name="last_name" required>
+                        <input autocomplete="off" value="{{ vendor['last_name'] }}" type="text" name="last_name" required>
                     </div>
 
                     <div class="input-container">
                         <label for="">Email (required)</label>
-                        <input autocomplete="off" value="" type="text" name="email" required>
+                        <input autocomplete="off" value="{{ vendor['email'] }}" type="text" name="email" required>
                     </div>
 
                     <div class="input-container">
                         <label for="">Alt. Email</label>
-                        <input autocomplete="off" value="" type="text" name="alt_email">
+                        <input autocomplete="off" value="{{ vendor['alt_email'] }}" type="text" name="alt_email">
                     </div>
 
                     <div class="input-container">
                         <label for="">Phone Number</label>
-                        <input autocomplete="off" value="" type="text" name="phone_number">
+                        <input autocomplete="off" value="{{ vendor['phone_number'] }}" type="text" name="phone_number">
                     </div>
 
                     <div class="input-container">
                         <label for="">Alt. Phone Number</label>
-                        <input autocomplete="off" value="" type="text" name="alt_phone_number">
+                        <input autocomplete="off" value="{{ vendor['alt_phone_number'] }}" type="text" name="alt_phone_number">
                     </div>
 
                 </div>
@@ -68,32 +70,36 @@
 
                     <div class="input-container">
                         <label for="">Company Name (required)</label>
-                        <input autocomplete="off" value="" type="text" name="company_name" required>
+                        <input autocomplete="off" value="{{ vendor['company_name'] }}" type="text" name="company_name" required>
                     </div>
 
                     <div class="input-container">
                         <label for="">Website</label>
-                        <input autocomplete="off" value="" type="text" name="website">
+                        <input autocomplete="off" value="{{ vendor['website'] }}" type="text" name="website">
                     </div>
 
                     <div class="input-container">
                         <label for="">Pref. Curreency</label>
-                        <input autocomplete="off" value="" type="text" name="pref_currency">
+                        <input autocomplete="off" value="{{ vendor['pref_currency'] }}" type="text" name="pref_currency">
                     </div>
 
                     <div class="input-container">
                         <label for="">Billing Address</label>
-                        <textarea autocomplete="off" name="billing_address" rows="4" cols="20"></textarea>
+                        <textarea autocomplete="off" name="billing_address" rows="4" cols="20">{{ vendor['billing_address'] }}</textarea>
                     </div>
 
                     <div class="input-container">
                         <label for="">Notes</label>
-                        <textarea autocomplete="off" name="notes" rows="4" cols="20"></textarea>
+                        <textarea autocomplete="off" name="notes" rows="4" cols="20">{{ vendor['notes'] }}</textarea>
                     </div>
 
+
                     <div class="input-container">
-                        <button type="submit">Create Vendor</button>
+                        <button type="submit">Update Vendor</button>
+                        <a class="button button-red" onclick="window.location='/wms/index.php/deletevendor';">Delete </a>
                     </div>
+
+                    {% endfor %}
 
                 </div>
 

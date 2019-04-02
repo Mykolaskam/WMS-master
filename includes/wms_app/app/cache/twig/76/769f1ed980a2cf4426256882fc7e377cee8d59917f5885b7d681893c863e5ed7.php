@@ -58,18 +58,18 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">SKU</label>
-                        <input value=\"\" type=\"text\" name=\"sku\" autofocus>
+                        <label for=\"\">SKU (required)</label>
+                        <input value=\"\" type=\"text\" name=\"sku\" autofocus required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Selling Price</label>
-                        <input value=\"\" type=\"text\" name=\"selling_price\">
+                        <label for=\"\">Selling Price (required)</label>
+                        <input value=\"\" type=\"text\" name=\"selling_price\" required>
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Purchase Price</label>
-                        <input value=\"\" type=\"text\" name=\"purchase_price\">
+                        <label for=\"\">Purchase Price (required)</label>
+                        <input value=\"\" type=\"text\" name=\"purchase_price\" required>
                     </div>
 
                     <div class=\"input-container\">
@@ -83,8 +83,8 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">On-hand Stock</label>
-                        <input value=\"\" type=\"text\" name=\"stock\">
+                        <label for=\"\">On-hand Stock (required)</label>
+                        <input value=\"\" type=\"text\" name=\"stock\" required>
                     </div>
 
                 </div>
@@ -98,8 +98,8 @@ class __TwigTemplate_bb063a9441fe61fe2db467298a2ab1cdbf343085e107fa829c30840055f
                     </div>
 
                     <div class=\"input-container\">
-                        <label for=\"\">Item Name</label>
-                        <input value=\"\" type=\"text\" name=\"item_name\">
+                        <label for=\"\">Item Name (required)</label>
+                        <input value=\"\" type=\"text\" name=\"item_name\" required>
                     </div>
 
                     <div class=\"input-container\">

@@ -39,7 +39,7 @@
 
                         {% for vendor in all_vendors %}
 
-                            <tr>
+                            <tr onclick="window.location='/wms/index.php/editvendor/{{ vendor['ID'] }}';">
                                 <td class="Vsalutation"> {{ vendor['salutation'] }} </td>
                                 <td class="Vname"> {{ vendor['first_name'] }} {{ vendor['last_name'] }}</td>
                                 <td class="VcompanyName"> {{ vendor['company_name'] }} </td>
