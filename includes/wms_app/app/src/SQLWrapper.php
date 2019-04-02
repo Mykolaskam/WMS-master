@@ -541,8 +541,6 @@ class SQLWrapper
     }
 
 
-
-
     public function get_customers_var()
     {
 
@@ -554,6 +552,19 @@ class SQLWrapper
 
         $customer = $this->safe_fetch_all_array();
         return $customer;
+    }
+
+    public function delete_customer_var($id)
+    {
+
+        $m_query_string = $this->c_obj_sql_queries->delete_customer();
+
+        $m_arr_query_parameters = [
+            ':local_id' => $id,
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
     }
 
     public function create_new_customer_var($p_salutation, $p_first_name, $p_last_name, $p_company_name, $p_email, $p_alt_email, $p_phone_number, $p_alt_phone_number, $p_website, $p_billing_address, $p_pref_currency, $p_notes)
@@ -573,6 +584,29 @@ class SQLWrapper
             ':local_billing_address' => $p_billing_address,
             ':local_pref_currency' => $p_pref_currency,
             ':local_notes' => $p_notes
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+    }
+
+    public function update_customer_var($p_salutation, $p_first_name, $p_last_name, $p_company_name, $p_email, $p_alt_email, $p_phone_number, $p_alt_phone_number, $p_website, $p_billing_address, $p_pref_currency, $p_notes, $p_id)
+    {
+        $m_query_string = $this->c_obj_sql_queries->update_customer();
+
+        $m_arr_query_parameters = [
+            ':local_salutation' => $p_salutation,
+            ':local_first_name' => $p_first_name,
+            ':local_last_name' => $p_last_name,
+            ':local_company_name' => $p_company_name,
+            ':local_email' => $p_email,
+            ':local_alt_email' => $p_alt_email,
+            ':local_phone_number' => $p_phone_number,
+            ':local_alt_phone_number' => $p_alt_phone_number,
+            ':local_website' => $p_website,
+            ':local_billing_address' => $p_billing_address,
+            ':local_pref_currency' => $p_pref_currency,
+            ':local_notes' => $p_notes,
+            ':local_id' => $p_id
         ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);

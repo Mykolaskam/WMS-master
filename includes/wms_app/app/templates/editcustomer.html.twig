@@ -1,0 +1,115 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Edit Customer{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+        <form action="{{ action_update_customer }}" method="post">
+            <div class="container-row">
+                <h1 class="big-title">Edit Customer</h1>
+                <!--       <a id="addItem" class="button-small shadow addItem">
+                           <i class="fas fa-plus plus"></i>
+                           <span class="btn-text">Add Customer</span>
+                       </a> -->
+            </div>
+
+            <div class="row-col-inputs">
+                <div class="col-inputs shadow shell">
+
+                    <div class="input-container">
+                        <h2 class="col-title">Customer Information (1/2)</h2>
+                        <div class="line-blue"></div>
+                    </div>
+
+                    {% for customer in the_customer %}
+
+                    <div class="input-container">
+                        <label for="">Salutation</label>
+                        <input value="{{ customer['salutation'] }}" type="text" name="salutation" autofocus>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">First Name</label>
+                        <input autocomplete="off" value="{{ customer['first_name'] }}" type="text" name="first_name">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Last Name</label>
+                        <input autocomplete="off" value="{{ customer['last_name'] }}" type="text" name="last_name">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Email</label>
+                        <input autocomplete="off" value="{{ customer['email'] }}" type="text" name="email">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Alt. Email</label>
+                        <input autocomplete="off" value="{{ customer['alt_email'] }}" type="text" name="alt_email">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Phone Number</label>
+                        <input autocomplete="off" value="{{ customer['phone_number'] }}" type="text" name="phone_number">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Alt. Phone Number</label>
+                        <input autocomplete="off" value="{{ customer['alt_phone_number'] }}" type="text" name="alt_phone_number">
+                    </div>
+
+                </div>
+
+
+                <div class="col-inputs shadow shell">
+
+                    <div class="input-container">
+                        <h2 class="col-title">Customer Information (2/2)</h2>
+                        <div class="line-blue"></div>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Company Name</label>
+                        <input autocomplete="off" value="{{ customer['company_name'] }}" type="text" name="company_name">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Website</label>
+                        <input autocomplete="off" value="{{ customer['website'] }}" type="text" name="website">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Pref. Curreency</label>
+                        <input autocomplete="off" value="{{ customer['pref_currency'] }}" type="text" name="pref_currency">
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Billing Address</label>
+                        <textarea autocomplete="off" name="billing_address" rows="4" cols="20">{{ customer['billing_address'] }}</textarea>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="">Notes</label>
+                        <textarea autocomplete="off" name="notes" rows="4" cols="20">{{ customer['notes'] }}</textarea>
+                    </div>
+
+                    {% endfor %}
+
+                    <div class="input-container">
+                        <button type="submit">Update Customer</button>
+                        <a class="button button-red" onclick="window.location='/wms/index.php/deletecustomer';">Delete </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+
+
+
+{% endblock %}

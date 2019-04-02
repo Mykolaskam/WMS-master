@@ -497,13 +497,19 @@ class SQLQueries
     }
 
 
-
-
     public static function get_customers()
     {
         $m_query_string = "SELECT * ";
         $m_query_string .= "FROM customers ";
         $m_query_string .= "ORDER BY first_name DESC ";
+        return $m_query_string;
+    }
+
+    public static function delete_customer()
+    {
+        $m_query_string = "DELETE ";
+        $m_query_string .= "FROM customers ";
+        $m_query_string .= "WHERE ID = :local_id ";
         return $m_query_string;
     }
 
@@ -522,6 +528,25 @@ class SQLQueries
         $m_query_string .= "billing_address = :local_billing_address, ";
         $m_query_string .= "pref_currency = :local_pref_currency, ";
         $m_query_string .= "notes = :local_notes ";
+        return $m_query_string;
+    }
+
+    public static function update_customer()
+    {
+        $m_query_string = "UPDATE customers ";
+        $m_query_string .= "SET salutation = :local_salutation, ";
+        $m_query_string .= "first_name = :local_first_name, ";
+        $m_query_string .= "last_name = :local_last_name, ";
+        $m_query_string .= "company_name = :local_company_name, ";
+        $m_query_string .= "email = :local_email, ";
+        $m_query_string .= "alt_email = :local_alt_email, ";
+        $m_query_string .= "phone_number = :local_phone_number, ";
+        $m_query_string .= "alt_phone_number = :local_alt_phone_number, ";
+        $m_query_string .= "website = :local_website, ";
+        $m_query_string .= "billing_address = :local_billing_address, ";
+        $m_query_string .= "pref_currency = :local_pref_currency, ";
+        $m_query_string .= "notes = :local_notes ";
+        $m_query_string .= "WHERE ID = :local_id ";
         return $m_query_string;
     }
     /** ========================= CUSTOMERS END ==============================     */
