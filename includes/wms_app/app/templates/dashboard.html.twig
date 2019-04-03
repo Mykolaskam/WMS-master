@@ -12,33 +12,28 @@
 
         <div class="row-col-inputs">
 
-            <div class="shadow shell indicator-box pointer" onclick="window.location='/wms/index.php/editsalesorder/{{ order['ID'] }}';">
+            <div class="shadow shell indicator-box pointer" onclick="window.location='/wms/index.php/tobepacked';">
                 <div>
-                    <h2 class="large-no">0</h2>
+                    <h2 class="large-no">{{ to_be_packed_num }}</h2>
                     <h3>To be Packed</h3>
                 </div>
             </div>
 
-            <div class="shadow shell indicator-box pointer">
+            <div class="shadow shell indicator-box pointer" onclick="window.location='/wms/index.php/tobeshipped';">
                 <div>
-                    <h2 class="large-no">0</h2>
+                    <h2 class="large-no">{{ to_be_shipped_num }}</h2>
                     <h3>To be Shipped</h3>
                 </div>
             </div>
 
-            <div class="shadow shell indicator-box pointer">
+            <div class="shadow shell indicator-box pointer" onclick="window.location='/wms/index.php/tobeinvoiced';">
                 <div>
-                    <h2 class="large-no">0</h2>
+                    <h2 class="large-no">{{ to_be_invoiced_num }}</h2>
                     <h3>To be Invoiced</h3>
                 </div>
             </div>
 
-            <div class="shadow shell indicator-box pointer">
-                <div>
-                    <h2 class="large-no">0</h2>
-                    <h3>To be packed</h3>
-                </div>
-            </div>
+
 
         </div>
 

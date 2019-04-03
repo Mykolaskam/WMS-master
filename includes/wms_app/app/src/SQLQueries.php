@@ -614,4 +614,60 @@ class SQLQueries
     }
     /** ========================= CUSTOMERS END ==============================     */
 
+
+    /** ========================= DASHBOARD ==============================     */
+
+    public static function get_sales_orders_to_be_packed()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE packed = :local_packed";
+        return $m_query_string;
+    }
+
+    public static function get_sales_orders_to_be_invoiced()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE invoiced = :local_invoiced";
+        return $m_query_string;
+    }
+
+    public static function get_sales_orders_to_be_shipped()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE packed = :local_packed ";
+        $m_query_string .= "AND shipped = :local_shipped";
+        return $m_query_string;
+    }
+
+    public static function count_to_be_packed()
+    {
+        $m_query_string = "SELECT COUNT(*) ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE packed = :local_packed";
+        return $m_query_string;
+    }
+
+    public static function count_to_be_invoiced()
+    {
+        $m_query_string = "SELECT COUNT(*) ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE invoiced = :local_invoiced";
+        return $m_query_string;
+    }
+
+    public static function count_to_be_shipped()
+    {
+        $m_query_string = "SELECT COUNT(*) ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE packed = :local_packed ";
+        $m_query_string .= "AND shipped = :local_shipped";
+        return $m_query_string;
+    }
+
+    /** ========================= DASHBOARD END ==============================     */
+
+
 }

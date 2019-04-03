@@ -1,0 +1,80 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}To be shipped{% endblock %}
+
+{% block content %}
+
+    <main class="main-body">
+
+        <div class="container-row">
+            <h1 class="big-title">You need to ship...</h1>
+        </div>
+
+
+        <div class="row-col-inputs">
+
+            <div class="col-inputs shadow shell" id="so-table">
+
+                <div class="scroll-container">
+
+                    <input class="input-search search" type="text" name="search" placeholder="Search">
+
+                    <table>
+
+                        <tr class="table-titles">
+                            <th class="button-sort sort" data-sort="customerName">Customer Name<i
+                                        class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SONumber">SO Number<i
+                                        class="arrow fas fa-angle-up"></i>
+                            </th>
+                            <th class="button-sort sort" data-sort="SODate">SO Date<i class="arrow fas fa-angle-up"></i>
+                            </th>
+                            <th class="text-center">Packed</th>
+                            <th class="text-center">Shipped</th>
+                            <th class="text-center">Invoiced</th>
+                            <th class="text-center button-sort sort" data-sort="amount">Amount<i
+                                        class="arrow fas fa-angle-up"></i></th>
+                        </tr>
+
+                        <tbody class="list">
+
+                        {% for SO in to_be_shipped %}
+
+                            <tr onclick="window.location='/wms/index.php/editsalesorder/{{ SO['ID'] }}';">
+
+                                <td class="customerName"> {{ SO['customer_name'] }} </td>
+
+                                <td class="SONumber"> {{ SO['so_number'] }} </td>
+                                <td class="SODate"> {{ SO['so_date'] }} </td>
+                                <td class="packed text-center">
+                                    <div class="indicator {{ SO['packed'] }}"></div>
+                                </td>
+                                <td class=" shipped text-center">
+                                    <div class="indicator {{ SO['shipped'] }}"></div>
+                                </td>
+                                <td class="invoiced text-center">
+                                    <div class="indicator {{ SO['invoiced'] }}"></div>
+                                </td>
+                                <td class="amount text-center"> £{{ SO['amount'] }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+              <!--  <button type="button" class="button">me</button> -->
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+
+{% endblock %}
