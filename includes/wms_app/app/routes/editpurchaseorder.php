@@ -7,13 +7,10 @@ $app->get('/deletepurchasesorder/{id3}', function ($request, $response, $args) {
 
     $item_id = $args['id3'];
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -33,13 +30,11 @@ $app->get('/removepurchaseorderitem/{id2}', function ($request, $response, $args
 
     $item_id = $args['id2'];
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -58,13 +53,11 @@ $app->get('/editpurchaseorder/{id}', function ($request, $response, $args) {
 
     $purchase_order_id = $args['id'];
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -74,7 +67,6 @@ $app->get('/editpurchaseorder/{id}', function ($request, $response, $args) {
     if ($wrapper_sql->session_var_exists(session_id())) {
 
         $the_order = $wrapper_sql->get_purchase_order_by_id_var($purchase_order_id);
-
 
         unset($order_items_array);
         $order_items_array = $wrapper_sql->get_purchase_item_var($purchase_order_id);
@@ -96,13 +88,11 @@ $app->get('/editpurchaseorder/{id}', function ($request, $response, $args) {
             }
         }
 
-
         $items_array = [];
         $items_array = $wrapper_sql->get_items_var();
 
         $customers_array = [];
         $customers_array = $wrapper_sql->get_vendors_var();
-
 
         return $this->view->render($response,
             'editPO.html.twig',
@@ -131,13 +121,10 @@ $app->get('/editpurchaseorder/{id}', function ($request, $response, $args) {
 
 $app->post('/editpurchaseorder', function (Request $request, Response $response) {
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $sales_order = $this->get('sales_order');
     $validator = $this->get('validator');
 
     $wrapper_sql->set_db_handle($db_handle);
@@ -191,9 +178,7 @@ $app->post('/editpurchaseorder', function (Request $request, Response $response)
 
         }
 
-
         $wrapper_sql->create_purchase_order_var($sanitised_customer, $customer_name, $sanitised_orderID, $sanitised_date, $switchReceived, $switchBilled, $amount, $session_wrapper->get_session('purchase_order_id'));
-
 
         return $this->response->withRedirect('/wms/index.php/purchaseorders');
 
@@ -259,13 +244,9 @@ $app->post('/editpurchaseorder_modal', function (Request $request, Response $res
 
             $wrapper_sql->update_purchase_order_item_var($session_wrapper->get_session('purchase_order_id'), $purchase_order_items->get_item_id(), $qty_sanitised);
 
-            //    $wrapper_sql->minus_quantity_item_var($order_items->get_item_id(), $qty_sanitised);
-
         } else {
 
             $purchase_order_items->store_data();
-
-            //    $wrapper_sql->minus_quantity_item_var($order_items->get_item_id(), $qty_sanitised);
 
         }
 
@@ -330,13 +311,11 @@ $app->get('/editPOremovepurchaseorderitem/{id}/{qty}', function ($request, $resp
     $item_id = $args['id'];
     $item_quantity = $args['qty'];
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -344,9 +323,6 @@ $app->get('/editPOremovepurchaseorderitem/{id}/{qty}', function ($request, $resp
     if ($wrapper_sql->session_var_exists(session_id())) {
 
         $wrapper_sql->delete_purchase_order_item_var($session_wrapper->get_session('purchase_order_id'), $item_id);
-
-        //returnt quantity to stock
-        //    $wrapper_sql->plus_quantity_item_var($item_id, $item_quantity);
 
         return $this->response->withRedirect('/wms/index.php/editpurchaseorder/' . $session_wrapper->get_session('purchase_order_id'));
 

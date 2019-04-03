@@ -132,22 +132,19 @@ class UserModel
         return $m_store_result;
     }
 
-    public function get_user_data($p_variable_wanted){
-        if($p_variable_wanted == 'username'){
+    public function get_user_data($p_variable_wanted)
+    {
+        if ($p_variable_wanted == 'username') {
             return $this->c_username;
-        }
-        elseif($p_variable_wanted == 'password'){
+        } elseif ($p_variable_wanted == 'password') {
             return $this->c_password;
-        }
-        elseif($p_variable_wanted == 'name'){
+        } elseif ($p_variable_wanted == 'name') {
             return $this->c_name;
-        }
-        elseif($p_variable_wanted == 'surname'){
+        } elseif ($p_variable_wanted == 'surname') {
             return $this->c_surname;
-        }
-        else{
+        } else {
             return '';
         }
     }
-  }
+}
   

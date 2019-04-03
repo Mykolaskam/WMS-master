@@ -43,6 +43,9 @@
                                     <th class="button-sort sort sku" data-sort="sku">SKU<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
+                                    <th class="button-sort sort sku" data-sort="sku">Location<i
+                                                class="arrow fas fa-angle-up"></i>
+                                    </th>
                                     <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Purchase Price<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
@@ -59,6 +62,7 @@
                                     <tr>
                                         <td class="">{{ item[0]['item_name'] }}</td>
                                         <td class="">{{ item[0]['sku'] }}</td>
+                                        <td class="">{{ item[0]['warehouse_location'] }}</td>
                                         <td class="">{{ item[0]['purchase_price'] }}</td>
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
                                         <td class="text-center">£{{ item[0]['purchase_price'] * item[0]['quantity'] }}</td>

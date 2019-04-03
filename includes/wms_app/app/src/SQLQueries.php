@@ -369,7 +369,6 @@ class SQLQueries
     }
 
 
-
     public static function delete_order_item()
     {
         $m_query_string = "DELETE ";

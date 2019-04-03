@@ -11,9 +11,8 @@ $app->get('/deletesalesorder/{id3}', function ($request, $response, $args) {
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -33,13 +32,11 @@ $app->get('/removeorderitem/{id2}', function ($request, $response, $args) {
 
     $item_id = $args['id2'];
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -62,9 +59,8 @@ $app->get('/editsalesorder/{id}', function ($request, $response, $args) {
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -134,9 +130,7 @@ $app->post('/editsalesorder', function (Request $request, Response $response) {
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $sales_order = $this->get('sales_order');
     $validator = $this->get('validator');
 
     $wrapper_sql->set_db_handle($db_handle);
@@ -316,7 +310,6 @@ $app->post('/editsalesorder_modal', function (Request $request, Response $respon
                 'action_create_so' => '/wms/index.php/editsalesorder'
             ]);
 
-
     } else {
 
         return $this->response->withRedirect('/wms/index.php/');
@@ -332,13 +325,11 @@ $app->get('/editSOremoveorderitem/{id}/{qty}', function ($request, $response, $a
     $item_id = $args['id'];
     $item_quantity = $args['qty'];
 
-
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);

@@ -69,16 +69,6 @@ $container['libsodium_wrapper'] = function ($container) {
     return $wrapper;
 };
 
-/**
- * @param $container
- * @return Base64Wrapper
- */
-$container['base64_wrapper'] = function ($container) {
-    $class_path = $container->get('settings')['class_path'];
-    require $class_path . 'Base64Wrapper.php';
-    $wrapper = new Base64Wrapper();
-    return $wrapper;
-};
 
 /**
  * @param $container
@@ -89,13 +79,6 @@ $container['user_model'] = function ($container) {
     require $class_path . 'UserModel.php';
     $user_model = new UserModel();
     return $user_model;
-};
-
-$container['sales_order'] = function ($container) {
-    $class_path = $container->get('settings')['class_path'];
-    require $class_path . 'SalesOrder.php';
-    $sales_order = new SalesOrder();
-    return $sales_order;
 };
 
 $container['order_items'] = function ($container) {
@@ -152,12 +135,6 @@ $container['sql_model'] = function ($container) {
     return $sql_model;
 };
 
-$container['sales_order'] = function ($container) {
-    $class_path = $container->get('settings')['class_path'];
-    require $class_path . 'SalesOrder.php';
-    $sales_order = new salesorder();
-    return $sales_order;
-};
 
 /**
  * @param $container

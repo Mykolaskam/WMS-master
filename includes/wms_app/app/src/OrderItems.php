@@ -137,7 +137,6 @@ class OrderItems
         $this->c_obj_wrapper_user_db->set_sql_queries($this->c_obj_sql_queries);
 
 
-
         $m_store_result = $this->c_obj_wrapper_user_db->add_item_to_order_items_var($this->c_order_id, $this->c_item_id, $this->c_quantity);
 
         return $m_store_result;
