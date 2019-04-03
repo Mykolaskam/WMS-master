@@ -190,7 +190,7 @@ $app->post('/newsalesorder_modal', function (Request $request, Response $respons
 
         unset($order_items_array);
         $order_items_array = $real_item->get_order_items_from_database($order_items->get_order_id());
-var_dump($order_items_array);
+
         unset($real_items_array);
 
         foreach ($order_items_array as $item) {
