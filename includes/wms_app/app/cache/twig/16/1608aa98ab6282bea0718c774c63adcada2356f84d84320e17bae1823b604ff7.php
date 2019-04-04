@@ -40,7 +40,7 @@ class __TwigTemplate_780e038896ea743cbeebb37cdfa1a65484bee8a1c3e12dc3358f7577201
     {
         // line 5
         echo "
-    <main class=\"main-body\">
+    <main class=\"main-body\" id=\"main\">
         <form action=\"";
         // line 7
         echo twig_escape_filter($this->env, ($context["action_update_vendor"] ?? null), "html", null, true);

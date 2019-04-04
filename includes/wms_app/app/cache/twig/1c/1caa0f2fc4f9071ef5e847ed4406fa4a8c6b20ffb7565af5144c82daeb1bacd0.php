@@ -40,7 +40,7 @@ class __TwigTemplate_7fdc4adb2f5e098a7baace5b2c9af22cf9142a835050ab02e34e1d02643
     {
         // line 6
         echo "
-    <main class=\"main-body\">
+    <main class=\"main-body\" id=\"main\">
 
         <div class=\"container-row\">
             <h1 class=\"big-title\">You need to pack...</h1>

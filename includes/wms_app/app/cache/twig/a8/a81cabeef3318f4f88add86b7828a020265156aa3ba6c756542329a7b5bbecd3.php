@@ -40,7 +40,7 @@ class __TwigTemplate_14c2658dfb60622950324c0efac842f94c36898c80b464b32fd24be83aa
     {
         // line 4
         echo "
-    <main class=\"main-body\">
+    <main class=\"main-body\" id=\"main\">
 
         <form action=\"";
         // line 7
@@ -48,38 +48,41 @@ class __TwigTemplate_14c2658dfb60622950324c0efac842f94c36898c80b464b32fd24be83aa
         echo "\" method=\"post\">
 
 
-            <div class=\"col-inputs shadow shell\">
+            <div class=\"container-row\">
+                <h1 class=\"big-title\">Add New User</h1>
+            </div>
+            <div class=\"col-inputs \">
+                <div class=\"col-inputs shadow shell\">
 
-                <h2 class=\"col-title\">Add New User</h2>
+                    <div class=\"input-container\">
+                        <label>Username</label>
+                        <input class=\"input\" type=\"text\" name=\"username\"/>
+                    </div>
 
-                <div class=\"input-container\">
-                    <label>Username</label>
-                    <input class=\"input\" type=\"text\" name=\"username\"/>
-                </div>
+                    <div class=\"input-container\">
+                        <label>Password</label>
+                        <input class=\"input\" type=\"password\" name=\"password\"/>
+                    </div>
 
-                <div class=\"input-container\">
-                    <label>Password</label>
-                    <input class=\"input\" type=\"password\" name=\"password\"/>
-                </div>
+                    <div class=\"input-container\">
+                        <label>Name</label>
+                        <input class=\"input\" type=\"text\" name=\"name\"/>
+                    </div>
 
-                <div class=\"input-container\">
-                    <label>Name</label>
-                    <input class=\"input\" type=\"text\" name=\"name\"/>
-                </div>
+                    <div class=\"input-container\">
+                        <label>Surname</label>
+                        <input class=\"input\" type=\"text\" name=\"surname\"/>
+                    </div>
 
-                <div class=\"input-container\">
-                    <label>Surname</label>
-                    <input class=\"input\" type=\"text\" name=\"surname\"/>
-                </div>
-
-                <div class=\"input-container\">
-                    <button type=\"submit\" class=\"btn-blue\" name=\"register\">Submit</button>
+                    <div class=\"input-container\">
+                        <button type=\"submit\" class=\"btn-blue\" name=\"register\">Submit</button>
+                    </div>
                 </div>
             </div>
         </form>
 
         <h4 class=\"error-msg\">";
-        // line 40
+        // line 43
         echo twig_escape_filter($this->env, ($context["error_message"] ?? null), "html", null, true);
         echo "</h4>
 
@@ -100,7 +103,7 @@ class __TwigTemplate_14c2658dfb60622950324c0efac842f94c36898c80b464b32fd24be83aa
 
     public function getDebugInfo()
     {
-        return array (  83 => 40,  47 => 7,  42 => 4,  39 => 3,  33 => 2,  15 => 1,);
+        return array (  86 => 43,  47 => 7,  42 => 4,  39 => 3,  33 => 2,  15 => 1,);
     }
 
     public function getSourceContext()

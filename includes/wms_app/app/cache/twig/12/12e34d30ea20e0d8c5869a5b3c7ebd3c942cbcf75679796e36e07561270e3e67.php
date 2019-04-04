@@ -40,7 +40,7 @@ class __TwigTemplate_9cab8eed88cfa4c66b1fd2f5396333574cf0b52c5d967285293792bda84
     {
         // line 6
         echo "
-    <main class=\"main-body\">
+    <main class=\"main-body\" id=\"main\">
 
         <div class=\"container-row\">
             <h1 class=\"big-title\">Customers</h1>

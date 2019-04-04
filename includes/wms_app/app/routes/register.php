@@ -23,6 +23,7 @@ $app->get(/**
             'register.html.twig',
             [
                 'css_path' => CSS_PATH,
+                'js_path' => JS_PATH,
                 'action_register' => '/wms/index.php/registercheck',
 
             ]);

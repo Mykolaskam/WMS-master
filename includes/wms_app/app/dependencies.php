@@ -28,6 +28,17 @@ $container['validator'] = function ($container) {
     return $validator;
 };
 
+/**
+ * @param $container
+ * @return Base64Wrapper
+ */
+$container['base64_wrapper'] = function ($container) {
+    $class_path = $container->get('settings')['class_path'];
+    require $class_path . 'Base64Wrapper.php';
+    $wrapper = new Base64Wrapper();
+    return $wrapper;
+};
+
 
 /**
  * @param $container

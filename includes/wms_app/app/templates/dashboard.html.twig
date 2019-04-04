@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <main class="main-body">
+    <main class="main-body" id="main">
 
         <div class="container-row">
             <h1 class="big-title">Dashboard</h1>
@@ -33,8 +33,22 @@
                 </div>
             </div>
 
+            <div class="shadow shell indicator-box pointer" onclick="window.location='/wms/index.php/tobeinvoiced';">
+                <div>
+                    <h2 class="large-no">{{ to_be_invoiced_num }}</h2>
+                    <h3>Completed Sales Orders</h3>
+                </div>
+            </div>
 
 
+        </div>
+
+        <div class="container-row">
+
+        </div>
+
+        <div class="container-row">
+            <h1 class="big-title">Coming soon - WMS Finance</h1>
         </div>
 
         <div class="row-col-inputs">
@@ -48,10 +62,13 @@
                     <table>
 
                         <tr class="table-titles">
-                            <th class="button-sort sort" data-sort="customerName">Customer Name<i class="arrow fas fa-angle-up"></i></th>
-                            <th class="button-sort sort" data-sort="SONumber">SO Number<i class="arrow fas fa-angle-up"></i></th>
-                            <th class="button-sort sort" data-sort="SODate">SO Date<i class="arrow fas fa-angle-up"></i></th>
-                            <th class="text-center button-sort sort" data-sort="amount">Amount<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="customerName">Item name<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SONumber">SKU<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="button-sort sort" data-sort="SODate">Selling Price<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="amount">Purchase Price<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="amount">Quantity Sold<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="amount">Profit Margin<i class="arrow fas fa-angle-up"></i></th>
+                            <th class="text-center button-sort sort" data-sort="amount">Sales Score<i class="arrow fas fa-angle-up"></i></th>
                         </tr>
 
                         <tbody class="list">

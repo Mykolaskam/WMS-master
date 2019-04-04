@@ -40,7 +40,7 @@ class __TwigTemplate_df28ccef5a8e701709d603dc058b16417f46a9f5e496037e467a8edfa0a
     {
         // line 5
         echo "
-    <main class=\"main-body\">
+    <main class=\"main-body\" id=\"main\">
         <form action=\"";
         // line 7
         echo twig_escape_filter($this->env, ($context["action_create_customer"] ?? null), "html", null, true);

@@ -194,15 +194,12 @@ h3 {
 
 .top-bar {
     width: 100%;
-    margin-left: 0;
     height: 60px;
     background-color: white;
-
-    align-items: center;
-    justify-content: space-between;
     z-index: 3;
     box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
     0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
 }
 
 
@@ -228,6 +225,7 @@ a.menu-button {
     font-size: 150%;
     color: #007AFF;
     margin: auto 20px;
+    align-self: flex-start;
 }
 
 .user-container {
@@ -250,9 +248,7 @@ a.menu-button {
     color: #007AFF;
 }
 
-.side-menu {
-    display: none;
-}
+
 
 main {
     padding-top: 40px;
@@ -769,13 +765,22 @@ input:checked + .slider:before {
 
 }
 
+.closed {
+    display: none;
+    background: #031B4D;
+}
+
+.open {
+    display: block;
+    background: #031B4D;
+}
+
 
 /* DESKTOP STYLES */
 
 @media screen and (min-width: 1200px) {
 
     .side-menu {
-        display: flex;
         flex-direction: column;
         justify-content: center;
         margin: 0;
@@ -784,7 +789,6 @@ input:checked + .slider:before {
         width: 200px;
         position: fixed;
         background: #031B4D;
-        display: block;
     }
 
     main {
@@ -793,6 +797,8 @@ input:checked + .slider:before {
         width: calc(100% - 200px);
         height: 100vh;
     }
+
+
 
     .col-inputs {
         margin: 10px;
@@ -932,10 +938,10 @@ input:checked + .slider:before {
         margin-left: 200px;
         height: 60px;
         background-color: white;
-
-        align-items: center;
-        justify-content: space-between;
         z-index: 3;
+        box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+        0 5px 15px 0 rgba(0, 0, 0, 0.08);
+        display: flex;
     }
 
     .side-modal-container-row {
@@ -970,4 +976,9 @@ input:checked + .slider:before {
 
 .active {
     display: block;
+}
+
+.no-left {
+    margin-left: 0;
+    width: 100%;
 }

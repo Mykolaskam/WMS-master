@@ -39,7 +39,7 @@ class __TwigTemplate_630cc2934aa1f27fc93fbcc32a7c6235246ec8c41776dec17785e40d17e
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "
+        echo "    <main class=\"main-body\" id=\"main\">
     <div class=\"login-container\">
         <div class=\"login-form\">
             <div class=\"login-form-contents\">
@@ -70,6 +70,7 @@ class __TwigTemplate_630cc2934aa1f27fc93fbcc32a7c6235246ec8c41776dec17785e40d17e
             </div>
         </div>
     </div>
+    </main>
 
 ";
     }

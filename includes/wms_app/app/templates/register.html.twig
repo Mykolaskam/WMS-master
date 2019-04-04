@@ -2,37 +2,40 @@
 {% block title %}Register{% endblock %}
 {% block content %}
 
-    <main class="main-body">
+    <main class="main-body" id="main">
 
         <form action="{{ action_register }}" method="post">
 
 
-            <div class="col-inputs shadow shell">
+            <div class="container-row">
+                <h1 class="big-title">Add New User</h1>
+            </div>
+            <div class="col-inputs ">
+                <div class="col-inputs shadow shell">
 
-                <h2 class="col-title">Add New User</h2>
+                    <div class="input-container">
+                        <label>Username</label>
+                        <input class="input" type="text" name="username"/>
+                    </div>
 
-                <div class="input-container">
-                    <label>Username</label>
-                    <input class="input" type="text" name="username"/>
-                </div>
+                    <div class="input-container">
+                        <label>Password</label>
+                        <input class="input" type="password" name="password"/>
+                    </div>
 
-                <div class="input-container">
-                    <label>Password</label>
-                    <input class="input" type="password" name="password"/>
-                </div>
+                    <div class="input-container">
+                        <label>Name</label>
+                        <input class="input" type="text" name="name"/>
+                    </div>
 
-                <div class="input-container">
-                    <label>Name</label>
-                    <input class="input" type="text" name="name"/>
-                </div>
+                    <div class="input-container">
+                        <label>Surname</label>
+                        <input class="input" type="text" name="surname"/>
+                    </div>
 
-                <div class="input-container">
-                    <label>Surname</label>
-                    <input class="input" type="text" name="surname"/>
-                </div>
-
-                <div class="input-container">
-                    <button type="submit" class="btn-blue" name="register">Submit</button>
+                    <div class="input-container">
+                        <button type="submit" class="btn-blue" name="register">Submit</button>
+                    </div>
                 </div>
             </div>
         </form>

@@ -15,38 +15,43 @@ $('.table-titles').on('click', 'th', function () {
 });
 /*----------------------*/
 
+/*----------MENU------------*/
 
 
-//
-// function checkForm(form)
-// {
-//     // validation fails if the input is blank
-//     if(form.orderID.value != "") {
-//         orderID.classList.add("failed");
-//         alert("Error: Input is empty!");
-//         form.orderID.focus();
-//         return false;
-//     }
-// }
+document.getElementById("menu").addEventListener("click", function openMenu() {
+    const overlay = document.getElementById("side-menu");
+    const main = document.getElementById("main");
+    const top = document.getElementById("top-bar");
+    //   overlay.classList.add("open");
+    //  overlay.classList.remove("open");
+    if(overlay.classList.contains("open")){
+        overlay.classList.remove("open");
+        main.classList.add("no-left");
+        top.classList.add("no-left");
+    } else {
+        overlay.classList.add("open");
+        main.classList.remove("no-left");
+        top.classList.remove("no-left");
+    }
 
 
+});
 
 
-
-
+/*----------------------*/
 
 
 //Menu button
 
-$('#menu').on('click', function () {
-
-    if ($('#side-menu').hasClass('menu-open')) {
-        $('#side-menu').removeClass('menu-open');
-    } else {
-        $('#side-menu').addClass('menu-open');
-    }
-
-});
+// $('#menu').on('click', function () {
+//
+//     if ($('#side-menu').hasClass('menu-open')) {
+//         $('#side-menu').removeClass('menu-open');
+//     } else {
+//         $('#side-menu').addClass('menu-open');
+//     }
+//
+// });
 
 
 /*----------------------*/
@@ -143,38 +148,38 @@ window.onclick = function (event) {
 }
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#SO-items").select2();
 });
 
-$(document).ready(function() {
-    $("#SO-items").select2({ width: 'resolve' });
+$(document).ready(function () {
+    $("#SO-items").select2({width: 'resolve'});
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#PO-items").select2();
 });
 
-$(document).ready(function() {
-    $("#PO-items").select2({ width: 'resolve' });
+$(document).ready(function () {
+    $("#PO-items").select2({width: 'resolve'});
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#edit-PO-items").select2();
 });
 
-$(document).ready(function() {
-    $("#edit-PO-items").select2({ width: 'resolve' });
+$(document).ready(function () {
+    $("#edit-PO-items").select2({width: 'resolve'});
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     $("#edit-PO-items").select2();
 });
 
-$(document).ready(function() {
-    $("#edit-PO-items").select2({ width: 'resolve' });
+$(document).ready(function () {
+    $("#edit-PO-items").select2({width: 'resolve'});
 });
 
-$('.button').click(function() {
+$('.button').click(function () {
     Snackbar.show({text: 'Example notification text.'});
 });

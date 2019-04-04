@@ -8,9 +8,8 @@ $app->get('/deletevendor', function ($request, $response, $args) {
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -34,9 +33,8 @@ $app->get('/editvendor/{id}', function ($request, $response, $args) {
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $validator = $this->get('validator');
+
 
     $wrapper_sql->set_db_handle($db_handle);
     $wrapper_sql->set_sql_queries($sql_queries);
@@ -73,9 +71,7 @@ $app->post('/editvendor', function (Request $request, Response $response) {
     $wrapper_sql = $this->get('sql_wrapper');
     $db_handle = $this->get('dbase');
     $sql_queries = $this->get('sql_queries');
-    $session_model = $this->get('session_model');
     $session_wrapper = $this->get('session_wrapper');
-    $sales_order = $this->get('sales_order');
     $validator = $this->get('validator');
 
     $wrapper_sql->set_db_handle($db_handle);

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <main class="main-body">
+    <main class="main-body" id="main">
         <form action="{{ action_update_so }}" method="post" onsubmit="return checkForm(this);">
             <div class="container-row">
                 <h1 class="big-title">Edit Sales Order</h1>
@@ -110,10 +110,10 @@
                                     <th class="button-sort sort sku" data-sort="sku">SKU<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
-                                    <th class="button-sort sort sku" data-sort="sku">Location<i
+                                    <th class="button-sort text-center sort sku" data-sort="sku">Location<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
-                                    <th class="button-sort sort purchasePrice" data-sort="purchasePrice">Purchase Price<i
+                                    <th class="button-sort sort purchasePrice text-center" data-sort="purchasePrice">Purchase Price<i
                                                 class="arrow fas fa-angle-up"></i>
                                     </th>
                                     <th class="text-center quantity" data-sort="quantity">Quantity</th>
@@ -129,8 +129,8 @@
                                     <tr>
                                         <td class="">{{ item[0]['item_name'] }}</td>
                                         <td class="">{{ item[0]['sku'] }}</td>
-                                        <td class="">{{ item[0]['warehouse_location'] }}</td>
-                                        <td class="">{{ item[0]['purchase_price'] }}</td>
+                                        <td class="text-center">{{ item[0]['warehouse_location'] }}</td>
+                                        <td class="text-center">{{ item[0]['purchase_price'] }}</td>
                                         <td class="text-center">{{ item[0]['quantity'] }}</td>
                                         <td class="text-center">£{{ item[0]['selling_price'] * item[0]['quantity'] }}</td>
                                         <td class="text-center">

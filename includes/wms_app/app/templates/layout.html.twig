@@ -18,11 +18,11 @@
 
 
 {% block menu %}
-    <div class="top-bar">
-        <!--     <a id="menu" class="menu-button"><i class="fas fa-bars"></i></a> -->
+    <div class="top-bar" id="top-bar">
+         <a id="menu" class="menu-button"><i class="fas fa-bars"></i></a>
     </div>
 
-    <div id="side-menu" class="shadow side-menu">
+    <div id="side-menu" class="shadow side-menu closed open">
         <h2 class="logo">WMS</h2>
         <h2 class="logo2">Lite</h2>
 
@@ -41,7 +41,7 @@
         <h4 class="menu-header">Account</h4>
         <div class="menu-items">
             <a class="menu-item" href="{{ path_for('logout') }}">Log Out</a>
-            <a class="menu-item" href="#">Help</a>
+            <a class="menu-item" href="{{ path_for('register') }}">Add User</a>
         </div>
     </div>
 {% endblock %}

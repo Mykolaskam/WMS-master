@@ -89,11 +89,11 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
     public function block_menu($context, array $blocks = array())
     {
         // line 21
-        echo "    <div class=\"top-bar\">
-        <!--     <a id=\"menu\" class=\"menu-button\"><i class=\"fas fa-bars\"></i></a> -->
+        echo "    <div class=\"top-bar\" id=\"top-bar\">
+         <a id=\"menu\" class=\"menu-button\"><i class=\"fas fa-bars\"></i></a>
     </div>
 
-    <div id=\"side-menu\" class=\"shadow side-menu\">
+    <div id=\"side-menu\" class=\"shadow side-menu closed open\">
         <h2 class=\"logo\">WMS</h2>
         <h2 class=\"logo2\">Lite</h2>
 
@@ -133,7 +133,10 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
         // line 43
         echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("logout"), "html", null, true);
         echo "\">Log Out</a>
-            <a class=\"menu-item\" href=\"#\">Help</a>
+            <a class=\"menu-item\" href=\"";
+        // line 44
+        echo twig_escape_filter($this->env, $this->extensions['Slim\Views\TwigExtension']->pathFor("register"), "html", null, true);
+        echo "\">Add User</a>
         </div>
     </div>
 ";
@@ -159,7 +162,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 
     public function getDebugInfo()
     {
-        return array (  146 => 50,  143 => 49,  134 => 43,  125 => 37,  120 => 35,  116 => 34,  112 => 33,  108 => 32,  104 => 31,  92 => 21,  89 => 20,  84 => 6,  74 => 58,  70 => 57,  63 => 52,  61 => 49,  58 => 48,  56 => 20,  46 => 13,  42 => 12,  33 => 6,  26 => 1,);
+        return array (  149 => 50,  146 => 49,  138 => 44,  134 => 43,  125 => 37,  120 => 35,  116 => 34,  112 => 33,  108 => 32,  104 => 31,  92 => 21,  89 => 20,  84 => 6,  74 => 58,  70 => 57,  63 => 52,  61 => 49,  58 => 48,  56 => 20,  46 => 13,  42 => 12,  33 => 6,  26 => 1,);
     }
 
     public function getSourceContext()
