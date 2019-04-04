@@ -3,49 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="842b8b29-8b3b-42b7-a5d6-86395138770f" name="Default Changelist" comment="connection to database, basic routing and use of twig for information display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/02/02d3b221048f17a1f3e97b703be21fa3aa88250fd2e8620c0a980312b76ca4d5.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/02/02d3b221048f17a1f3e97b703be21fa3aa88250fd2e8620c0a980312b76ca4d5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/12/12e34d30ea20e0d8c5869a5b3c7ebd3c942cbcf75679796e36e07561270e3e67.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/12/12e34d30ea20e0d8c5869a5b3c7ebd3c942cbcf75679796e36e07561270e3e67.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/16/1608aa98ab6282bea0718c774c63adcada2356f84d84320e17bae1823b604ff7.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/16/1608aa98ab6282bea0718c774c63adcada2356f84d84320e17bae1823b604ff7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/1c/1caa0f2fc4f9071ef5e847ed4406fa4a8c6b20ffb7565af5144c82daeb1bacd0.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/1c/1caa0f2fc4f9071ef5e847ed4406fa4a8c6b20ffb7565af5144c82daeb1bacd0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/23/2359fc0138ad47b5efa204b3445c6013728856b37c5f5ebed22780a6e64bf10d.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/23/2359fc0138ad47b5efa204b3445c6013728856b37c5f5ebed22780a6e64bf10d.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/66/66b9f44e4fcc4527c6b64861658f97a31894f6710b0a4b1c79c084589724cc18.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/66/66b9f44e4fcc4527c6b64861658f97a31894f6710b0a4b1c79c084589724cc18.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/6c/6c4d8029c8a5961e5b34d074f188da44cd84646e61d44355f8533676ddcc11f7.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/6c/6c4d8029c8a5961e5b34d074f188da44cd84646e61d44355f8533676ddcc11f7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/79/79e5ff17bf8d6cdae6a0a98472c31cabd730f3c7501b107c2a227f715abf1393.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/79/79e5ff17bf8d6cdae6a0a98472c31cabd730f3c7501b107c2a227f715abf1393.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/96/962814a0c5035a911be64c502cf77d196220bd8c3bb4dbe44fbee1048246dd92.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/96/962814a0c5035a911be64c502cf77d196220bd8c3bb4dbe44fbee1048246dd92.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a0/a0a9830c17c9528c5432ee6be72c9585a0e9c2bee08a51274f5f28ecb9212137.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a0/a0a9830c17c9528c5432ee6be72c9585a0e9c2bee08a51274f5f28ecb9212137.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a5/a5b8a1a4fe892b4ba7da49205035753c98d18134c81138ae14adf7bcc87e8577.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a5/a5b8a1a4fe892b4ba7da49205035753c98d18134c81138ae14adf7bcc87e8577.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a8/a81cabeef3318f4f88add86b7828a020265156aa3ba6c756542329a7b5bbecd3.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/a8/a81cabeef3318f4f88add86b7828a020265156aa3ba6c756542329a7b5bbecd3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ba/baa318e4e9e7e48f8183fd046577dfa3a9e3b55fae0fa4383ba211b31d0fbdd0.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ba/baa318e4e9e7e48f8183fd046577dfa3a9e3b55fae0fa4383ba211b31d0fbdd0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ca/ca5a9e083fbfc6dcb535c044b50a0f5a589ab334bdff7b89d47a1280cf7e7dd0.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/cache/twig/ca/ca5a9e083fbfc6dcb535c044b50a0f5a589ab334bdff7b89d47a1280cf7e7dd0.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/dependencies.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/dependencies.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/editcustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/editcustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/editvendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/editvendor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/routes/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/routes/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/customers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/customers.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/dashboard.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/dashboard.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/editPO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editPO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editSO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/editcustomer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editcustomer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/edititem.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/edititem.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/editvendor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/editvendor.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/items.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/items.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/settings.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newPO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newSO.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newcustomer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newcustomer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newitem.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newitem.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/newvendor.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/newvendor.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/purchaseorders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/purchaseorders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/register.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/salesorders.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/tobeinvoiced.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/tobeinvoiced.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/tobepacked.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/tobepacked.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/tobeshipped.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/tobeshipped.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/wms_app/app/templates/vendors.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/includes/wms_app/app/templates/vendors.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_php/wms/css/modals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_php/wms/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_php/wms/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_php/wms/js/javascript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_php/wms/js/javascript.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_php/wms/js/javascript.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
@@ -100,10 +59,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/wms_app/app/settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="573">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -193,7 +161,6 @@
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/PurchaseOrderItems.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/purchaseorders.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/src/Item.php" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/settings.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/edititem.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/bootstrap.php" />
@@ -233,8 +200,9 @@
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/login.html.twig" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/routes/register.php" />
         <option value="$PROJECT_DIR$/includes/wms_app/app/templates/register.html.twig" />
-        <option value="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" />
         <option value="$PROJECT_DIR$/public_php/wms/js/javascript.js" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/settings.php" />
+        <option value="$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig" />
       </list>
     </option>
   </component>
@@ -402,19 +370,19 @@
       <workItem from="1550407982458" duration="61043000" />
       <workItem from="1551102356062" duration="2779000" />
       <workItem from="1552305586123" duration="30451000" />
-      <workItem from="1553543394657" duration="55546000" />
+      <workItem from="1553543394657" duration="55706000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="296923000" />
+    <option name="totallyTimeSpent" value="297083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24324325" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.24324325" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
@@ -440,7 +408,7 @@
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32948583" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32948583" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -465,9 +433,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="connection to database, basic routing and use of twig for information display" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public_php/wms/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/wms_app/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -820,17 +785,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_php/wms/js/javascript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/wms_app/app/templates/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>

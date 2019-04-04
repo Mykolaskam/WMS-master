@@ -41,10 +41,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
         // line 12
         echo twig_escape_filter($this->env, ($context["css_path"] ?? null), "html", null, true);
         echo "\"/>
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"";
-        // line 13
-        echo twig_escape_filter($this->env, ($context["CSS_FOLDER_PATH"] ?? null), "html", null, true);
-        echo "\" />
+
 
 </head>
 
@@ -65,10 +62,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.js\"></script>
 <script src=\"https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js\"></script>
-<script src=\"";
-        // line 57
-        echo twig_escape_filter($this->env, ($context["JS_FOLDER_PATH"] ?? null), "html", null, true);
-        echo "\"></script>
+
 <script src=\"";
         // line 58
         echo twig_escape_filter($this->env, ($context["js_path"] ?? null), "html", null, true);
@@ -162,7 +156,7 @@ class __TwigTemplate_1c496cbd56d5b23803c71634fffcaf6af4e905c55bc2fa288e440d23740
 
     public function getDebugInfo()
     {
-        return array (  149 => 50,  146 => 49,  138 => 44,  134 => 43,  125 => 37,  120 => 35,  116 => 34,  112 => 33,  108 => 32,  104 => 31,  92 => 21,  89 => 20,  84 => 6,  74 => 58,  70 => 57,  63 => 52,  61 => 49,  58 => 48,  56 => 20,  46 => 13,  42 => 12,  33 => 6,  26 => 1,);
+        return array (  143 => 50,  140 => 49,  132 => 44,  128 => 43,  119 => 37,  114 => 35,  110 => 34,  106 => 33,  102 => 32,  98 => 31,  86 => 21,  83 => 20,  78 => 6,  68 => 58,  60 => 52,  58 => 49,  55 => 48,  53 => 20,  42 => 12,  33 => 6,  26 => 1,);
     }
 
     public function getSourceContext()
