@@ -40,7 +40,7 @@ class __TwigTemplate_fe68230e2c3a60ad51fa2fd06fa15dac9b1aa071672679f4c2ea7b2fd1b
     {
         // line 6
         echo "
-    <main class=\"main-body\">
+    <main class=\"main-body\" id=\"main\">
 
         <div class=\"container-row\">
             <h1 class=\"big-title\">You need to invoice...</h1>

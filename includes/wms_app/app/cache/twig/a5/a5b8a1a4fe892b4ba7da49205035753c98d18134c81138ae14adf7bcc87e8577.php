@@ -78,11 +78,11 @@ class __TwigTemplate_4028d3780b0a8c092f4d693d28850fba7be206e71754539171c5678f5e5
                 </div>
             </div>
 
-            <div class=\"shadow shell indicator-box pointer\" onclick=\"window.location='/wms/index.php/tobeinvoiced';\">
+            <div class=\"shadow shell indicator-box pointer\" onclick=\"window.location='/wms/index.php/completedsales';\">
                 <div>
                     <h2 class=\"large-no\">";
         // line 38
-        echo twig_escape_filter($this->env, ($context["to_be_invoiced_num"] ?? null), "html", null, true);
+        echo twig_escape_filter($this->env, ($context["completed_sales_num"] ?? null), "html", null, true);
         echo "</h2>
                     <h3>Completed Sales Orders</h3>
                 </div>

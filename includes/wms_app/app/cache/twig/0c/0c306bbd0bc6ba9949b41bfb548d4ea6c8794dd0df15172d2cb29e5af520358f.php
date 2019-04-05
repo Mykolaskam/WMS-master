@@ -1,7 +1,7 @@
 <?php
 
-/* tobeshipped.html.twig */
-class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893ef8c5 extends Twig_Template
+/* completedsales.html.twig */
+class __TwigTemplate_e7a2637fee7b675935c0942b0e38a34a00a762b3d9246e4d324d6dfe2bfe921f extends Twig_Template
 {
     private $source;
 
@@ -12,7 +12,7 @@ class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("layout.html.twig", "tobeshipped.html.twig", 1);
+        $this->parent = $this->loadTemplate("layout.html.twig", "completedsales.html.twig", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'content' => array($this, 'block_content'),
@@ -32,7 +32,7 @@ class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        echo "To be shipped";
+        echo "To be invoiced";
     }
 
     // line 5
@@ -43,7 +43,7 @@ class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893
     <main class=\"main-body\" id=\"main\">
 
         <div class=\"container-row\">
-            <h1 class=\"big-title\">You need to ship...</h1>
+            <h1 class=\"big-title\">Completed Sales</h1>
         </div>
 
 
@@ -77,7 +77,7 @@ class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893
                         ";
         // line 41
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(($context["to_be_shipped"] ?? null));
+        $context['_seq'] = twig_ensure_traversable(($context["completed_sales"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["SO"]) {
             // line 42
             echo "
@@ -152,7 +152,7 @@ class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893
 
     public function getTemplateName()
     {
-        return "tobeshipped.html.twig";
+        return "completedsales.html.twig";
     }
 
     public function isTraitable()
@@ -167,6 +167,6 @@ class __TwigTemplate_e817201ee657eff9bd392f20a38c18eedc9946f68c9449872cba03c4893
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "tobeshipped.html.twig", "/Applications/MAMP/htdocs/WMS-master/includes/wms_app/app/templates/tobeshipped.html.twig");
+        return new Twig_Source("", "completedsales.html.twig", "/Applications/MAMP/htdocs/WMS-master/includes/wms_app/app/templates/completedsales.html.twig");
     }
 }

@@ -41,6 +41,14 @@ $app->get('/dashboard', function (Request $request, Response $response, $args) {
             $to_be_invoiced_num;
         }
 
+
+        $completed_sales_arr = $wrapper_sql->count_completed_sales_var('on', 'on', 'on');
+
+        foreach ($completed_sales_arr as $completed_sales_num) {
+            $completed_sales_num;
+        }
+
+
         return $this->view->render($response,
             'dashboard.html.twig',
             [
@@ -50,6 +58,7 @@ $app->get('/dashboard', function (Request $request, Response $response, $args) {
                 'to_be_packed_num' => $to_be_packed_num,
                 'to_be_shipped_num' => $to_be_shipped_num,
                 'to_be_invoiced_num' => $to_be_invoiced_num,
+                'completed_sales_num' => $completed_sales_num,
 
             ]);
 
@@ -162,7 +171,7 @@ $app->get('/tobeinvoiced', function (Request $request, Response $response, $args
 
 
         $to_be_invoiced = [];
-        var_dump($to_be_invoiced = $wrapper_sql->get_sales_orders_to_be_invoiced_var('off'));
+        $to_be_invoiced = $wrapper_sql->get_sales_orders_to_be_invoiced_var('off');
 
 
         return $this->view->render($response,
@@ -182,5 +191,48 @@ $app->get('/tobeinvoiced', function (Request $request, Response $response, $args
 
 
 })->setName('tobeinvoiced');
+
+
+$app->get('/completedsales', function (Request $request, Response $response, $args) {
+
+    $wrapper_sql = $this->get('sql_wrapper');
+    $db_handle = $this->get('dbase');
+    $sql_queries = $this->get('sql_queries');
+    $session_model = $this->get('session_model');
+    $bcrypt = $this->get('bcrypt_wrapper');
+    $validator = $this->get('validator');
+    $session_wrapper = $this->get('session_wrapper');
+    $session_wrapper->unset_session('order_id');
+
+    $wrapper_sql->set_db_handle($db_handle);
+    $wrapper_sql->set_sql_queries($sql_queries);
+
+
+    if ($wrapper_sql->session_var_exists(session_id())) {
+
+
+        $completed_salesm = [];
+        $completed_sales = $wrapper_sql->get_completed_sales_var('on', 'on', 'on');
+
+
+        return $this->view->render($response,
+            'completedsales.html.twig',
+            [
+                'css_path' => CSS_PATH,
+                'js_path' => JS_PATH,
+
+                'completed_sales' => $completed_sales,
+            ]);
+
+    } else {
+
+        return $this->response->withRedirect('/wms/index.php/');
+
+    }
+
+
+})->setName('completedsales');
+
+
 
 

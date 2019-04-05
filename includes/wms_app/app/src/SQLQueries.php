@@ -642,6 +642,16 @@ class SQLQueries
         return $m_query_string;
     }
 
+    public static function get_completed_sales()
+    {
+        $m_query_string = "SELECT * ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE packed = :local_packed ";
+        $m_query_string .= "AND shipped = :local_shipped ";
+        $m_query_string .= "AND invoiced = :local_invoiced";
+        return $m_query_string;
+    }
+
     public static function count_to_be_packed()
     {
         $m_query_string = "SELECT COUNT(*) ";
@@ -664,6 +674,16 @@ class SQLQueries
         $m_query_string .= "FROM salesorders ";
         $m_query_string .= "WHERE packed = :local_packed ";
         $m_query_string .= "AND shipped = :local_shipped";
+        return $m_query_string;
+    }
+
+    public static function count_completed_sales()
+    {
+        $m_query_string = "SELECT COUNT(*) ";
+        $m_query_string .= "FROM salesorders ";
+        $m_query_string .= "WHERE packed = :local_packed ";
+        $m_query_string .= "AND shipped = :local_shipped ";
+        $m_query_string .= "AND invoiced = :local_invoiced";
         return $m_query_string;
     }
 

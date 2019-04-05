@@ -969,6 +969,22 @@ class SQLWrapper
         return $message;
     }
 
+    public function get_completed_sales_var($packed, $shipped, $invoiced)
+    {
+        $m_query_string = $this->c_obj_sql_queries->get_completed_sales();
+
+        $m_arr_query_parameters = [
+            ':local_packed' => $packed,
+            ':local_shipped' => $shipped,
+            ':local_invoiced' => $invoiced
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $message = $this->safe_fetch_all_array();
+        return $message;
+    }
+
 
     public function count_to_be_packed_var($packed)
     {
@@ -1005,6 +1021,22 @@ class SQLWrapper
         $m_arr_query_parameters = [
             ':local_packed' => $packed,
             ':local_shipped' => $shipped
+        ];
+
+        $this->safe_query($m_query_string, $m_arr_query_parameters);
+
+        $message = $this->safe_fetch_array();
+        return $message;
+    }
+
+    public function count_completed_sales_var($packed, $shipped, $invoiced)
+    {
+        $m_query_string = $this->c_obj_sql_queries->count_completed_sales();
+
+        $m_arr_query_parameters = [
+            ':local_packed' => $packed,
+            ':local_shipped' => $shipped,
+            ':local_invoiced' => $invoiced
         ];
 
         $this->safe_query($m_query_string, $m_arr_query_parameters);
